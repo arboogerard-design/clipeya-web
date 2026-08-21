@@ -236,6 +236,23 @@
   .demo-foot .arrow{transition:transform .3s ease;font-size:1.1rem}
   .card-demo:hover .arrow{transform:translateX(6px)}
 
+  /* ---------- PROCESO ---------- */
+  .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+  .paso{border:1px solid var(--line);border-radius:18px;padding:1.5rem 1.4rem;background:var(--bg2)}
+  .paso .num{font-size:.74rem;font-weight:800;letter-spacing:.2em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:.5rem}
+  .paso h3{font-size:1.02rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;
+    margin-bottom:.45rem}
+  .paso p{color:var(--muted);font-size:.9rem;line-height:1.55}
+  /* ---------- FORM ---------- */
+  .brief{max-width:560px;margin:0 auto;display:grid;gap:.8rem;text-align:left}
+  .brief label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted)}
+  .brief input,.brief select,.brief textarea{
+    width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;
+    background:#fff;font:inherit;font-size:.95rem;color:inherit}
+  .brief input:focus,.brief select:focus,.brief textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+  .brief textarea{min-height:90px;resize:vertical}
   /* ---------- CTA ---------- */
   #cta{background:var(--bg2);border-top:1px solid var(--line)}
   .cta-box{
@@ -453,13 +470,68 @@
   </div>
 </section>
 
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">05 — Cómo trabajamos</div>
+      <h2>Sabes qué pasa<br>en cada momento</h2>
+      <p class="sec-sub">Sin humo y sin sorpresas: precio cerrado antes de empezar, número exacto de piezas y un informe donde se ve lo que se ha hecho.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso fade">
+        <div class="num">Paso 1</div>
+        <h3>Briefing de 10 min</h3>
+        <p>Nos cuentas tu negocio y qué necesitas. Nosotros te decimos qué haríamos con tu material — antes de hablar de dinero.</p>
+      </div>
+      <div class="paso fade">
+        <div class="num">Paso 2</div>
+        <h3>Propuesta cerrada</h3>
+        <p>Precio fijo, piezas exactas y fecha de entrega por escrito. Vale 7 días. Ni «depende», ni letra pequeña.</p>
+      </div>
+      <div class="paso fade">
+        <div class="num">Paso 3</div>
+        <h3>Producción</h3>
+        <p>Trabajamos con tu material real. Una ronda de ajustes en una sola tanda, para que la entrega no se eternice.</p>
+      </div>
+      <div class="paso fade">
+        <div class="num">Paso 4</div>
+        <h3>Entrega + informe</h3>
+        <p>Recibes las piezas listas para publicar y un informe de lo hecho. Y si quieres que no se apague, lo alimentamos cada mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="cta">
   <div class="wrap">
     <div class="cta-box fade">
-      <div class="sec-tag">05 — Empieza aquí</div>
+      <div class="sec-tag">06 — Empieza aquí</div>
       <h2>Pide tu demo<br>personalizada gratis</h2>
       <p>Nos mandas una grabación tuya o tu producto y te devolvemos una muestra hecha con tu contenido. Sin compromiso: si no te vuela la cabeza, no pasa nada.</p>
-      <a class="btn btn-solid" href="mailto:adminclipeya@gmail.com?subject=Quiero%20mi%20demo%20personalizada">Pedir demo gratis ✉</a>
+      <form class="brief" id="brief" onsubmit="return enviarBrief(this)">
+        <div>
+          <label for="b-nombre">Tu nombre</label>
+          <input id="b-nombre" name="nombre" required autocomplete="name">
+        </div>
+        <div>
+          <label for="b-negocio">Tu negocio o Instagram</label>
+          <input id="b-negocio" name="negocio" placeholder="@tumarca o tuweb.com" required>
+        </div>
+        <div>
+          <label for="b-que">Qué necesitas</label>
+          <select id="b-que" name="que">
+            <option>Clips para redes</option>
+            <option>Tienda o landing</option>
+            <option>Sistema completo de captación</option>
+            <option>Aún no lo sé — asesórame</option>
+          </select>
+        </div>
+        <div>
+          <label for="b-msg">Cuéntanos en una línea</label>
+          <textarea id="b-msg" name="msg" placeholder="Ej.: tengo grabaciones de mis eventos y no publico nada con ellas"></textarea>
+        </div>
+        <button class="btn btn-solid" type="submit">Pedir mi demo gratis →</button>
+      </form>
       <p class="cta-ig">o escríbenos por Instagram <b>@clipeya</b></p>
     </div>
   </div>
@@ -470,6 +542,16 @@
 </footer>
 
 <script>
+function enviarBrief(f){
+  var cuerpo = "Nombre: " + f.nombre.value +
+    "\nNegocio: " + f.negocio.value +
+    "\nNecesita: " + f.que.value +
+    "\nMensaje: " + (f.msg.value || "-");
+  location.href = "mailto:adminclipeya@gmail.com?subject=" +
+    encodeURIComponent("Demo gratis — " + f.negocio.value) +
+    "&body=" + encodeURIComponent(cuerpo);
+  return false;
+}
 (function(){
   var els = document.querySelectorAll('.fade');
   if(!('IntersectionObserver' in window)){
