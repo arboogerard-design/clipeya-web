@@ -257,6 +257,12 @@
     border-top:1px solid var(--line);
   }
   footer b{color:var(--txt)}
+
+  @media (max-width: 640px){
+    .grid, .vfx-grid, [class*='grid']{grid-template-columns:1fr !important}
+    h1{font-size:2.4rem !important}
+    video{width:100% !important}
+  }
 </style>
 </head>
 <body>
