@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLIPEYA — Clips que traen clientes</title>
+<meta name="description" content="Clipeya convierte tus grabaciones largas en clips que traen clientes. Catálogo de trabajo real y demo personalizada gratis.">
+<style>
+  :root{
+    --bg:#09090b;
+    --bg2:#0e0e12;
+    --card:#121216;
+    --line:rgba(255,255,255,.08);
+    --txt:#f4f2ec;
+    --muted:#9a97a0;
+    --accent:#d8ff3a;
+    --accent-dim:rgba(216,255,58,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+  ::selection{background:var(--accent);color:#09090b}
+
+  /* ---------- utilidades ---------- */
+  .wrap{width:min(1180px,92%);margin:0 auto}
+  .fade{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+  .fade.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .fade{opacity:1;transform:none;transition:none}
+    *{animation:none!important;transition:none!important}
+  }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    background:rgba(9,9,11,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+  .logo{font-weight:800;letter-spacing:.14em;font-size:1.02rem;text-decoration:none;color:var(--txt)}
+  .logo b{color:var(--accent)}
+  .nav-cta{
+    font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#09090b;background:var(--accent);text-decoration:none;
+    padding:.55rem 1.1rem;border-radius:99px;
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(216,255,58,.35)}
+
+  /* ---------- hero ---------- */
+  header{
+    min-height:92svh;
+    display:flex;flex-direction:column;justify-content:center;
+    position:relative;
+    padding:7.5rem 0 4rem;
+    background:
+      radial-gradient(60% 45% at 75% 12%, rgba(216,255,58,.07), transparent 65%),
+      radial-gradient(50% 40% at 15% 85%, rgba(120,90,255,.06), transparent 65%),
+      var(--bg);
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);
+    border:1px solid rgba(216,255,58,.3);
+    background:var(--accent-dim);
+    padding:.4rem .95rem;border-radius:99px;
+    margin-bottom:1.6rem;width:fit-content;
+  }
+  .kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{
+    font-size:clamp(3.4rem,13vw,9.5rem);
+    font-weight:800;line-height:.92;letter-spacing:-.03em;
+    text-transform:uppercase;
+  }
+  h1 .dot{color:var(--accent)}
+  .hero-sub{
+    margin-top:1.8rem;max-width:34ch;
+    font-size:clamp(1.15rem,2.6vw,1.6rem);
+    font-weight:500;line-height:1.35;color:var(--txt);
+  }
+  .hero-sub em{font-style:normal;color:var(--accent)}
+  .hero-note{margin-top:1rem;color:var(--muted);font-size:.95rem;max-width:44ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-weight:700;font-size:.92rem;letter-spacing:.04em;
+    text-decoration:none;border-radius:99px;padding:.95rem 1.8rem;
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  }
+  .btn-solid{background:var(--accent);color:#09090b}
+  .btn-solid:hover{transform:translateY(-3px);box-shadow:0 10px 34px rgba(216,255,58,.35)}
+  .btn-ghost{color:var(--txt);border:1px solid var(--line);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{transform:translateY(-3px);background:rgba(255,255,255,.07)}
+  .scroll-hint{
+    position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);
+    color:var(--muted);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* ---------- secciones ---------- */
+  section{padding:5.5rem 0}
+  .sec-head{margin-bottom:3rem}
+  .sec-tag{
+    font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:.8rem;
+  }
+  h2{
+    font-size:clamp(2rem,6vw,3.6rem);
+    font-weight:800;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase;
+  }
+  .sec-sub{margin-top:1rem;color:var(--muted);max-width:52ch;font-size:1.02rem}
+
+  /* ---------- catálogo ---------- */
+  #catalogo{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .grid{
+    display:grid;gap:1.4rem;
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease,box-shadow .35s ease;
+  }
+  .card:hover{
+    transform:translateY(-8px) scale(1.015);
+    border-color:rgba(216,255,58,.35);
+    box-shadow:0 24px 60px rgba(0,0,0,.55);
+  }
+  .card video{
+    width:100%;aspect-ratio:9/16;display:block;
+    object-fit:cover;background:#000;
+  }
+  .card-body{padding:1.1rem 1.2rem 1.3rem}
+  .card-num{
+    font-size:.7rem;font-weight:700;letter-spacing:.22em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:.35rem;
+  }
+  .card-title{font-size:1.08rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+  .card-desc{margin-top:.4rem;color:var(--muted);font-size:.88rem;line-height:1.45}
+
+  /* tarjeta demo */
+  .card-demo{
+    text-decoration:none;color:var(--txt);
+    justify-content:space-between;
+    background:
+      radial-gradient(120% 90% at 85% 10%, rgba(216,255,58,.16), transparent 60%),
+      var(--card);
+    border:1px solid rgba(216,255,58,.4);
+    min-height:340px;position:relative;
+  }
+  .card-demo:hover{border-color:var(--accent)}
+  .demo-top{padding:1.4rem 1.3rem 0}
+  .demo-tag{
+    display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:#09090b;background:var(--accent);
+    padding:.3rem .8rem;border-radius:99px;margin-bottom:1rem;
+  }
+  .demo-title{font-size:1.5rem;font-weight:800;line-height:1.08;text-transform:uppercase;letter-spacing:-.01em}
+  .demo-desc{margin-top:.7rem;color:var(--muted);font-size:.92rem;max-width:26ch}
+  .demo-foot{
+    padding:0 1.3rem 1.4rem;display:flex;align-items:center;gap:.5rem;
+    font-weight:700;font-size:.9rem;color:var(--accent);letter-spacing:.04em;
+  }
+  .demo-foot .arrow{transition:transform .3s ease;font-size:1.1rem}
+  .card-demo:hover .arrow{transform:translateX(6px)}
+
+  /* ---------- cómo funciona ---------- */
+  .steps{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+  .step{
+    border:1px solid var(--line);border-radius:20px;
+    padding:2rem 1.6rem;background:var(--bg2);
+    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease;
+  }
+  .step:hover{transform:translateY(-6px);border-color:rgba(216,255,58,.3)}
+  .step-num{
+    font-size:2.6rem;font-weight:800;line-height:1;
+    color:transparent;-webkit-text-stroke:1.5px var(--accent);
+    margin-bottom:1.1rem;
+  }
+  .step h3{font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.6rem}
+  .step p{color:var(--muted);font-size:.95rem}
+
+  /* ---------- CTA ---------- */
+  #cta{background:var(--bg2);border-top:1px solid var(--line)}
+  .cta-box{
+    text-align:center;
+    border:1px solid rgba(216,255,58,.35);border-radius:28px;
+    padding:clamp(2.5rem,7vw,5rem) clamp(1.2rem,5vw,4rem);
+    background:
+      radial-gradient(70% 100% at 50% 0%, rgba(216,255,58,.1), transparent 70%),
+      var(--card);
+  }
+  .cta-box h2{margin-bottom:1rem}
+  .cta-box p{color:var(--muted);max-width:46ch;margin:0 auto 2.2rem}
+  .cta-ig{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
+  .cta-ig b{color:var(--txt);font-weight:700}
+
+  footer{
+    padding:2.2rem 0;text-align:center;
+    color:var(--muted);font-size:.82rem;letter-spacing:.06em;
+    border-top:1px solid var(--line);
+  }
+  footer b{color:var(--txt)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">CLIPEYA<b>.</b></a>
+    <a class="nav-cta" href="#cta">Pide tu demo</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <span class="kicker fade">Agencia de clips</span>
+    <h1 class="fade">Clipeya<span class="dot">.</span></h1>
+    <p class="hero-sub fade">Convertimos tus grabaciones largas en <em>clips que traen clientes</em>.</p>
+    <p class="hero-note fade">Tú grabas una vez. Nosotros lo convertimos en el contenido de tu mes. Esto es lo que hacemos, míralo tú mismo.</p>
+    <div class="hero-actions fade">
+      <a class="btn btn-solid" href="#catalogo">Ver el catálogo ↓</a>
+      <a class="btn btn-ghost" href="#cta">Demo gratis</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Desliza</div>
+</header>
+
+<section id="catalogo">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">01 — El catálogo</div>
+      <h2>El trabajo habla<br>por nosotros</h2>
+      <p class="sec-sub">Clips reales, editados por Clipeya. Hook adelantado, subtítulos palabra a palabra y corte donde muere la atención — no donde acaba la frase.</p>
+    </div>
+    <div class="grid">
+      <article class="card fade">
+        <video src="media/CLIPEYA_tt1_mina.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="card-body">
+          <div class="card-num">Clip 01</div>
+          <div class="card-title">La mina</div>
+          <p class="card-desc">Tu grabación larga esconde los clips que traen seguidores nuevos. Nosotros los excavamos.</p>
+        </div>
+      </article>
+      <article class="card fade">
+        <video src="media/CLIPEYA_tt2_retencion.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="card-body">
+          <div class="card-num">Clip 02</div>
+          <div class="card-title">Retención</div>
+          <p class="card-desc">Por qué tus clips mueren en el segundo 2 — y las tres causas que lo arreglan.</p>
+        </div>
+      </article>
+      <article class="card fade">
+        <video src="media/CLIPEYA_tt3_sistema.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="card-body">
+          <div class="card-num">Clip 03</div>
+          <div class="card-title">El sistema</div>
+          <p class="card-desc">Graba una vez al mes. Publica todos los días. Así funciona por dentro.</p>
+        </div>
+      </article>
+      <article class="card fade">
+        <video src="media/CLIPEYA_tt4_espejo.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="card-body">
+          <div class="card-num">Clip 04</div>
+          <div class="card-title">El espejo</div>
+          <p class="card-desc">El cuello de botella no es grabar: es entregar. El contenido que no se publica no existe.</p>
+        </div>
+      </article>
+      <article class="card fade">
+        <video src="media/CLIPEYA_tt5_destinos.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="card-body">
+          <div class="card-num">Clip 05</div>
+          <div class="card-title">Dos destinos</div>
+          <p class="card-desc">El mismo momento, dos destinos. La diferencia no es el contenido: es la edición.</p>
+        </div>
+      </article>
+      <a class="card card-demo fade" href="https://arboogerard-design.github.io/clipeya-demos/luis_carmelo/" target="_blank" rel="noopener">
+        <div class="demo-top">
+          <span class="demo-tag">Ejemplo real</span>
+          <div class="demo-title">Demo personalizada para un creador</div>
+          <p class="demo-desc">Así entregamos: una página como esta, con sus clips, hecha a medida antes de firmar nada.</p>
+        </div>
+        <div class="demo-foot">Ver la demo <span class="arrow">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">02 — Cómo funciona</div>
+      <h2>Tres pasos.<br>Cero fricción.</h2>
+    </div>
+    <div class="steps">
+      <div class="step fade">
+        <div class="step-num">01</div>
+        <h3>Nos pasas tu grabación</h3>
+        <p>Un podcast, una clase, un directo, una charla. Lo que ya tienes grabado — sin grabar nada nuevo.</p>
+      </div>
+      <div class="step fade">
+        <div class="step-num">02</div>
+        <h3>Te devolvemos el mes de contenido</h3>
+        <p>Clips con hook adelantado, subtítulos y corte al beat. Listos para subir, ordenados y con criterio.</p>
+      </div>
+      <div class="step fade">
+        <div class="step-num">03</div>
+        <h3>Publicas y creces</h3>
+        <p>Tú sigues a lo tuyo. Tu contenido sale todos los días y trabaja para traerte clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-box fade">
+      <div class="sec-tag">03 — Empieza aquí</div>
+      <h2>Pide tu demo<br>personalizada gratis</h2>
+      <p>Nos mandas una grabación tuya y te devolvemos una muestra hecha con tu contenido. Sin compromiso: si no te vuela la cabeza, no pasa nada.</p>
+      <a class="btn btn-solid" href="mailto:adminclipeya@gmail.com?subject=Quiero%20mi%20demo%20personalizada">Pedir demo gratis ✉</a>
+      <p class="cta-ig">o escríbenos por Instagram <b>@clipeya</b></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><b>CLIPEYA</b> — clips que traen clientes · 2026</div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){
+    for(var i=0;i<els.length;i++){ els[i].classList.add('in'); }
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){
+        entries[i].target.classList.add('in');
+        io.unobserve(entries[i].target);
+      }
+    }
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  for(var j=0;j<els.length;j++){ io.observe(els[j]); }
+
+  // pausa los demas videos cuando uno empieza a sonar
+  var vids = document.querySelectorAll('video');
+  function pauseOthers(e){
+    for(var k=0;k<vids.length;k++){
+      if(vids[k]!==e.target){ vids[k].pause(); }
+    }
+  }
+  for(var m=0;m<vids.length;m++){ vids[m].addEventListener('play',pauseOthers); }
+})();
+</script>
+
+</body>
+</html>
