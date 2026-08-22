@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CLIPEYA — Clips, VFX y tiendas que venden</title>
 <meta name="description" content="Clipeya hace clips con VFX, tiendas Shopify completas y landing pages para e-commerce. Trabajo real de clientes y demo personalizada gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#ffffff;
@@ -21,12 +24,40 @@
   body{
     background:var(--bg);
     color:var(--txt);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
     line-height:1.5;
   }
   ::selection{background:var(--accent);color:#ffffff}
+  h1,h2,h3,.card-title,.demo-title,.paso h3,.srv h3{font-family:"Sora","Manrope",sans-serif}
+  /* ---------- PARA QUIEN ---------- */
+  .quien{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+  .quien-col{border:1px solid var(--line);border-radius:18px;padding:1.7rem 1.6rem;background:var(--card)}
+  .quien-col.si{border-top:4px solid var(--accent)}
+  .quien-col.no{border-top:4px solid #c4c9d4}
+  .quien-col h3{font-size:1.05rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.9rem}
+  .quien-col ul{list-style:none}
+  .quien-col li{padding-left:1.5rem;position:relative;margin-bottom:.6rem;color:var(--muted);font-size:.95rem}
+  .quien-col.si li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:800}
+  .quien-col.no li::before{content:"✕";position:absolute;left:0;color:#c4c9d4;font-weight:800}
+  /* ---------- GARANTIA ---------- */
+  .garantia{background:var(--accent);color:#fff;border-radius:20px;padding:2rem 2.2rem;
+    text-align:center;margin-top:2.2rem}
+  .garantia h3{font-size:1.25rem;font-weight:800;margin-bottom:.5rem}
+  .garantia p{opacity:.92;max-width:56ch;margin:0 auto}
+  /* ---------- FUNDADORES ---------- */
+  .fund{border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;background:var(--bg2);
+    max-width:720px;margin:0 auto}
+  .fund p{color:var(--muted);margin-bottom:.8rem}
+  .fund p b{color:var(--txt)}
+  /* ---------- FAQ ---------- */
+  .faq{max-width:720px;margin:0 auto}
+  .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+  .faq summary{cursor:pointer;font-weight:800;font-size:1rem;list-style:none;position:relative;padding-right:2rem}
+  .faq summary::after{content:"+";position:absolute;right:0;top:0;color:var(--accent);font-weight:800;font-size:1.2rem}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{color:var(--muted);padding-top:.7rem;font-size:.95rem}
 
   /* ---------- utilidades ---------- */
   .wrap{width:min(1180px,92%);margin:0 auto}
@@ -287,7 +318,7 @@
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="#top">CL<b>I</b>PEY<b>A</b>.</a>
-    <a class="nav-cta" href="#cta">Pide tu demo</a>
+    <a class="nav-cta" href="#cta">Pide tu demo gratis</a>
   </div>
 </nav>
 
@@ -295,21 +326,49 @@
   <div class="wrap">
     <span class="kicker fade">Agencia de contenido y e-commerce</span>
     <h1 class="fade">CL<span class="dot">I</span>PEY<span class="dot">A</span>.</h1>
-    <p class="hero-sub fade">Convertimos tus grabaciones largas en <em>clips que traen clientes</em>.</p>
-    <p class="hero-note fade">Y cuando el clip trae al cliente, le damos donde comprar: tiendas Shopify y landings que convierten. Esto es trabajo real, míralo tú mismo.</p>
+    <p class="hero-sub fade">Grabas mucho. <em>Publicas nada.</em></p>
+    <p class="hero-note fade">Convertimos lo que ya tienes grabado en clips, webs y sistemas que traen clientes — del bruto al clip publicado, todo el camino. Y te enseñamos tu demo <b>antes de que pagues un euro</b>.</p>
     <div class="hero-actions fade">
-      <a class="btn btn-solid" href="#cta">Quiero mi demo gratis</a>
-      <a class="btn btn-ghost" href="#portfolio">Ver el trabajo ↓</a>
+      <a class="btn btn-solid" href="#cta">Pide tu demo gratis</a>
     </div>
-    <p class="cta-ig fade" style="margin-top:1.1rem">Te la montamos <b>antes de firmar nada</b> — con tu material y tu marca.</p>
+    <p class="cta-ig fade" style="margin-top:1.1rem">Trabajo real de clientes aquí abajo — <a href="#portfolio" style="color:var(--accent);font-weight:700">míralo tú mismo ↓</a></p>
   </div>
   <div class="scroll-hint">Desliza</div>
 </header>
 
+<section id="quien">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">01 — Para quién es esto</div>
+      <h2>Esto no es<br>para todos</h2>
+    </div>
+    <div class="quien">
+      <div class="quien-col si fade">
+        <h3>Es para ti si…</h3>
+        <ul>
+          <li>Tienes un negocio o una marca y <b>material grabado que no se publica</b> (eventos, clases, producto, día a día)</li>
+          <li>Vendes algo real y quieres que te encuentren, te consulten y te compren</li>
+          <li>Prefieres ver una demo hecha antes de decidir</li>
+          <li>Quieres precios cerrados y fechas por escrito</li>
+        </ul>
+      </div>
+      <div class="quien-col no fade">
+        <h3>No es para ti si…</h3>
+        <ul>
+          <li>Buscas seguidores por vanidad, sin negocio detrás</li>
+          <li>Quieres «viralizar» sin enseñar tu producto ni tu cara</li>
+          <li>Necesitas resultados garantizados por contrato — garantizamos ejecución y plazos, no milagros</li>
+          <li>Lo quieres «para ayer» sin mandar tu material</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="portfolio">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="sec-tag">01 — Portfolio VFX</div>
+      <div class="sec-tag">02 — Portfolio VFX</div>
       <h2>Hecho para clientes<br>reales</h2>
       <p class="sec-sub">Ads, reels y loops con VFX y escenas generadas que entregamos a marcas de e-commerce. Producto real, escenas imposibles de rodar, montaje listo para publicar.</p>
     </div>
@@ -377,7 +436,7 @@
 <section id="servicios">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="sec-tag">02 — Servicios</div>
+      <div class="sec-tag">03 — Servicios</div>
       <h2>Del clip<br>a la venta</h2>
       <p class="sec-sub">No nos quedamos en el vídeo. Montamos la tienda y la página donde ese vídeo convierte. Todo lo que ves abajo es trabajo entregado a clientes.</p>
     </div>
@@ -433,7 +492,7 @@
 <section id="webs">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="sec-tag">03 — En el móvil</div>
+      <div class="sec-tag">04 — En el móvil</div>
       <h2>Donde de verdad<br>se compra</h2>
       <p class="sec-sub">Cada página se entrega verificada en móvil, que es donde llega el tráfico de los clips.</p>
     </div>
@@ -457,7 +516,7 @@
 <section id="demo">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="sec-tag">04 — Ejemplo real</div>
+      <div class="sec-tag">05 — Ejemplo real</div>
       <h2>Así entregamos</h2>
     </div>
     <a class="card-demo fade" href="https://arboogerard-design.github.io/clipeya-demos/luis_carmelo/" target="_blank" rel="noopener">
@@ -476,7 +535,7 @@
 <section id="proceso">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="sec-tag">05 — Cómo trabajamos</div>
+      <div class="sec-tag">06 — Cómo trabajamos</div>
       <h2>Sabes qué pasa<br>en cada momento</h2>
       <p class="sec-sub">Sin humo y sin sorpresas: precio cerrado antes de empezar, número exacto de piezas y un informe donde se ve lo que se ha hecho.</p>
     </div>
@@ -502,13 +561,74 @@
         <p>Recibes las piezas listas para publicar y un informe de lo hecho. Y si quieres que no se apague, lo alimentamos cada mes.</p>
       </div>
     </div>
+    <div class="garantia fade">
+      <h3>Nuestra garantía es ir por delante</h3>
+      <p>La demo se hace <b>gratis y antes de firmar nada</b>. Si no te vuela la cabeza, no pasa nada:
+      no pagas, no firmas, y lo que viste se queda contigo. Solo cobramos cuando quieres más.</p>
+    </div>
+  </div>
+</section>
+
+<section id="fundadores">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">07 — Quiénes somos</div>
+      <h2>Dos personas,<br>cero humo</h2>
+    </div>
+    <div class="fund fade">
+      <p><b>Detrás de Clipeya no hay una agencia de 40 personas: hay dos.</b> Uno se pasa el día
+      montando sistemas con IA — clips, webs, automatizaciones — y el otro vive dentro del
+      contenido: qué se publica, cómo suena, por qué se comparte.</p>
+      <p>Todo lo que ves arriba es <b>trabajo real entregado a clientes reales</b>: cosmética,
+      calzado, joyería, moda. No enseñamos plantillas — enseñamos entregas.</p>
+      <p>Por eso trabajamos con demo por delante: preferimos que nos juzgues por lo que hacemos
+      con TU material, no por lo que te contamos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-tag">08 — Preguntas</div>
+      <h2>Lo que todos<br>preguntan</h2>
+    </div>
+    <div class="faq fade">
+      <details>
+        <summary>¿Cuánto cuesta?</summary>
+        <p>Depende de lo que necesites, y no te vamos a soltar un menú genérico: tras un briefing
+        de 10 minutos recibes una propuesta con <b>precio fijo, piezas exactas y fecha de
+        entrega</b>, con validez de 7 días. Ni «depende», ni sorpresas a mitad.</p>
+      </details>
+      <details>
+        <summary>¿Y si casi no tengo material grabado?</summary>
+        <p>Con lo que tengas en el móvil montamos la demo. Y a partir de ahí te decimos exactamente
+        qué grabar (2 minutos por evento o por día) para que nunca falte materia prima.</p>
+      </details>
+      <details>
+        <summary>¿Usáis IA con mi producto o con mi cara?</summary>
+        <p>Tu producto y las personas salen <b>siempre de material real</b>. La IA la usamos para
+        escenas de apoyo, fondos y montaje — nunca para inventar tu producto. Es una regla de la
+        casa, no un eslogan.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tarda?</summary>
+        <p>La demo, días. Los proyectos llevan su fecha <b>por escrito en la propuesta</b> y una
+        ronda de ajustes en una sola tanda para que la entrega no se eternice.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si la demo no me convence?</summary>
+        <p>Nada. Es gratis, sin compromiso, y no te vamos a perseguir. Si te convence, hablamos de
+        propuesta; si no, te quedas la demo y tan amigos.</p>
+      </details>
+    </div>
   </div>
 </section>
 
 <section id="cta">
   <div class="wrap">
     <div class="cta-box fade">
-      <div class="sec-tag">06 — Empieza aquí</div>
+      <div class="sec-tag">09 — Empieza aquí</div>
       <h2>Pide tu demo<br>personalizada gratis</h2>
       <p>Nos mandas una grabación tuya o tu producto y te devolvemos una muestra hecha con tu contenido. Sin compromiso: si no te vuela la cabeza, no pasa nada.</p>
       <form class="brief" id="brief" onsubmit="return enviarBrief(this)">
@@ -533,7 +653,7 @@
           <label for="b-msg">Cuéntanos en una línea</label>
           <textarea id="b-msg" name="msg" placeholder="Ej.: tengo grabaciones de mis eventos y no publico nada con ellas"></textarea>
         </div>
-        <button class="btn btn-solid" type="submit">Pedir mi demo gratis →</button>
+        <button class="btn btn-solid" type="submit">Pide tu demo gratis →</button>
       </form>
       <p class="cta-ig">o escríbenos por Instagram <b>@clipeya</b></p>
     </div>
