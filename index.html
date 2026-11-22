@@ -131,7 +131,7 @@ section{padding:var(--sec) 0;position:relative;scroll-margin-top:56px}
 /* cómo trabajamos */
 #como{background:var(--sup)}
 .pasos{display:grid;gap:14px;counter-reset:p}
-@media(min-width:900px){.pasos{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.pasos{grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}}
 .pasos article{padding:26px 24px;background:var(--sup2);border:1px solid var(--linea);border-radius:var(--r);counter-increment:p;display:grid;gap:8px;align-content:start}
 .pasos article::before{content:"0" counter(p);font:400 2.4rem/1 "Serif",Georgia,serif;font-style:italic;color:var(--oro)}
 .pasos p{color:var(--tenue);font-size:.96rem}
@@ -197,7 +197,7 @@ section{padding:var(--sec) 0;position:relative;scroll-margin-top:56px}
 #como{background:var(--fondo)}
 .pasos{gap:0;border-top:1px solid var(--linea)}
 .pasos article{background:none;border:0;border-radius:0;border-bottom:1px solid var(--linea);padding:24px 0}
-@media(min-width:900px){.pasos article{border-bottom:0;border-right:1px solid var(--linea);padding:28px 28px 8px}.pasos article:first-child{padding-left:0}.pasos article:last-child{border-right:0}}
+@media(min-width:900px){.pasos article{border-bottom:0;border-right:1px solid var(--linea);padding:28px 22px 8px}.pasos article:first-child{padding-left:0}.pasos article:last-child{border-right:0}}
 .pasos article::before{font-size:3.2rem}
 
 /* cierre */
@@ -325,6 +325,7 @@ footer img{height:28px;width:auto}
       <article class="rv"><h3>Diagnóstico</h3><span class="pc">97 €</span><p>Revisamos tu caso en el móvil y te decimos los 3 fallos que más ventas te quitan y qué pack te toca. Si contratas, los 97 € se descuentan del inicio.</p></article>
       <article class="rv"><h3>Pack</h3><p>Eliges el pack de tu caso. Pagas el inicio antes de empezar y montamos lo que pone en su lista.</p></article>
       <article class="rv"><h3>Cuidado mensual</h3><p>Cada mes pagas al comenzarlo. Vigilancia, arreglos e informe, según tu pack.</p></article>
+      <article class="rv"><h3>Todo llevado</h3><span class="pc">1.190 €/mes</span><p>Cuando lleves 2 meses con un pack, si quieres, te llevamos entera la parte digital: chat que contesta y agenda, contactos ordenados, panel con tus cifras, 4 piezas nuevas al mes y una reunión mensual. Sin cuota de inicio. Máximo 6 clientes a la vez.</p></article>
     </div>
   </div>
 </section>
