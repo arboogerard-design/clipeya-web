@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/clipeya_spark_favicon.svg">
 <link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Landing de Clipeya AI Lab v12 (22-nov-2026). Oferta por tipo de cliente. Servicios y precios: bloque CASOS del script (único sitio). Sin IVA. -->
+<!-- Landing de Clipeya AI Lab v13 (22-nov-2026). Oferta por tipo de cliente. Servicios y precios: bloque CASOS del script (único sitio). Sin IVA. -->
 <style>
 @font-face{font-family:"Bricolage";src:url("fonts/bricolage-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
 @font-face{font-family:"Serif";src:url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@5.3.0/files/instrument-serif-latin-400-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
@@ -216,6 +216,14 @@ section{padding:var(--sec) 0;position:relative;scroll-margin-top:60px}
 .tramo span{display:block;font:600 1.02rem/1.25 "Bricolage";margin:8px 0 6px}
 .tramo em{font:700 clamp(1.3rem,2.2vw,1.8rem) "Bricolage";font-style:normal;color:var(--oro)}
 .tramo em small{font:500 .78rem "Plex";color:var(--tenue)}
+.vol{background:var(--sup2);border-radius:16px;padding:20px}
+.vol p{font:600 .72rem "Plex";letter-spacing:.14em;text-transform:uppercase;color:var(--oro);margin-bottom:14px;line-height:1.5}
+.vol div{display:grid;gap:10px}
+@media(min-width:700px){.vol div{grid-template-columns:repeat(3,1fr)}}
+.vol span{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;border:1px solid var(--linea);border-radius:12px}
+.vol b{font:500 .95rem "Plex"}
+.vol em{font:700 1.3rem "Bricolage";font-style:normal;color:var(--oro);white-space:nowrap}
+.vol em small{font:500 .74rem "Plex";color:var(--tenue)}
 .cPie{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
 .cPie small{color:var(--tenue);font-size:.8rem;max-width:60ch}
 /* proceso y condiciones */
@@ -316,6 +324,7 @@ footer img{height:28px;width:auto}
       <div class="cTop"><h3 id="cTit"></h3><p id="cDes"></p></div>
       <div class="grupos" id="cGru"></div>
       <div class="ruta" id="cRuta"></div>
+      <div class="vol" id="cVol"></div>
       <div class="cPie"><small>Precios sin IVA. Pago por adelantado. Sin permanencia. Lo que pone «a medida» se presupuesta en 48 horas, con precio cerrado.</small><a class="btn p" href="#hablar" id="cBtn"></a></div>
     </div>
   </div>
@@ -393,7 +402,8 @@ const CASOS=[
      ['Traer clientes',['Anuncios en Meta y TikTok','Creatividades y vídeo de producto','Página de destino para cada campaña']],
      ['Automatizar',['Carritos recuperados por WhatsApp','ManyChat en Instagram: del comentario al mensaje con enlace','Chatbot de atención: tallas, envíos y devoluciones']],
      ['Mantener',['Vigilancia de la tienda en el móvil','Arreglos y páginas nuevas cada mes','Informe mensual']]],
-  r:[['Empieza','Una landing de producto','100 €'],['Monta','Tienda completa o rediseño','desde 390 €'],['Automatiza','WhatsApp, ManyChat y chatbot','desde 97 €','/mes'],['Mantén','Cuidado mensual con páginas nuevas','desde 149 €','/mes']]},
+  r:[['Empieza','Una landing de producto','100 €'],['Monta','Tienda completa o rediseño','desde 390 €'],['Automatiza','WhatsApp, ManyChat y chatbot','desde 97 €','/mes'],['Mantén','Cuidado mensual con páginas nuevas','desde 149 €','/mes']],
+  v:['Mensualidad según volumen: vigilancia, arreglos e informe, más páginas nuevas o rehechas',[['1 página al mes','149 €'],['4 páginas al mes','349 €'],['8 páginas al mes','599 €']]]},
  {id:'info',c:'Infoproducto',n:'Infoproductores, academias y formadores',d:'Que entren contactos cada día, que se cualifiquen solos y que tu equipo de ventas sepa a quién llamar.',
   g:[['Captar',['Landing de captación con regalo de entrada','Embudo de webinar: registro, recordatorios y repetición','Embudo de vídeo de venta','Anuncios en Meta']],
      ['Convertir',['ManyChat que cualifica y agenda la llamada','Secuencias de email y WhatsApp','Página de venta y de pago']],
@@ -409,7 +419,8 @@ const CASOS=[
   g:[['Producción',['Landings y tiendas en marca blanca','Embudos completos para tus clientes','Creatividades y vídeo']],
      ['Automatización',['Flujos con n8n','ManyChat y chatbots para tus clientes','Informes automáticos']],
      ['Herramientas',['Paneles y CRM a medida','Integraciones entre tus herramientas']]],
-  r:[['Empieza','Una pieza de prueba','100 €'],['Monta','Panel, CRM o automatización','a medida'],['Mantén','Bolsa mensual de producción','a medida']]}
+  r:[['Empieza','Una pieza de prueba','100 €'],['Monta','Panel, CRM o automatización','a medida'],['Mantén','Bolsa mensual de producción','desde 449 €','/mes']],
+  v:['Bolsa mensual en marca blanca: landings, fichas o páginas de embudo, las que necesites ese mes',[['5 piezas al mes','449 €'],['10 piezas al mes','799 €'],['Más volumen','a medida']]]}
 ];
 /* ====== fin de casos ====== */
 const $=id=>document.getElementById(id);
@@ -421,8 +432,9 @@ function pinta(anima){
  $('cTit').textContent=p.n;$('cDes').textContent=p.d;
  $('cGru').innerHTML=p.g.map(g=>`<div class="grupo"><h4>${g[0]}</h4><ul>${g[1].map(l=>`<li>${l}</li>`).join('')}</ul></div>`).join('');
  $('cRuta').innerHTML=p.r.map(t=>`<div class="tramo"><b>${t[0]}</b><span>${t[1]}</span><em>${t[2]}${t[3]?`<small>${t[3]}</small>`:''}</em></div>`).join('');
+ $('cVol').innerHTML=p.v?`<p>${p.v[0]}</p><div>${p.v[1].map(t=>`<span><b>${t[0]}</b><em>${t[1]}${t[1].includes('€')?'<small>/mes</small>':''}</em></span>`).join('')}</div>`:'';$('cVol').hidden=!p.v;
  $('cBtn').textContent='Diagnóstico gratis para mi caso';$('cBtn').dataset.plan=p.c.toLowerCase();
- if(anima&&window.gsap&&!reduce){gsap.from('#cGru .grupo',{opacity:0,y:22,duration:.7,ease:'expo.out',stagger:.06});gsap.from('#cRuta .tramo',{opacity:0,x:-18,duration:.7,ease:'expo.out',stagger:.09,delay:.15})}
+ if(anima&&window.gsap&&!reduce){gsap.from('#cGru .grupo',{opacity:0,y:22,duration:.7,ease:'expo.out',stagger:.06});gsap.from('#cVol span',{opacity:0,y:14,duration:.6,ease:'expo.out',stagger:.07,delay:.3});gsap.from('#cRuta .tramo',{opacity:0,x:-18,duration:.7,ease:'expo.out',stagger:.09,delay:.15})}
 }
 $('pest').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;caso=b.dataset.id;pinta(true)});
 pinta(false);
