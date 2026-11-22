@@ -1,706 +1,445 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLIPEYA — Clips, VFX y tiendas que venden</title>
-<meta name="description" content="Clipeya hace clips con VFX, tiendas Shopify completas y landing pages para e-commerce. Trabajo real de clientes y demo personalizada gratis.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!doctype html>
+<!-- index.html · Landing de Clipeya AI Lab (22-nov-2026). Generada por _montar.py: no editar a mano.
+     Entra: nada (página autónoma; fuentes en fonts/, sin librerías ni red). Sale: la landing en local para que la vean Gerard y Andy.
+     Estructura calcada de la referencia Df7r1aKKPl9 (scroll con la hora del día que avanza, titulares grandes, configurador con precio que cambia).
+     Precios: lista del 22-nov-2026 (sin IVA). Sin testimonios ni cifras de clientes: no hay fuente.
+     Prueba: abrir en el navegador a 390 y 1440 px; con «reducir movimiento» se ve todo quieto y legible. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clipeya AI Lab · tu negocio sigue cuando tú paras</title>
+<meta name="description" content="Montamos y cuidamos la parte digital de tu negocio: páginas que venden, tiendas, WhatsApp que contesta y embudos. El diagnóstico es gratis.">
+<meta name="robots" content="noindex">
 <style>
-  :root{
-    --bg:#ffffff;
-    --bg2:#f6f7fa;
-    --card:#ffffff;
-    --line:rgba(10,10,20,.10);
-    --txt:#0a0a0c;
-    --muted:#5c6270;
-    --accent:#2E5BFF;
-    --accent-dim:rgba(46,91,255,.08);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--txt);
-    font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    line-height:1.5;
-  }
-  ::selection{background:var(--accent);color:#ffffff}
-  h1,h2,h3,.card-title,.demo-title,.paso h3,.srv h3{font-family:"Sora","Manrope",sans-serif}
-  /* ---------- PARA QUIEN ---------- */
-  .quien{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
-  .quien-col{border:1px solid var(--line);border-radius:18px;padding:1.7rem 1.6rem;background:var(--card)}
-  .quien-col.si{border-top:4px solid var(--accent)}
-  .quien-col.no{border-top:4px solid #c4c9d4}
-  .quien-col h3{font-size:1.05rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.9rem}
-  .quien-col ul{list-style:none}
-  .quien-col li{padding-left:1.5rem;position:relative;margin-bottom:.6rem;color:var(--muted);font-size:.95rem}
-  .quien-col.si li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:800}
-  .quien-col.no li::before{content:"✕";position:absolute;left:0;color:#c4c9d4;font-weight:800}
-  /* ---------- GARANTIA ---------- */
-  .garantia{background:var(--accent);color:#fff;border-radius:20px;padding:2rem 2.2rem;
-    text-align:center;margin-top:2.2rem}
-  .garantia h3{font-size:1.25rem;font-weight:800;margin-bottom:.5rem}
-  .garantia p{opacity:.92;max-width:56ch;margin:0 auto}
-  /* ---------- FUNDADORES ---------- */
-  .fund{border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;background:var(--bg2);
-    max-width:720px;margin:0 auto}
-  .fund p{color:var(--muted);margin-bottom:.8rem}
-  .fund p b{color:var(--txt)}
-  /* ---------- FAQ ---------- */
-  .faq{max-width:720px;margin:0 auto}
-  .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
-  .faq summary{cursor:pointer;font-weight:800;font-size:1rem;list-style:none;position:relative;padding-right:2rem}
-  .faq summary::after{content:"+";position:absolute;right:0;top:0;color:var(--accent);font-weight:800;font-size:1.2rem}
-  .faq details[open] summary::after{content:"–"}
-  .faq details p{color:var(--muted);padding-top:.7rem;font-size:.95rem}
+@font-face{font-family:"Bricolage";src:url("fonts/bricolage-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Plex";src:url("fonts/plexsans-var.woff2") format("woff2");font-weight:100 700;font-display:swap}
+:root{
+  /* paleta A «Ciruela Oro» de ENTREGAS_17NOV\AGENCIA\guia_clipeya\paleta.css */
+  --fondo:#0A0810;--fondo2:#17101F;--prof:#3D1B5E;--marca:#8F52D9;--crema:#F4E8D8;--oro:#D4AF37;--gris:#B3AABF;
+  --linea:rgba(244,232,216,.12);--r:18px;--ease:cubic-bezier(.22,1,.36,1);
+  --cielo1:#2a1838;--cielo2:#0A0810;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:72px}
+body{margin:0;background:var(--fondo);color:var(--crema);font:17px/1.6 "Plex",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage",serif;font-weight:700;letter-spacing:-.025em;line-height:1.02;margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.k{font:600 12px/1 "Plex";letter-spacing:.18em;text-transform:uppercase;color:var(--oro)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--oro);color:#1a1206;font:700 16px/1 "Plex";text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(212,175,55,.6)}
+.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.btn.sec{background:transparent;color:var(--crema);border:1px solid var(--linea)}
 
-  /* ---------- utilidades ---------- */
-  .wrap{width:min(1180px,92%);margin:0 auto}
-  .fade{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
-  .fade.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){
-    .fade{opacity:1;transform:none;transition:none}
-    *{animation:none!important;transition:none!important}
-  }
+/* cabecera */
+header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(10,8,16,.9);border-bottom:1px solid var(--linea)}
+.logo{font:800 19px/1 "Bricolage";letter-spacing:-.02em;text-decoration:none}.logo span{color:var(--oro)}
+header .btn{min-height:44px;padding:0 18px;font-size:14px}
 
-  /* ---------- nav ---------- */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-    background:rgba(255,255,255,.82);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-  .logo{font-weight:800;letter-spacing:.14em;font-size:1.02rem;text-decoration:none;color:var(--txt)}
-  .logo b{color:var(--accent)}
-  .nav-cta{
-    font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-    color:#ffffff;background:var(--accent);text-decoration:none;
-    padding:.55rem 1.1rem;border-radius:99px;
-    transition:transform .25s ease,box-shadow .25s ease;
-  }
-  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(46,91,255,.35)}
+/* HERO */
+.hero{min-height:100svh;display:grid;align-content:end;padding:120px 0 56px;position:relative;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;z-index:-1;background:radial-gradient(60% 55% at 70% 30%,rgba(143,82,217,.38),transparent 70%),radial-gradient(40% 40% at 20% 80%,rgba(212,175,55,.14),transparent 70%)}
+.hero .reloj{font:300 clamp(64px,16vw,200px)/.9 "Bricolage";color:transparent;-webkit-text-stroke:1px rgba(244,232,216,.28);letter-spacing:-.04em;margin-bottom:14px}
+.hero h1{font-size:clamp(42px,8.4vw,112px);max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p.sub{max-width:52ch;color:var(--gris);font-size:clamp(17px,1.6vw,20px);margin:22px 0 30px}
+.hero .fila{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero small{display:block;margin-top:16px;color:var(--gris);font-size:14px}
 
-  /* ---------- hero ---------- */
-  header{
-    min-height:92svh;
-    display:flex;flex-direction:column;justify-content:center;
-    position:relative;
-    padding:7.5rem 0 4rem;
-    background:
-      radial-gradient(60% 45% at 75% 12%, rgba(46,91,255,.07), transparent 65%),
-      radial-gradient(50% 40% at 15% 85%, rgba(120,90,255,.06), transparent 65%),
-      var(--bg);
-  }
-  .kicker{
-    display:inline-flex;align-items:center;gap:.5rem;
-    font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent);
-    border:1px solid rgba(46,91,255,.3);
-    background:var(--accent-dim);
-    padding:.4rem .95rem;border-radius:99px;
-    margin-bottom:1.6rem;width:fit-content;
-  }
-  .kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  h1{
-    font-size:clamp(3.4rem,13vw,9.5rem);
-    font-weight:800;line-height:.92;letter-spacing:-.03em;
-    text-transform:uppercase;
-  }
-  h1 .dot{color:var(--accent)}
-  .hero-sub{
-    margin-top:1.8rem;max-width:34ch;
-    font-size:clamp(1.15rem,2.6vw,1.6rem);
-    font-weight:500;line-height:1.35;color:var(--txt);
-  }
-  .hero-sub em{font-style:normal;color:var(--accent)}
-  .hero-note{margin-top:1rem;color:var(--muted);font-size:.95rem;max-width:44ch}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem}
-  .btn{
-    display:inline-flex;align-items:center;gap:.55rem;
-    font-weight:700;font-size:.92rem;letter-spacing:.04em;
-    text-decoration:none;border-radius:99px;padding:.95rem 1.8rem;
-    transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
-  }
-  .btn-solid{background:var(--accent);color:#ffffff}
-  .btn-solid:hover{transform:translateY(-3px);box-shadow:0 10px 34px rgba(46,91,255,.35)}
-  .btn-ghost{color:var(--txt);border:1px solid var(--line);background:rgba(10,10,20,.02)}
-  .btn-ghost:hover{transform:translateY(-3px);background:rgba(10,10,20,.05)}
-  .scroll-hint{
-    position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);
-    color:var(--muted);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
-    animation:bob 2.6s ease-in-out infinite;
-  }
-  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+/* DÍA (la hora avanza con el scroll) */
+.dia{position:relative;background:linear-gradient(180deg,var(--cielo1),var(--cielo2) 70%)}
+.dia .pista{position:relative}
+.escena{min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding:12vh 0}
+.escena .hora{font:300 clamp(56px,9vw,128px)/.9 "Bricolage";letter-spacing:-.04em;color:var(--oro);font-variant-numeric:tabular-nums}
+.escena h2{font-size:clamp(34px,5.2vw,68px);margin:16px 0 14px;max-width:13ch}
+.escena p{color:var(--gris);max-width:44ch;margin:0}
+.escena .serv{margin-top:18px;display:inline-block;padding:8px 14px;border:1px solid var(--linea);border-radius:999px;font-size:14px;color:var(--crema)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
 
-  /* ---------- secciones ---------- */
-  section{padding:5.5rem 0}
-  .sec-head{margin-bottom:3rem}
-  .sec-tag{
-    font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:.8rem;
-  }
-  h2{
-    font-size:clamp(2rem,6vw,3.6rem);
-    font-weight:800;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase;
-  }
-  .sec-sub{margin-top:1rem;color:var(--muted);max-width:56ch;font-size:1.02rem}
+/* maquetas dentro de cada escena (ilustrativas) */
+.maq{background:rgba(23,16,31,.86);border:1px solid var(--linea);border-radius:24px;padding:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.maq .cab{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--gris);margin-bottom:16px}
+.maq .cab b{color:var(--crema);font-weight:600}
+.ej{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);opacity:.8}
+.burb{max-width:84%;padding:11px 15px;border-radius:16px;margin:8px 0;font-size:15px;line-height:1.45}
+.burb.el{background:#241a30;border-bottom-left-radius:4px}
+.burb.yo{background:var(--prof);margin-left:auto;border-bottom-right-radius:4px}
+.burb small{display:block;font-size:11px;color:var(--gris);margin-top:4px}
+.paso{display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--linea)}
+.paso:first-of-type{border-top:0}
+.paso i{flex:0 0 38px;height:38px;border-radius:12px;display:grid;place-items:center;font-style:normal;background:#241a30;color:var(--oro);font-weight:700}
+.pag{border-radius:16px;overflow:hidden;border:1px solid var(--linea)}
+.pag .top{height:120px;background:radial-gradient(70% 90% at 30% 20%,rgba(143,82,217,.55),transparent),#1e1528;padding:18px;font:700 22px/1.1 "Bricolage"}
+.pag .bd{padding:16px 18px;display:grid;gap:8px}
+.pag .bd span{height:9px;border-radius:9px;background:rgba(244,232,216,.12)}
+.pag .bd span:nth-child(2){width:70%}.pag .bd span:nth-child(3){width:45%}
+.pag .bd .b{height:40px;width:55%;border-radius:999px;background:var(--oro);margin-top:6px}
+.embudo{display:grid;gap:10px}
+.embudo div{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-radius:12px;background:#1e1528;font-size:15px}
+.embudo div:nth-child(1){margin-right:0}.embudo div:nth-child(2){margin-right:8%}.embudo div:nth-child(3){margin-right:16%}.embudo div:nth-child(4){margin-right:24%;border:1px solid rgba(212,175,55,.5)}
+.embudo em{font-style:normal;color:var(--gris);font-size:13px}
 
-  /* ---------- portfolio ---------- */
-  #portfolio{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .grid{
-    display:grid;gap:1.4rem;
-    grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));
-  }
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;overflow:hidden;
-    display:flex;flex-direction:column;
-    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease,box-shadow .35s ease;
-  }
-  .card:hover{
-    transform:translateY(-8px) scale(1.015);
-    border-color:rgba(46,91,255,.4);
-    box-shadow:0 24px 60px rgba(10,10,30,.14);
-  }
-  .card video{
-    width:100%;aspect-ratio:9/16;display:block;
-    object-fit:cover;background:#000;
-  }
-  .card-body{padding:1.1rem 1.2rem 1.3rem}
-  .card-num{
-    font-size:.7rem;font-weight:700;letter-spacing:.22em;color:var(--accent);
-    text-transform:uppercase;margin-bottom:.35rem;
-  }
-  .card-title{font-size:1.08rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
-  .card-desc{margin-top:.4rem;color:var(--muted);font-size:.88rem;line-height:1.45}
+/* PARA QUIÉN */
+section.blq{padding:120px 0}
+.blq h2{font-size:clamp(36px,5.6vw,72px);max-width:16ch;margin:14px 0 18px}
+.blq .intro{color:var(--gris);max-width:56ch;margin:0 0 48px}
+.quien{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linea)}
+.quien div{padding:28px 22px 30px 0;border-right:1px solid var(--linea)}
+.quien div+div{padding-left:22px}
+.quien div:last-child{border-right:0}
+.quien h3{font-size:24px;margin:12px 0 8px}
+.quien p{color:var(--gris);font-size:15px;margin:0}
+.quien .n{font:300 14px/1 "Plex";color:var(--oro)}
+.no{margin-top:40px;padding:20px 22px;border:1px dashed var(--linea);border-radius:var(--r);color:var(--gris);font-size:15px;max-width:760px}
+.no b{color:var(--crema)}
 
-  /* ---------- servicios ---------- */
-  .srv-grid{
-    display:grid;gap:1.4rem;
-    grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));
-  }
-  .srv{
-    background:var(--card);border:1px solid var(--line);border-radius:20px;
-    overflow:hidden;display:flex;flex-direction:column;
-    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease,box-shadow .35s ease;
-  }
-  .srv:hover{
-    transform:translateY(-8px);
-    border-color:rgba(46,91,255,.4);
-    box-shadow:0 24px 60px rgba(10,10,30,.14);
-  }
-  .srv img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;display:block;background:#e8eaef}
-  .srv-body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.7rem}
-  .srv h3{font-size:1.12rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
-  .srv ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
-  .srv li{
-    color:var(--muted);font-size:.9rem;line-height:1.4;
-    padding-left:1.1rem;position:relative;
-  }
-  .srv li::before{
-    content:"";position:absolute;left:0;top:.5em;
-    width:.5rem;height:.5rem;border-radius:2px;background:var(--accent);
-  }
+/* CONFIGURADOR */
+.conf{background:var(--fondo2);border-block:1px solid var(--linea)}
+.conf-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.planes{display:grid;gap:12px}
+.plan{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;padding:20px 22px;border-radius:var(--r);border:1px solid var(--linea);background:var(--fondo);transition:border-color .2s,transform .2s var(--ease)}
+.plan:hover{transform:translateX(4px)}
+.plan[aria-pressed=true]{border-color:var(--oro)}
+.plan h3{font-size:24px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.plan h3 small{font:600 12px/1 "Plex";letter-spacing:.1em;text-transform:uppercase;color:var(--oro)}
+.plan p{margin:6px 0 0;color:var(--gris);font-size:15px}
+.extra{display:flex;gap:12px;align-items:center;margin-top:6px;padding:14px 4px;color:var(--gris);font-size:15px;cursor:pointer}
+.extra[hidden]{display:none}
+.extra input{width:22px;height:22px;accent-color:var(--oro)}
+.ficha{position:sticky;top:90px;padding:30px;border-radius:24px;background:linear-gradient(160deg,rgba(61,27,94,.55),rgba(10,8,16,.9));border:1px solid var(--linea)}
+.ficha .precios{display:flex;gap:28px;flex-wrap:wrap;margin:14px 0 6px}
+.ficha .cifra{font:700 clamp(44px,5vw,64px)/1 "Bricolage";font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.ficha .cifra small{font:500 16px "Plex";color:var(--gris);letter-spacing:0}
+.ficha .et{font-size:13px;color:var(--gris)}
+.ficha ul{list-style:none;padding:0;margin:20px 0;display:grid;gap:10px}
+.ficha li{padding-left:26px;position:relative;font-size:15px}
+.ficha li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:7px;border-left:2px solid var(--oro);border-bottom:2px solid var(--oro);transform:rotate(-45deg)}
+.ficha .letra{font-size:13px;color:var(--gris);border-top:1px solid var(--linea);padding-top:14px;margin:0 0 18px}
 
-  /* ---------- webs en movil ---------- */
-  #webs{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .movil-grid{
-    display:grid;gap:1.4rem;
-    grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));
-    max-width:900px;
-  }
-  .movil{
-    background:var(--card);border:1px solid var(--line);border-radius:20px;
-    overflow:hidden;
-    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease,box-shadow .35s ease;
-  }
-  .movil:hover{
-    transform:translateY(-8px);
-    border-color:rgba(46,91,255,.4);
-    box-shadow:0 24px 60px rgba(10,10,30,.14);
-  }
-  .movil img{width:100%;aspect-ratio:390/844;object-fit:cover;display:block;background:#e8eaef}
-  .movil figcaption{
-    padding:.85rem 1.1rem 1rem;
-    font-size:.85rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
-  }
-  .movil figcaption span{display:block;margin-top:.15rem;font-weight:400;text-transform:none;color:var(--muted);font-size:.82rem}
+/* PASOS */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:p}
+.pasos article{padding:28px;border-radius:var(--r);border:1px solid var(--linea);background:var(--fondo2);position:relative}
+.pasos article::before{counter-increment:p;content:"0" counter(p);font:300 56px/1 "Bricolage";color:transparent;-webkit-text-stroke:1px rgba(212,175,55,.6);display:block;margin-bottom:18px}
+.pasos h3{font-size:26px;margin-bottom:10px}
+.pasos p{color:var(--gris);margin:0;font-size:15px}
+.pasos .pz{display:inline-block;margin-top:16px;font-size:13px;color:var(--oro)}
 
-  /* ---------- demo ---------- */
-  .card-demo{
-    text-decoration:none;color:var(--txt);
-    display:flex;flex-direction:column;justify-content:space-between;
-    background:
-      radial-gradient(120% 90% at 85% 10%, rgba(46,91,255,.12), transparent 60%),
-      var(--card);
-    border:1px solid rgba(46,91,255,.4);
-    border-radius:20px;
-    min-height:300px;position:relative;
-    max-width:560px;
-    transition:transform .35s cubic-bezier(.2,.6,.2,1),border-color .35s ease,box-shadow .35s ease;
-  }
-  .card-demo:hover{
-    border-color:var(--accent);
-    transform:translateY(-8px);
-    box-shadow:0 24px 60px rgba(10,10,30,.14);
-  }
-  .demo-top{padding:1.6rem 1.5rem 0}
-  .demo-tag{
-    display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;
-    text-transform:uppercase;color:#ffffff;background:var(--accent);
-    padding:.3rem .8rem;border-radius:99px;margin-bottom:1rem;
-  }
-  .demo-title{font-size:1.5rem;font-weight:800;line-height:1.08;text-transform:uppercase;letter-spacing:-.01em}
-  .demo-desc{margin-top:.7rem;color:var(--muted);font-size:.92rem;max-width:34ch}
-  .demo-foot{
-    padding:1.4rem 1.5rem;display:flex;align-items:center;gap:.5rem;
-    font-weight:700;font-size:.9rem;color:var(--accent);letter-spacing:.04em;
-  }
-  .demo-foot .arrow{transition:transform .3s ease;font-size:1.1rem}
-  .card-demo:hover .arrow{transform:translateX(6px)}
+/* PRUEBA (sin inventar) */
+.prueba{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.prueba blockquote{margin:0;font:600 clamp(26px,3.4vw,40px)/1.15 "Bricolage";letter-spacing:-.02em}
+.prueba blockquote em{font-style:normal;color:var(--oro)}
+.prueba ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.prueba li{padding:16px 18px;border-radius:14px;background:var(--fondo2);border:1px solid var(--linea);font-size:15px}
+.prueba li b{display:block;font-size:16px;margin-bottom:2px}
 
-  /* ---------- PROCESO ---------- */
-  .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
-  .paso{border:1px solid var(--line);border-radius:18px;padding:1.5rem 1.4rem;background:var(--bg2)}
-  .paso .num{font-size:.74rem;font-weight:800;letter-spacing:.2em;color:var(--accent);
-    text-transform:uppercase;margin-bottom:.5rem}
-  .paso h3{font-size:1.02rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;
-    margin-bottom:.45rem}
-  .paso p{color:var(--muted);font-size:.9rem;line-height:1.55}
-  /* ---------- FORM ---------- */
-  .brief{max-width:560px;margin:0 auto;display:grid;gap:.8rem;text-align:left}
-  .brief label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted)}
-  .brief input,.brief select,.brief textarea{
-    width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;
-    background:#fff;font:inherit;font-size:.95rem;color:inherit}
-  .brief input:focus,.brief select:focus,.brief textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
-  .brief textarea{min-height:90px;resize:vertical}
-  /* ---------- CTA ---------- */
-  #cta{background:var(--bg2);border-top:1px solid var(--line)}
-  .cta-box{
-    text-align:center;
-    border:1px solid rgba(46,91,255,.35);border-radius:28px;
-    padding:clamp(2.5rem,7vw,5rem) clamp(1.2rem,5vw,4rem);
-    background:
-      radial-gradient(70% 100% at 50% 0%, rgba(46,91,255,.08), transparent 70%),
-      var(--card);
-  }
-  .cta-box h2{margin-bottom:1rem}
-  .cta-box p{color:var(--muted);max-width:46ch;margin:0 auto 2.2rem}
-  .cta-ig{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
-  .cta-ig b{color:var(--txt);font-weight:700}
+/* FAQ */
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--linea)}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font:600 19px/1.3 "Bricolage";position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:18px;font:300 28px/1 "Plex";color:var(--oro);transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:0 0 22px;color:var(--gris);max-width:62ch}
 
-  footer{
-    padding:2.2rem 0;text-align:center;
-    color:var(--muted);font-size:.82rem;letter-spacing:.06em;
-    border-top:1px solid var(--line);
-  }
-  footer b{color:var(--txt)}
+/* CIERRE */
+.cierre{min-height:100svh;display:grid;align-content:center;text-align:center;position:relative;isolation:isolate;overflow:hidden}
+.cierre::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 45% at 50% 60%,rgba(212,175,55,.16),transparent 70%)}
+.cierre .reloj{font:300 clamp(56px,12vw,150px)/.9 "Bricolage";color:transparent;-webkit-text-stroke:1px rgba(212,175,55,.5);letter-spacing:-.04em}
+.cierre h2{font-size:clamp(40px,6.4vw,84px);margin:18px auto 14px;max-width:14ch}
+.cierre p{color:var(--gris);max-width:50ch;margin:0 auto 32px}
+form{max-width:520px;margin:0 auto;display:grid;gap:12px;text-align:left}
+label{font-size:14px;color:var(--gris);display:grid;gap:6px}
+input,textarea{font:16px "Plex";color:var(--crema);background:var(--fondo2);border:1px solid var(--linea);border-radius:14px;padding:14px 16px;min-height:52px}
+textarea{min-height:96px;resize:vertical}
+form .btn{justify-content:center;margin-top:6px}
+form .nota{font-size:13px;color:var(--gris);text-align:center;margin:4px 0 0}
+.err{color:#f3b2a6;font-size:14px;min-height:1.2em;margin:0}
+footer{padding:40px 20px 110px;text-align:center;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
 
-  @media (max-width: 640px){
-    .grid, .vfx-grid, [class*='grid']{grid-template-columns:1fr !important}
-    h1{font-size:2.4rem !important}
-    video{width:100% !important}
-  }
-</style>
-</head>
+/* botón fijo en móvil */
+.fijo{position:fixed;left:16px;right:16px;bottom:14px;z-index:30;justify-content:center;display:none}
+
+@media (max-width:900px){
+  .escena{grid-template-columns:1fr;gap:28px;padding:14vh 0 10vh;min-height:auto}
+  .quien{grid-template-columns:1fr 1fr}
+  .quien div{border-right:0;border-bottom:1px solid var(--linea);padding:24px 14px 24px 0!important}
+  .quien div:nth-child(even){padding-left:14px!important;border-left:1px solid var(--linea)}
+  .conf-g,.prueba{grid-template-columns:1fr;gap:32px}
+  .ficha{position:static}
+  .pasos{grid-template-columns:1fr}
+  section.blq{padding:88px 0}
+  .fijo{display:inline-flex;transition:opacity .25s,transform .25s var(--ease)}
+  .fijo.fuera{opacity:0;transform:translateY(20px);pointer-events:none}
+  header .btn{display:none}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .quien{grid-template-columns:1fr}
+  .quien div:nth-child(even){padding-left:0!important;border-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style></head>
 <body>
+<header><a class="logo" href="#">Clipeya <span>AI Lab</span></a><a class="btn" href="#diagnostico">Pide tu diagnóstico</a></header>
 
-<nav>
-  <div class="wrap nav-inner">
-    <a class="logo" href="#top">CL<b>I</b>PEY<b>A</b>.</a>
-    <a class="nav-cta" href="#cta">Pide tu demo gratis</a>
-  </div>
-</nav>
-
-<header id="top">
+<main>
+<section class="hero">
   <div class="wrap">
-    <span class="kicker fade">Agencia de contenido y e-commerce</span>
-    <h1 class="fade">CL<span class="dot">I</span>PEY<span class="dot">A</span>.</h1>
-    <p class="hero-sub fade">Grabas mucho. <em>Publicas nada.</em></p>
-    <p class="hero-note fade">Convertimos lo que ya tienes grabado en clips, webs y sistemas que traen clientes — del bruto al clip publicado, todo el camino. Y te enseñamos tu demo <b>antes de que pagues un euro</b>.</p>
-    <div class="hero-actions fade">
-      <a class="btn btn-solid" href="#cta">Pide tu demo gratis</a>
-    </div>
-    <p class="cta-ig fade" style="margin-top:1.1rem">Trabajo real de clientes aquí abajo — <a href="#portfolio" style="color:var(--accent);font-weight:700">míralo tú mismo ↓</a></p>
+    <div class="reloj" aria-hidden="true">09:03</div>
+    <h1>Tu negocio sigue <em>cuando tú paras.</em></h1>
+    <p class="sub">Montamos y cuidamos la parte digital de tu negocio: el WhatsApp que contesta, el embudo que capta, la tienda que cobra y el panel donde lo ves todo. Y te acompañamos uno a uno después.</p>
+    <div class="fila"><a class="btn" href="#diagnostico">Pide tu diagnóstico</a><a class="btn sec" href="#dia">Mira un día entero ↓</a></div>
+    <small>El diagnóstico es gratis: te enseñamos en tu propia web qué está fallando. Sin compromiso.</small>
   </div>
-  <div class="scroll-hint">Desliza</div>
-</header>
+</section>
 
-<section id="quien">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">01 — Para quién es esto</div>
-      <h2>Esto no es<br>para todos</h2>
+<section class="dia" id="dia" aria-label="Un día de tu negocio">
+  <div class="wrap pista">
+
+    <div class="escena" data-cielo="#2a1838">
+      <div class="reveal">
+        <div class="hora">09:03</div>
+        <h2>Te escribe un cliente. Ya tiene respuesta.</h2>
+        <p>Tu WhatsApp contesta al momento con la información de tu negocio, pide los datos y agenda. Si hace falta una persona, te avisa.</p>
+        <span class="serv">Respuesta automática por WhatsApp</span>
+      </div>
+      <div class="maq reveal" aria-label="Conversación de ejemplo">
+        <div class="cab"><b>WhatsApp de tu negocio</b><span class="ej">Ejemplo</span></div>
+        <div class="burb el">Hola, ¿tenéis hueco esta semana?<small>09:03</small></div>
+        <div class="burb yo">¡Hola! Sí: jueves a las 11:00 o viernes a las 17:30. ¿Cuál te va mejor?<small>09:03</small></div>
+        <div class="burb el">El jueves.<small>09:04</small></div>
+        <div class="burb yo">Hecho. Te he guardado el jueves a las 11:00 y te llegará un recordatorio el día antes.<small>09:04</small></div>
+      </div>
     </div>
+
+    <div class="escena" data-cielo="#3a2140">
+      <div class="reveal">
+        <div class="hora">11:40</div>
+        <h2>Alguien comenta tu reel. Ya es un contacto.</h2>
+        <p>Quien escribe la palabra clave recibe tu regalo por privado, deja su contacto y pasa a tu WhatsApp o a tu agenda. Sin que tú contestes uno a uno.</p>
+        <span class="serv">Embudo de Instagram con palabra clave</span>
+      </div>
+      <div class="maq reveal" aria-label="Recorrido de ejemplo">
+        <div class="cab"><b>Del comentario al contacto</b><span class="ej">Ejemplo</span></div>
+        <div class="paso"><i>1</i><div>Comenta <b>GUIA</b> en tu reel</div></div>
+        <div class="paso"><i>2</i><div>Le llega la guía por privado</div></div>
+        <div class="paso"><i>3</i><div>Deja su email o su teléfono</div></div>
+        <div class="paso"><i>4</i><div>Pasa a tu WhatsApp o a tu agenda</div></div>
+      </div>
+    </div>
+
+    <div class="escena" data-cielo="#2b1a3f">
+      <div class="reveal">
+        <div class="hora">15:20</div>
+        <h2>Tu página vende mientras comes.</h2>
+        <p>Una página o una tienda que contesta las dudas de quien compra y lleva a un solo sitio: a comprar o a escribirte. Revisada en móvil y en ordenador.</p>
+        <span class="serv">Página de venta · Tienda Shopify</span>
+      </div>
+      <div class="maq reveal" aria-label="Página de ejemplo">
+        <div class="cab"><b>tu-negocio.com</b><span class="ej">Ejemplo</span></div>
+        <div class="pag"><div class="top">Lo que consigues, en una frase.</div><div class="bd"><span></span><span></span><span></span><span class="b"></span></div></div>
+      </div>
+    </div>
+
+    <div class="escena" data-cielo="#1c1430">
+      <div class="reveal">
+        <div class="hora">19:10</div>
+        <h2>Ves el día entero en un panel.</h2>
+        <p>Cada paso con su número: quién te visitó, quién dejó su contacto, quién pidió cita y quién pagó. Sabes dónde se pierde la venta.</p>
+        <span class="serv">Panel con los números de cada paso</span>
+      </div>
+      <div class="maq reveal" aria-label="Panel de ejemplo">
+        <div class="cab"><b>Hoy en tu negocio</b><span class="ej">Ejemplo, con tus números</span></div>
+        <div class="embudo">
+          <div>Visitas <em>tu cifra</em></div>
+          <div>Contactos <em>tu cifra</em></div>
+          <div>Citas <em>tu cifra</em></div>
+          <div>Pagos <em>tu cifra</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="escena" data-cielo="#0A0810">
+      <div class="reveal">
+        <div class="hora">22:09</div>
+        <h2>Tú cierras. Lo demás sigue.</h2>
+        <p>Y cuando algo se rompe, te avisamos el mismo día. Vigilamos el móvil y el pago, y cada mes te llega un informe de una página.</p>
+        <span class="serv">Mantenimiento uno a uno</span>
+      </div>
+      <div class="maq reveal" aria-label="Lo que cuidamos">
+        <div class="cab"><b>Lo que cuidamos cada mes</b><span class="ej">Cuidado mensual</span></div>
+        <div class="paso"><i>✓</i><div>Arreglos pequeños incluidos</div></div>
+        <div class="paso"><i>✓</i><div>Vigilamos el móvil y el pago</div></div>
+        <div class="paso"><i>✓</i><div>Aviso el mismo día si algo se rompe</div></div>
+        <div class="paso"><i>✓</i><div>Informe mensual de una página</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blq">
+  <div class="wrap">
+    <span class="k">Para quién</span>
+    <h2>Para negocios que ya venden y quieren dejar de hacerlo todo a mano.</h2>
+    <p class="intro">No hace falta que sepas de tecnología. Sí que tengas algo que ya funciona y que quieras que crezca sin ti delante a todas horas.</p>
     <div class="quien">
-      <div class="quien-col si fade">
-        <h3>Es para ti si…</h3>
-        <ul>
-          <li>Tienes un negocio o una marca y <b>material grabado que no se publica</b> (eventos, clases, producto, día a día)</li>
-          <li>Vendes algo real y quieres que te encuentren, te consulten y te compren</li>
-          <li>Prefieres ver una demo hecha antes de decidir</li>
-          <li>Quieres precios cerrados y fechas por escrito</li>
-        </ul>
+      <div><span class="n">01</span><h3>Academias y formaciones</h3><p>Lanzamientos con página, vídeo de venta, correos y citas en tu agenda.</p></div>
+      <div><span class="n">02</span><h3>Marca personal</h3><p>De un comentario en Instagram a un contacto, sin contestar uno a uno.</p></div>
+      <div><span class="n">03</span><h3>Tiendas online</h3><p>Fichas que contestan las dudas, carrito, correos y un pago que no se rompe.</p></div>
+      <div><span class="n">04</span><h3>Agencias y equipos</h3><p>Panel del equipo y automatizaciones entre tus herramientas.</p></div>
+    </div>
+    <p class="no"><b>Para quién no:</b> si todavía estás buscando qué vender, empieza por ahí. Esto acelera lo que ya funciona; no lo sustituye.</p>
+  </div>
+</section>
+
+<section class="blq conf" id="planes">
+  <div class="wrap">
+    <span class="k">Configura tu plan</span>
+    <h2>Elige hasta dónde llegamos contigo.</h2>
+    <p class="intro">Precio cerrado, y cuota al mes solo si quieres que lo cuidemos. Precios sin IVA.</p>
+    <div class="conf-g">
+      <div>
+        <div class="planes" role="group" aria-label="Planes">
+          <button class="plan" data-id="pagina" aria-pressed="true"><h3>Una página que vende <small>Por aquí se empieza</small></h3><p>Tu página de producto, rehecha para vender en el móvil.</p></button>
+          <button class="plan" data-id="tienda" aria-pressed="false"><h3>Tienda completa <small></small></h3><p>Tu tienda online lista para vender.</p></button>
+          <button class="plan" data-id="web" aria-pressed="false"><h3>Web para tu negocio <small></small></h3><p>Una página con WhatsApp y cita online, sin pago inicial.</p></button>
+          <button class="plan" data-id="embudo" aria-pressed="false"><h3>Embudo completo <small></small></h3><p>De la primera visita a la cita, con cada contacto seguido.</p></button>
+        </div>
+        <label class="extra" id="extraL" hidden><input type="checkbox" id="extra"> <span id="extraT"></span></label>
       </div>
-      <div class="quien-col no fade">
-        <h3>No es para ti si…</h3>
-        <ul>
-          <li>Buscas seguidores por vanidad, sin negocio detrás</li>
-          <li>Quieres «viralizar» sin enseñar tu producto ni tu cara</li>
-          <li>Necesitas resultados garantizados por contrato — garantizamos ejecución y plazos, no milagros</li>
-          <li>Lo quieres «para ayer» sin mandar tu material</li>
-        </ul>
-      </div>
+      <aside class="ficha" aria-live="polite">
+        <span class="k" id="fNom">Una página que vende</span>
+        <div class="precios">
+          <div><div class="cifra" id="fMont">100 €</div><div class="et">Una vez</div></div>
+          <div><div class="cifra" id="fMes">—</div><div class="et">Cuota</div></div>
+        </div>
+        <ul id="fInc"></ul>
+        <p class="letra" id="fPlazo"></p>
+        <a class="btn" href="#diagnostico">Empieza por el diagnóstico</a>
+      </aside>
     </div>
   </div>
 </section>
 
-<section id="portfolio">
+<section class="blq">
   <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">02 — Portfolio VFX</div>
-      <h2>Hecho para clientes<br>reales</h2>
-      <p class="sec-sub">Ads, reels y loops con VFX y escenas generadas que entregamos a marcas de e-commerce. Producto real, escenas imposibles de rodar, montaje listo para publicar.</p>
-    </div>
-    <div class="grid">
-      <article class="card fade">
-        <video src="media/vfx_cosmetica_led.mp4" poster="media/poster_vfx_cosmetica_led.jpg" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="card-body">
-          <div class="card-num">VFX 01 · Marca de cosmética</div>
-          <div class="card-title">Ad de producto</div>
-          <p class="card-desc">Anuncio completo con voz, subtítulos y escenas generadas alrededor del producto real. Sin rodaje.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_cosmetica_ugc.mp4" poster="media/poster_vfx_cosmetica_ugc.jpg" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="card-body">
-          <div class="card-num">VFX 02 · Marca de cosmética</div>
-          <div class="card-title">UGC de la escéptica</div>
-          <p class="card-desc">Estilo testimonio: la clienta que no se lo creía. Guion, voz y escenas hechas a medida del producto.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_calzado_martillo.mp4" poster="media/poster_vfx_calzado_martillo.jpg" autoplay loop muted playsinline preload="metadata" loop></video>
-        <div class="card-body">
-          <div class="card-num">VFX 03 · E-com de calzado</div>
-          <div class="card-title">Prueba de impacto</div>
-          <p class="card-desc">El martillo cae sobre la puntera de acero. Escena cinematográfica generada para demostrar el producto.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_calzado_cine.mp4" poster="media/poster_vfx_calzado_cine.jpg" autoplay loop muted playsinline preload="metadata" loop></video>
-        <div class="card-body">
-          <div class="card-num">VFX 04 · E-com de calzado</div>
-          <div class="card-title">Hero cinemático</div>
-          <p class="card-desc">Plano de producto con atmósfera de taller. Hecho para la cabecera de su tienda y sus ads.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_joyeria_montaje.mp4" poster="media/poster_vfx_joyeria_montaje.jpg" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="card-body">
-          <div class="card-num">VFX 05 · Marca de joyería</div>
-          <div class="card-title">Montaje de catálogo</div>
-          <p class="card-desc">Loops de producto sobre modelo, cortados al beat. De foto de catálogo a vídeo en movimiento.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_moda_espejo.mp4" poster="media/poster_vfx_moda_espejo.jpg" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="card-body">
-          <div class="card-num">VFX 06 · E-com de moda deportiva</div>
-          <div class="card-title">Reel de marca</div>
-          <p class="card-desc">Reel UGC con modelo generada, subtítulos y mensaje de marca. Parte de una serie de 40+ piezas.</p>
-        </div>
-      </article>
-      <article class="card fade">
-        <video src="media/vfx_beauty_mascara.mp4" poster="media/poster_vfx_beauty_mascara.jpg" autoplay loop muted playsinline preload="metadata" loop></video>
-        <div class="card-body">
-          <div class="card-num">VFX 07 · Marca de fototerapia</div>
-          <div class="card-title">Loop de producto</div>
-          <p class="card-desc">Máscara LED en uso, luz real del producto. Loop para la landing y para stories.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="servicios">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">03 — Servicios</div>
-      <h2>Del clip<br>a la venta</h2>
-      <p class="sec-sub">No nos quedamos en el vídeo. Montamos la tienda y la página donde ese vídeo convierte. Todo lo que ves abajo es trabajo entregado a clientes.</p>
-    </div>
-    <div class="srv-grid">
-      <article class="srv fade">
-        <img src="media/srv_clips.jpg" alt="Escena cinematográfica generada para un e-commerce de calzado" loading="lazy">
-        <div class="srv-body">
-          <h3>Clips &amp; VFX</h3>
-          <ul>
-            <li>Ads y reels con escenas generadas que no se pueden rodar</li>
-            <li>Guion, voz, subtítulos y montaje al beat</li>
-            <li>Vertical, listo para Meta, TikTok e IG</li>
-          </ul>
-        </div>
-      </article>
-      <article class="srv fade">
-        <img src="media/srv_shopify.jpg" alt="Ficha de producto de una tienda Shopify montada por Clipeya" loading="lazy">
-        <div class="srv-body">
-          <h3>Tiendas Shopify completas</h3>
-          <ul>
-            <li>Theme a medida, de cero a publicado</li>
-            <li>Fichas de producto que venden: galería, oferta, garantías</li>
-            <li>Rápida y pensada para móvil</li>
-          </ul>
-        </div>
-      </article>
-      <article class="srv fade">
-        <img src="media/srv_landing.jpg" alt="Landing page oscura de fototerapia LED hecha por Clipeya" loading="lazy">
-        <div class="srv-body">
-          <h3>Landing pages</h3>
-          <ul>
-            <li>Estructura de venta completa: hero, prueba, oferta, FAQ</li>
-            <li>Copy, diseño y vídeo en una sola pieza</li>
-            <li>Entrega lista para pegar en tu tienda</li>
-          </ul>
-        </div>
-      </article>
-      <article class="srv fade">
-        <img src="media/srv_producto.jpg" alt="Landing de producto de cosmética hecha por Clipeya" loading="lazy">
-        <div class="srv-body">
-          <h3>Landings de producto</h3>
-          <ul>
-            <li>Una página, un producto, un objetivo</li>
-            <li>Loops de vídeo y fotografía integrados en la página</li>
-            <li>Versión desktop y móvil verificadas antes de entregar</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="webs">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">04 — En el móvil</div>
-      <h2>Donde de verdad<br>se compra</h2>
-      <p class="sec-sub">Cada página se entrega verificada en móvil, que es donde llega el tráfico de los clips.</p>
-    </div>
-    <div class="movil-grid">
-      <figure class="movil fade">
-        <img src="media/web_movil_led.jpg" alt="Landing móvil de fototerapia LED" loading="lazy">
-        <figcaption>Fototerapia LED<span>Landing de venta</span></figcaption>
-      </figure>
-      <figure class="movil fade">
-        <img src="media/web_movil_crema.jpg" alt="Landing móvil de cosmética" loading="lazy">
-        <figcaption>Cosmética<span>Landing de producto</span></figcaption>
-      </figure>
-      <figure class="movil fade">
-        <img src="media/web_movil_calzado.jpg" alt="Ficha de producto móvil de calzado de seguridad" loading="lazy">
-        <figcaption>Calzado de seguridad<span>Ficha de producto Shopify</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="demo">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">05 — Ejemplo real</div>
-      <h2>Así entregamos</h2>
-    </div>
-    <a class="card-demo fade" href="https://arboogerard-design.github.io/clipeya-demos/luis_carmelo/" target="_blank" rel="noopener">
-      <div class="demo-top">
-        <span class="demo-tag">Demo real · enviada esta semana</span>
-        <div class="demo-title">Web completa para un cortador de jamón profesional</div>
-        <p class="demo-desc">Se la montamos ANTES de la primera llamada: su marca, su servicio y su sistema de reservas. Él solo tuvo que verla. Así trabajamos con cada cliente.</p>
-        <img src="media/demo_luis_desktop.jpg" alt="Demo real entregada"
-             style="width:100%;border-radius:14px;margin-top:1.1rem;border:1px solid var(--line);display:block" loading="lazy">
-      </div>
-      <div class="demo-foot">Ver la demo en vivo <span class="arrow">→</span></div>
-    </a>
-  </div>
-</section>
-
-<section id="proceso">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">06 — Cómo trabajamos</div>
-      <h2>Sabes qué pasa<br>en cada momento</h2>
-      <p class="sec-sub">Sin humo y sin sorpresas: precio cerrado antes de empezar, número exacto de piezas y un informe donde se ve lo que se ha hecho.</p>
-    </div>
+    <span class="k">Cómo trabajamos</span>
+    <h2>Tres pasos. Sin sorpresas.</h2>
     <div class="pasos">
-      <div class="paso fade">
-        <div class="num">Paso 1</div>
-        <h3>Briefing de 10 min</h3>
-        <p>Nos cuentas tu negocio y qué necesitas. Nosotros te decimos qué haríamos con tu material — antes de hablar de dinero.</p>
-      </div>
-      <div class="paso fade">
-        <div class="num">Paso 2</div>
-        <h3>Propuesta cerrada</h3>
-        <p>Precio fijo, piezas exactas y fecha de entrega por escrito. Vale 7 días. Ni «depende», ni letra pequeña.</p>
-      </div>
-      <div class="paso fade">
-        <div class="num">Paso 3</div>
-        <h3>Producción</h3>
-        <p>Trabajamos con tu material real. Una ronda de ajustes en una sola tanda, para que la entrega no se eternice.</p>
-      </div>
-      <div class="paso fade">
-        <div class="num">Paso 4</div>
-        <h3>Entrega + informe</h3>
-        <p>Recibes las piezas listas para publicar y un informe de lo hecho. Y si quieres que no se apague, lo alimentamos cada mes.</p>
-      </div>
-    </div>
-    <div class="garantia fade">
-      <h3>Nuestra garantía es ir por delante</h3>
-      <p>La demo se hace <b>gratis y antes de firmar nada</b>. Si no te vuela la cabeza, no pasa nada:
-      no pagas, no firmas, y lo que viste se queda contigo. Solo cobramos cuando quieres más.</p>
+      <article><h3>Diagnóstico</h3><p>Te enseñamos en tu propia web, con capturas, qué está fallando y qué arreglaríamos primero.</p><span class="pz">Gratis · sin compromiso</span></article>
+      <article><h3>Montaje</h3><p>Montamos lo que el diagnóstico diga que va primero. Lo ves funcionando antes de darlo por acabado.</p><span class="pz">Una página, en 3 días · lo demás, con plazo escrito en el presupuesto</span></article>
+      <article><h3>Cuidado uno a uno</h3><p>Seguimos contigo cada mes: cambios, revisiones, avisos y un informe que se lee en un minuto.</p><span class="pz">Mes a mes, sin permanencia</span></article>
     </div>
   </div>
 </section>
 
-<section id="fundadores">
+<section class="blq" style="padding-top:40px">
+  <div class="wrap prueba">
+    <blockquote>No te enseñamos testimonios. <em>Te enseñamos tu propio negocio</em>, antes de que pagues nada.</blockquote>
+    <ul>
+      <li><b>Ves el diagnóstico antes de decidir</b>Capturas de tu propia web, no una presentación genérica.</li>
+      <li><b>Lo pruebas antes de darlo por hecho</b>Cada página se revisa en móvil y en ordenador; cada tienda, con una compra de prueba.</li>
+      <li><b>Nada se envía a tus clientes sin tu prueba</b>Los mensajes y flujos te llegan primero a ti.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="blq" style="padding-top:40px">
   <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">07 — Quiénes somos</div>
-      <h2>Dos personas,<br>cero humo</h2>
-    </div>
-    <div class="fund fade">
-      <p><b>Detrás de Clipeya no hay una agencia de 40 personas: hay dos.</b> Uno se pasa el día
-      montando sistemas con IA — clips, webs, automatizaciones — y el otro vive dentro del
-      contenido: qué se publica, cómo suena, por qué se comparte.</p>
-      <p>Todo lo que ves arriba es <b>trabajo real entregado a clientes reales</b>: cosmética,
-      calzado, joyería, moda. No enseñamos plantillas — enseñamos entregas.</p>
-      <p>Por eso trabajamos con demo por delante: preferimos que nos juzgues por lo que hacemos
-      con TU material, no por lo que te contamos.</p>
+    <span class="k">Preguntas</span>
+    <h2>Lo que nos suelen preguntar.</h2>
+    <div class="faq">
+      <details><summary>¿Tengo que saber de tecnología?</summary><p>No. Tú nos cuentas cómo trabajas hoy y nosotros lo montamos. Si hay que enseñar algo a tu equipo, lo enseñamos.</p></details>
+      <details><summary>¿Hay permanencia?</summary><p>No. Las cuotas son mes a mes. Solo la web de 49 € al mes tiene un mínimo de 6 meses, porque no cobra alta.</p></details>
+      <details><summary>¿Cómo se paga?</summary><p>Una página suelta se paga cuando la ves hecha. Desde 390 €, el 50 % al empezar y el 50 % a la entrega. Las cuotas, mes a mes. Todos los precios son sin IVA.</p></details>
+      <details><summary>¿Y si solo quiero una cosa, como que mi WhatsApp conteste solo?</summary><p>Se puede. La respuesta automática por WhatsApp son 390 € de montaje y 49 € al mes. Los emails automáticos de una tienda (bienvenida, carrito y después de comprar), 390 €.</p></details>
+      <details><summary>¿Cuánto cuesta el cuidado mensual de una tienda?</summary><p>79 € al mes con vigilancia, arreglos pequeños e informe. Con una página nueva o rehecha cada mes, 149 €. Con tres páginas y mejoras para vender más, 249 €.</p></details>
+      <details><summary>¿El diagnóstico cuesta algo?</summary><p>No. Es gratis y no te compromete a nada.</p></details>
     </div>
   </div>
 </section>
 
-<section id="faq">
+<section class="cierre" id="diagnostico">
   <div class="wrap">
-    <div class="sec-head fade">
-      <div class="sec-tag">08 — Preguntas</div>
-      <h2>Lo que todos<br>preguntan</h2>
-    </div>
-    <div class="faq fade">
-      <details>
-        <summary>¿Cuánto cuesta?</summary>
-        <p>Depende de lo que necesites, y no te vamos a soltar un menú genérico: tras un briefing
-        de 10 minutos recibes una propuesta con <b>precio fijo, piezas exactas y fecha de
-        entrega</b>, con validez de 7 días. Ni «depende», ni sorpresas a mitad.</p>
-      </details>
-      <details>
-        <summary>¿Y si casi no tengo material grabado?</summary>
-        <p>Con lo que tengas en el móvil montamos la demo. Y a partir de ahí te decimos exactamente
-        qué grabar (2 minutos por evento o por día) para que nunca falte materia prima.</p>
-      </details>
-      <details>
-        <summary>¿Usáis IA con mi producto o con mi cara?</summary>
-        <p>Tu producto y las personas salen <b>siempre de material real</b>. La IA la usamos para
-        escenas de apoyo, fondos y montaje — nunca para inventar tu producto. Es una regla de la
-        casa, no un eslogan.</p>
-      </details>
-      <details>
-        <summary>¿Cuánto tarda?</summary>
-        <p>La demo, días. Los proyectos llevan su fecha <b>por escrito en la propuesta</b> y una
-        ronda de ajustes en una sola tanda para que la entrega no se eternice.</p>
-      </details>
-      <details>
-        <summary>¿Qué pasa si la demo no me convence?</summary>
-        <p>Nada. Es gratis, sin compromiso, y no te vamos a perseguir. Si te convence, hablamos de
-        propuesta; si no, te quedas la demo y tan amigos.</p>
-      </details>
-    </div>
+    <div class="reloj" aria-hidden="true">09:03</div>
+    <h2>Mañana a las 9, que conteste tu negocio.</h2>
+    <p>Cuéntanos en dos líneas qué haces y qué te quita más tiempo. Te escribimos por WhatsApp para preparar el diagnóstico.</p>
+    <form id="form" novalidate>
+      <label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+      <label>Tu negocio (o tu web o tu Instagram)<input name="negocio" required></label>
+      <label>¿Qué te quita más tiempo hoy?<textarea name="que" required></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit">Pide tu diagnóstico</button>
+      <p class="nota">Se abre WhatsApp con tu mensaje escrito. Lo envías tú.</p>
+    </form>
   </div>
 </section>
+</main>
 
-<section id="cta">
-  <div class="wrap">
-    <div class="cta-box fade">
-      <div class="sec-tag">09 — Empieza aquí</div>
-      <h2>Pide tu demo<br>personalizada gratis</h2>
-      <p>Nos mandas una grabación tuya o tu producto y te devolvemos una muestra hecha con tu contenido. Sin compromiso: si no te vuela la cabeza, no pasa nada.</p>
-      <form class="brief" id="brief" onsubmit="return enviarBrief(this)">
-        <div>
-          <label for="b-nombre">Tu nombre</label>
-          <input id="b-nombre" name="nombre" required autocomplete="name">
-        </div>
-        <div>
-          <label for="b-negocio">Tu negocio o Instagram</label>
-          <input id="b-negocio" name="negocio" placeholder="@tumarca o tuweb.com" required>
-        </div>
-        <div>
-          <label for="b-que">Qué necesitas</label>
-          <select id="b-que" name="que">
-            <option>Clips para redes</option>
-            <option>Tienda o landing</option>
-            <option>Sistema completo de captación</option>
-            <option>Aún no lo sé — asesórame</option>
-          </select>
-        </div>
-        <div>
-          <label for="b-msg">Cuéntanos en una línea</label>
-          <textarea id="b-msg" name="msg" placeholder="Ej.: tengo grabaciones de mis eventos y no publico nada con ellas"></textarea>
-        </div>
-        <button class="btn btn-solid" type="submit">Pide tu demo gratis →</button>
-      </form>
-      <p class="cta-ig">o escríbenos por Instagram <b>@clipeya</b></p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap"><b>CLIPEYA</b> — clips que traen clientes · 2026</div>
-</footer>
+<footer>Clipeya AI Lab · precios sin IVA</footer>
+<a class="btn fijo fuera" href="#diagnostico">Pide tu diagnóstico</a>
 
 <script>
-function enviarBrief(f){
-  var cuerpo = "Nombre: " + f.nombre.value +
-    "\nNegocio: " + f.negocio.value +
-    "\nNecesita: " + f.que.value +
-    "\nMensaje: " + (f.msg.value || "-");
-  location.href = "mailto:adminclipeya@gmail.com?subject=" +
-    encodeURIComponent("Demo gratis — " + f.negocio.value) +
-    "&body=" + encodeURIComponent(cuerpo);
-  return false;
+/* Precios de la lista del 22-nov-2026 (sin IVA). Se cambian en _montar.py, no aquí. */
+const WA='34600235411';
+const PLANES={
+  pagina:{nombre:'Una página que vende',mont:100,mes:0,plazo:'En 3 días · la pagas cuando la ves hecha',inc:['Tu página de producto rehecha: fotos, texto que vende y reseñas','Carga rápida y botón de compra a la vista en el móvil','Revisada en móvil y en ordenador antes de entregarla'],extra:{t:'Con cuidado mensual',mes:149}},
+  tienda:{nombre:'Tienda completa',mont:690,mes:0,plazo:'Plazo escrito en el presupuesto · 50 % al empezar y 50 % a la entrega',inc:['Tienda online con hasta 10 productos','Pagos, envíos y textos legales puestos','Una compra de prueba antes de entregarla'],extra:{t:'Con cuidado mensual',mes:149}},
+  web:{nombre:'Web para tu negocio',mont:0,mes:49,plazo:'Sin pago inicial · mínimo 6 meses',inc:['Una página pensada para el móvil','Botón de WhatsApp a la vista','Cita online','Cambios pequeños incluidos']},
+  embudo:{nombre:'Embudo completo',mont:990,mes:149,plazo:'Plazo escrito en el presupuesto · 50 % al empezar y 50 % a la entrega',inc:['Página de captación','Emails automáticos','Agenda de citas','Seguimiento de cada contacto, de la visita a la cita']}
+};
+const eur=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'; /* separador de miles a mano (es-ES no agrupa 4 cifras) */
+const $=id=>document.getElementById(id);
+let actual='pagina';
+function pinta(){
+  const p=PLANES[actual],x=p.extra,on=x&&$('extra').checked;
+  $('fNom').textContent=p.nombre+(on?' · '+x.t.toLowerCase():'');
+  $('fMont').textContent=eur(p.mont);
+  const m=on?x.mes:p.mes; $('fMes').innerHTML=m?eur(m)+'<small>/mes</small>':'—';
+  $('fInc').innerHTML=p.inc.map(t=>'<li>'+t+'</li>').join('');
+  $('fPlazo').textContent=p.plazo+' · sin IVA';
+  $('extraL').hidden=!x; if(x) $('extraT').textContent=x.t+' ('+eur(x.mes)+'/mes)';
 }
-(function(){
-  var els = document.querySelectorAll('.fade');
-  if(!('IntersectionObserver' in window)){
-    for(var i=0;i<els.length;i++){ els[i].classList.add('in'); }
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    for(var i=0;i<entries.length;i++){
-      if(entries[i].isIntersecting){
-        entries[i].target.classList.add('in');
-        io.unobserve(entries[i].target);
-      }
-    }
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  for(var j=0;j<els.length;j++){ io.observe(els[j]); }
+document.querySelectorAll('.plan').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.plan').forEach(o=>o.setAttribute('aria-pressed',o===b));
+  actual=b.dataset.id; $('extra').checked=false; pinta();
+});
+$('extra').onchange=pinta; pinta();
 
-  // pausa los demas videos cuando uno empieza a sonar
-  var vids = document.querySelectorAll('video');
-  function pauseOthers(e){
-    for(var k=0;k<vids.length;k++){
-      if(vids[k]!==e.target){ vids[k].pause(); }
-    }
-  }
-  for(var m=0;m<vids.length;m++){ vids[m].addEventListener('play',pauseOthers); }
-})();
+/* formulario → WhatsApp con el texto escrito (no envía nada solo) */
+$('form').onsubmit=e=>{
+  e.preventDefault();
+  const f=e.target,v=k=>f[k].value.trim();
+  if(!v('nombre')||!v('negocio')||!v('que')){$('err').textContent='Rellena los tres campos, por favor.';return}
+  $('err').textContent='';
+  const txt=`Hola, soy ${v('nombre')}. Quiero el diagnóstico.\nMi negocio: ${v('negocio')}\nLo que más tiempo me quita: ${v('que')}`;
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(txt),'_blank','noopener');
+};
+
+/* botón fijo de móvil: oculto en el hero y en el formulario (ya tienen su botón) */
+const fijo=document.querySelector('.fijo'),vistos=new Set();
+if('IntersectionObserver' in window){
+  const ob=new IntersectionObserver(es=>{es.forEach(en=>en.isIntersecting?vistos.add(en.target):vistos.delete(en.target));fijo.classList.toggle('fuera',vistos.size>0)});
+  ob.observe(document.querySelector('.hero'));ob.observe(document.getElementById('diagnostico'));
+}else fijo.classList.remove('fuera');
+
+/* la hora avanza: aparición de cada escena y el cielo cambia de tono */
+const quieto=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const dia=document.querySelector('.dia');
+if('IntersectionObserver' in window && !quieto){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){en.target.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));dia.style.setProperty('--cielo1',en.target.dataset.cielo)}
+  }),{threshold:.35});
+  document.querySelectorAll('.escena').forEach(s=>io.observe(s));
+  dia.style.transition='background .8s';
+}else{
+  document.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));
+}
 </script>
-
-</body>
-</html>
+</body></html>
