@@ -11,6 +11,7 @@
 <!-- Landing de Clipeya AI Lab v6 (22-nov-2026). Precios: bloque AREAS y PACKS del script (único sitio). Sin IVA. -->
 <style>
 @font-face{font-family:"Bricolage";src:url("fonts/bricolage-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Serif";src:url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@5.3.0/files/instrument-serif-latin-400-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
 @font-face{font-family:"Plex";src:url("fonts/plexsans-var.woff2") format("woff2");font-weight:100 700;font-display:swap}
 :root{--fondo:#0A0810;--fondo2:#17101F;--prof:#3D1B5E;--marca:#8F52D9;--crema:#F4E8D8;--oro:#D4AF37;
  --tenue:rgba(244,232,216,.62);--linea:rgba(244,232,216,.12);--max:1320px;--pad:clamp(20px,4.5vw,64px);
@@ -24,13 +25,15 @@ h1,h2,h3{font-family:"Bricolage",sans-serif;font-weight:700;line-height:1.02;let
 h1{font-size:clamp(2.7rem,8.4vw,7.4rem)}
 h2{font-size:clamp(2.1rem,5.6vw,4.6rem)}
 h3{font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.12}
+.it{font-family:"Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.015em;color:var(--oro)}
+h1 .it{font-size:1.06em}
 p{text-wrap:pretty}
 a{color:inherit}
 img,video{display:block;max-width:100%}
 .w{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 .k{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600}
 .btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:0 1.6em;border-radius:999px;border:1px solid transparent;font:600 1rem "Plex",sans-serif;cursor:pointer;text-decoration:none;transition:transform .5s var(--e),background .3s,border-color .3s}
-.btn.p{background:var(--oro);color:#17101F}
+.btn.p{background:var(--crema);color:#0A0810}
 .btn.s{border-color:var(--linea);color:var(--crema);background:rgba(244,232,216,.04)}
 @media(hover:hover){.btn:hover{transform:translateY(-3px)}.btn.s:hover{border-color:var(--crema)}}
 .btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
@@ -46,12 +49,19 @@ header nav a.btn{color:#17101F;min-height:42px;padding:0 1.2em;font-size:.92rem}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding-bottom:clamp(40px,8vh,96px);isolation:isolate;
- background:radial-gradient(120% 80% at 70% 20%,#3D1B5E 0%,#17101F 42%,#0A0810 78%)}
+ background:radial-gradient(90% 70% at 78% 30%,#2a1640 0%,#120c19 45%,#0A0810 80%)}
 #red{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(transparent,#0A0810);z-index:-1}
 .hero .w{width:100%}
-.hero h1{max-width:13ch;margin:18px 0 26px}
-.hero h1 em{font-style:normal;color:var(--oro)}
+.hero h1{max-width:11ch;margin:18px 0 26px}
+.hero .w{display:grid;gap:40px;align-items:end}
+.abanico{display:none}
+@media(min-width:1100px){.hero .w{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+ .abanico{display:block;position:relative;height:min(68vh,620px);perspective:1400px}
+ .abanico video{position:absolute;bottom:0;width:46%;aspect-ratio:9/16;object-fit:cover;border-radius:22px;box-shadow:0 50px 90px -30px #000,0 0 0 1px var(--linea)}
+ .abanico video:nth-child(1){left:0;transform:rotateY(18deg) rotateZ(-4deg) translateY(-6%);z-index:1;filter:brightness(.8)}
+ .abanico video:nth-child(2){left:27%;z-index:3;transform:translateY(-14%);width:48%}
+ .abanico video:nth-child(3){right:0;transform:rotateY(-18deg) rotateZ(4deg) translateY(-2%);z-index:2;filter:brightness(.8)}}
 .hero p.sub{max-width:44ch;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--tenue);margin-bottom:34px}
 .hero .cta{display:flex;flex-wrap:wrap;gap:14px}
 .hero .dat{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:44px;padding-top:22px;border-top:1px solid var(--linea);font-size:.86rem;color:var(--tenue)}
@@ -200,16 +210,23 @@ footer img{height:30px}
 <section class="hero" style="padding-top:120px">
   <canvas id="red" aria-hidden="true"></canvas>
   <div class="w">
-    <span class="k">Clipeya AI Lab · estudio digital</span>
-    <h1 id="h1">Que te vean. Que te compren. <em>Que vuelvan.</em></h1>
-    <p class="sub">Vídeo de producto, páginas y tiendas, emails, WhatsApp, embudos y anuncios. Un solo equipo y todo conectado, para que cada pieza empuje a la siguiente.</p>
+    <div>
+    <span class="k">Estudio de contenido y venta para tiendas online</span>
+    <h1 id="h1">Tu producto es bueno. <span class="it">Que lo parezca.</span></h1>
+    <p class="sub">Vídeo, página y emails con el nivel de una marca grande, al precio y a la velocidad de un estudio pequeño.</p>
     <div class="cta"><a class="btn p" href="#sistema">Monta tu sistema</a><a class="btn s" href="#trabajos">Ver trabajos</a></div>
-    <div class="dat"><span><b>6 áreas</b> de servicio</span><span><b>Precio cerrado</b> antes de empezar</span><span><b>Diagnóstico gratis</b> sobre tu propia web</span></div>
+    <div class="dat"><span><b>12 servicios</b> con precio a la vista</span><span><b>Precio cerrado</b> antes de empezar</span><span><b>Diagnóstico gratis</b> sobre tu propia web</span></div>
+    </div>
+    <div class="abanico" aria-hidden="true">
+      <video muted loop playsinline preload="none" poster="media/poster_vfx_beauty_mascara.jpg" data-src="media/vfx_beauty_mascara.mp4"></video>
+      <video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" data-src="media/vfx_joyeria_montaje.mp4"></video>
+      <video muted loop playsinline preload="none" poster="media/poster_vfx_cosmetica_ugc.jpg" data-src="media/vfx_cosmetica_ugc.mp4"></video>
+    </div>
   </div>
 </section>
 
 <section id="trabajos">
-  <div class="w cab rv"><span class="k">Trabajos</span><h2>Esto ya está hecho.</h2><p>Clips de producto para cosmética, calzado, joyería y moda. Dale al sonido de tu cabeza: así se ve un producto cuando alguien se para a mirarlo.</p></div>
+  <div class="w cab rv"><span class="k">Trabajos</span><h2>Esto ya <span class="it">está hecho.</span></h2><p>Clips de producto para cosmética, calzado, joyería y moda. Así se ve un producto cuando alguien se para a mirarlo.</p></div>
   <div class="carril" id="carril">
     <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_cosmetica_led.jpg" src="media/vfx_cosmetica_led.mp4"></video><figcaption><span>Cosmética</span>Clip de uso con subtítulos</figcaption></figure>
     <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" src="media/vfx_joyeria_montaje.mp4"></video><figcaption><span>Joyería</span>Montaje de producto</figcaption></figure>
@@ -224,7 +241,7 @@ footer img{height:30px}
 
 <section id="webs">
   <div class="w">
-    <div class="cab rv"><span class="k">Páginas y tiendas</span><h2>Donde de verdad se compra: en el móvil.</h2><p>Tres páginas nuestras tal como se ven en un teléfono. Primera pantalla: qué es, por qué lo quiero y dónde pulso.</p></div>
+    <div class="cab rv"><span class="k">Páginas y tiendas</span><h2>Donde de verdad se compra: <span class="it">en el móvil.</span></h2><p>Tres páginas nuestras tal como se ven en un teléfono. Primera pantalla: qué es, por qué lo quiero y dónde pulso.</p></div>
     <div class="moviles">
       <figure><div class="movil"><img src="media/web_movil_led.jpg" alt="Landing de venta de una máscara LED vista en el móvil" width="390" height="844" loading="lazy"></div><figcaption><b>Fototerapia LED</b>Landing de venta</figcaption></figure>
       <figure><div class="movil"><img src="media/web_movil_crema.jpg" alt="Landing de producto de cosmética vista en el móvil" width="390" height="844" loading="lazy"></div><figcaption><b>Cosmética</b>Landing de producto</figcaption></figure>
@@ -232,21 +249,21 @@ footer img{height:30px}
     </div>
     <div class="demo rv">
       <img src="media/demo_luis_desktop.jpg" alt="Web de demostración para un cortador profesional de jamón" width="1280" height="800" loading="lazy">
-      <div><span class="k">Negocio local · demo</span><h3 style="margin:10px 0 12px">También para quien vende con las manos.</h3><p>Web de una página para un cortador de jamón en eventos: qué hace, para quién y un botón para pedir fecha. Otra demo que puedes abrir: <a href="https://arboogerard-design.github.io/demo-cafe-lunarbol/" target="_blank" rel="noopener">el antes y el después de una cafetería</a>.</p></div>
+      <div><span class="k">Negocio local · demo</span><h3 style="margin:10px 0 12px">También para quien vende con las manos.</h3><p>Web de una página para un cortador de jamón en eventos: qué hace, para quién y un botón para pedir fecha.</p></div>
     </div>
   </div>
 </section>
 
 <section id="servicios">
   <div class="w">
-    <div class="cab rv"><span class="k">Servicios</span><h2>Seis áreas. Cada una dice qué incluye y qué cuesta.</h2><p>Puedes contratar una sola pieza o combinarlas. Todos los precios son sin IVA y se cierran por escrito antes de empezar.</p></div>
+    <div class="cab rv"><span class="k">Servicios</span><h2>Verte, comprarte, <span class="it">volver.</span></h2><p>Tres pasos y doce servicios. Cada uno dice qué incluye, qué no y qué cuesta. Puedes contratar una sola pieza o combinarlas; todos los precios son sin IVA.</p></div>
     <div id="areas"></div>
   </div>
 </section>
 
 <section id="sistema">
   <div class="w">
-    <div class="cab rv"><span class="k">Monta tu sistema</span><h2>Enciende las piezas que te faltan.</h2><p>Elige qué tienes y qué necesitas. Ves el precio al momento y, si combinas tres o más, baja un 10 %.</p></div>
+    <div class="cab rv"><span class="k">Monta tu sistema</span><h2>Enciende las piezas <span class="it">que te faltan.</span></h2><p>Elige qué tienes y qué necesitas. Ves el precio al momento y, si combinas tres o más, baja un 10 %.</p></div>
     <div class="juego">
       <div>
         <p class="paso"><b>1</b> · ¿Qué tienes?</p>
@@ -280,7 +297,7 @@ footer img{height:30px}
 
 <section id="proceso">
   <div class="w">
-    <div class="cab rv"><span class="k">Cómo trabajamos</span><h2>Sabes qué pasa en cada momento.</h2></div>
+    <div class="cab rv"><span class="k">Cómo trabajamos</span><h2>Sabes qué pasa <span class="it">en cada momento.</span></h2></div>
     <div class="pasos">
       <article class="rv"><h3>Diagnóstico</h3><p>Entramos en tu web o tu tienda desde el móvil y te enseñamos, con capturas, qué está fallando y qué arreglaríamos primero.</p><span class="pz">Gratis · sin compromiso</span></article>
       <article class="rv"><h3>Presupuesto cerrado</h3><p>Un PDF con lo que has elegido: qué incluye cada línea, qué no, plazo y forma de pago. Vale 15 días.</p><span class="pz">Sin sorpresas después</span></article>
@@ -307,8 +324,8 @@ footer img{height:30px}
 <section id="hablar">
   <div class="w">
     <span class="k">Diagnóstico gratis</span>
-    <h2>Enséñanos tu web y te decimos qué falla.</h2>
-    <p>Déjanos tu nombre y la dirección de tu web o tu Instagram. Te contestamos por WhatsApp con capturas de lo que ve hoy un cliente tuyo.</p>
+    <h2>Parece caro. <span class="it">No lo es.</span></h2>
+    <p>Enséñanos tu tienda y te decimos qué falla. Déjanos tu nombre y tu web o Instagram: te contestamos por WhatsApp con capturas de lo que ve hoy un cliente tuyo.</p>
     <form id="form" novalidate>
       <label>Tu nombre<input id="fn" autocomplete="name"></label>
       <label>Tu web, tienda o Instagram<input id="fw" autocomplete="url" inputmode="url"></label>
@@ -318,7 +335,7 @@ footer img{height:30px}
   </div>
 </section>
 </main>
-<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="122" height="30"><span>Precios sin IVA. No prometemos cifras de ventas.</span></footer>
+<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="122" height="30"><span>Estudio de contenido y venta para tiendas online · Precios sin IVA. No prometemos cifras de ventas.</span></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
@@ -328,24 +345,22 @@ document.documentElement.classList.add('js');
 const WA='34600235411';
 /* ====== PRECIOS: único sitio (sin IVA). u = pago único, m = al mes ====== */
 const AREAS=[
- {id:'video',n:'Vídeo y creativos',d:'Clips verticales de tu producto para anuncios y para orgánico. Es lo primero que ve la gente y lo que decide si se para.',img:'media/srv_clips.jpg',s:[
+ {id:'video',n:'Que te vean',d:'Vídeo y creativos. Clips verticales de tu producto para anuncios y para orgánico: es lo primero que ve la gente y lo que decide si se para.',img:'media/srv_clips.jpg',s:[
   {id:'clips',n:'Pack de 4 clips de producto',c:'4 clips',u:490,m:0,p:'7 días',d:'Cuatro vídeos distintos del mismo producto para probar cuál funciona.',inc:['4 vídeos verticales 9:16 de 8 a 15 segundos','Cada uno con un gancho distinto','Subtítulos y versión sin texto','Listos para Meta, TikTok y Reels'],no:'Grabación en persona, modelos y envío del producto'},
   {id:'contenido',n:'Contenido cada mes',c:'Contenido mensual',u:0,m:590,p:'Entrega semanal',d:'Para no quedarte sin vídeo nuevo: ocho clips al mes con un plan.',inc:['8 clips al mes (2 por semana)','Calendario de publicación','Textos de cada publicación','Revisión mensual de qué ha funcionado'],no:'Publicar en tus cuentas y contestar comentarios'}]},
- {id:'paginas',n:'Páginas y tiendas',d:'La página donde se decide la compra. Pensada primero para el móvil, que es donde pasa casi todo.',img:'media/srv_producto.jpg',s:[
+ {id:'paginas',n:'Que te compren',d:'Páginas y tiendas. La página donde se decide la compra, pensada primero para el móvil, que es donde pasa casi todo.',img:'media/srv_producto.jpg',s:[
   {id:'pagina',n:'Página de producto',c:'Página de producto',u:290,m:0,p:'5 días',d:'Una ficha rehecha de arriba abajo para que venda.',inc:['Fotos colocadas y texto que vende','Bloques de beneficios, dudas y garantía','Reseñas reales colocadas','Carga rápida y botón de compra a la vista'],no:'Hacer fotos o vídeos nuevos'},
   {id:'landing',n:'Landing de venta o captación',c:'Landing',u:490,m:0,p:'7 días',d:'Una página con un solo objetivo: que compren o que dejen sus datos.',inc:['Estructura y textos completos','Diseño propio en móvil y ordenador','Formulario o botón de compra conectado','Medición de visitas y clics puesta'],no:'Dominio, anuncios y fotos nuevas'},
   {id:'tienda',n:'Tienda online completa',c:'Tienda completa',u:1290,m:0,p:'2 a 3 semanas',d:'Tu tienda lista para vender desde el primer día.',inc:['Hasta 10 productos con su ficha','Pagos, envíos y textos legales puestos','Portada, colecciones y menú','Una compra de prueba antes de entregarla'],no:'La cuota de Shopify y más de 10 productos'}]},
- {id:'email',n:'Emails y WhatsApp',d:'Lo que hace que un cliente vuelva sin pagar otra vez por él. Automático, con tu voz.',img:'',s:[
+ {id:'volver',n:'Que vuelvan',d:'Emails, WhatsApp y cuidado. Lo que hace que un cliente vuelva sin pagar otra vez por él, y que lo montado no se rompa.',img:'media/srv_shopify.jpg',s:[
   {id:'flujos',n:'Emails automáticos',c:'Emails automáticos',u:890,m:0,p:'10 días',d:'Los tres flujos que toda tienda necesita, escritos y diseñados.',inc:['Bienvenida, carrito abandonado y después de comprar','Diseño con tu marca, probado en móvil','Textos completos','Montados y encendidos en tu cuenta'],no:'La cuota de tu herramienta de email'},
   {id:'campanas',n:'Campañas de email cada mes',c:'Emails cada mes',u:0,m:490,p:'Mensual',d:'Cuatro envíos al mes a tu lista y los automáticos vigilados.',inc:['4 campañas al mes, diseñadas y programadas','Calendario mensual','Cuidado de los flujos automáticos','Informe de aperturas, clics y ventas'],no:'La cuota de tu herramienta de email'},
-  {id:'whatsapp',n:'WhatsApp que contesta solo',c:'WhatsApp automático',u:490,m:49,p:'7 días',d:'Tu WhatsApp responde al momento, pide los datos y agenda.',inc:['Respuestas a las preguntas frecuentes','Reserva de citas','Aviso a una persona cuando hace falta','Ajustes de respuestas cada mes'],no:'El coste de los mensajes, que se paga al proveedor'}]},
- {id:'embudo',n:'Embudos y captación',d:'De la primera visita a la cita o a la venta, con cada contacto seguido. Para formadores y servicios.',img:'media/srv_landing.jpg',s:[
-  {id:'embudo',n:'Embudo completo',c:'Embudo completo',u:1900,m:290,p:'3 a 4 semanas',d:'Todo el recorrido montado y conectado.',inc:['Página de captación y página de gracias','Secuencia de emails automáticos','Agenda de citas','Panel con el seguimiento de cada contacto','Ajustes y mejoras cada mes'],no:'Anuncios y contenido, que van en su área'}]},
- {id:'anuncios',n:'Anuncios',d:'Meta y TikTok, con creativos hechos por el mismo equipo que hace tu página.',img:'',s:[
-  {id:'ads',n:'Puesta en marcha y gestión',c:'Anuncios',u:390,m:390,p:'5 días para arrancar',d:'Montamos la cuenta bien y la llevamos cada semana.',inc:['Estructura de campañas y públicos','Medición de compras o contactos','Pruebas de creativos cada semana','Informe mensual con lo gastado y lo conseguido'],no:'La inversión en anuncios y los creativos (ver Vídeo)'}]},
- {id:'cuidado',n:'Web local y cuidado',d:'Para el negocio de barrio que necesita estar bien en el móvil, y para que lo montado no se rompa.',img:'media/srv_shopify.jpg',s:[
-  {id:'weblocal',n:'Web para tu negocio',c:'Web de negocio',u:0,m:49,p:'7 días · mínimo 6 meses',d:'Una página con WhatsApp y cita online, sin pago inicial.',inc:['Una página pensada para el móvil','Botón de WhatsApp a la vista','Cita online','Cambios pequeños incluidos'],no:'El dominio, que va a tu nombre'},
-  {id:'cuidado',n:'Cuidado y mejoras',c:'Cuidado mensual',u:0,m:149,p:'Mensual',d:'Vigilamos tu tienda o tu web y la mejoramos cada mes.',inc:['Vigilancia del móvil y del pago','Arreglos pequeños incluidos','Una página nueva o rehecha al mes','Informe mensual de una página'],no:'Rediseños completos'}]}
+  {id:'whatsapp',n:'WhatsApp que contesta solo',c:'WhatsApp automático',u:490,m:49,p:'7 días',d:'Tu WhatsApp responde al momento, pide los datos y agenda.',inc:['Respuestas a las preguntas frecuentes','Reserva de citas','Aviso a una persona cuando hace falta','Ajustes de respuestas cada mes'],no:'El coste de los mensajes, que se paga al proveedor'},
+  {id:'cuidado',n:'Cuidado y mejoras',c:'Cuidado mensual',u:0,m:149,p:'Mensual',d:'Vigilamos tu tienda o tu web y la mejoramos cada mes.',inc:['Vigilancia del móvil y del pago','Arreglos pequeños incluidos','Una página nueva o rehecha al mes','Informe mensual de una página'],no:'Rediseños completos'}]},
+ {id:'mas',n:'También hacemos',d:'Para formadores, servicios y negocios de barrio: captación, anuncios y web local, con el mismo equipo.',img:'media/srv_landing.jpg',s:[
+  {id:'embudo',n:'Embudo completo',c:'Embudo completo',u:1900,m:290,p:'3 a 4 semanas',d:'Todo el recorrido montado y conectado.',inc:['Página de captación y página de gracias','Secuencia de emails automáticos','Agenda de citas','Panel con el seguimiento de cada contacto','Ajustes y mejoras cada mes'],no:'Anuncios y contenido, que van en su área'},
+  {id:'ads',n:'Puesta en marcha y gestión',c:'Anuncios',u:390,m:390,p:'5 días para arrancar',d:'Montamos la cuenta bien y la llevamos cada semana.',inc:['Estructura de campañas y públicos','Medición de compras o contactos','Pruebas de creativos cada semana','Informe mensual con lo gastado y lo conseguido'],no:'La inversión en anuncios y los creativos (ver Vídeo)'},
+  {id:'weblocal',n:'Web para tu negocio',c:'Web de negocio',u:0,m:49,p:'7 días · mínimo 6 meses',d:'Una página con WhatsApp y cita online, sin pago inicial.',inc:['Una página pensada para el móvil','Botón de WhatsApp a la vista','Cita online','Cambios pequeños incluidos'],no:'El dominio, que va a tu nombre'}]}
 ];
 const REC={tienda:['clips','pagina','flujos','cuidado'],local:['weblocal','whatsapp','clips'],formador:['embudo','ads','contenido']};
 const PACKS=[
@@ -398,6 +413,7 @@ $('form').addEventListener('submit',e=>{e.preventDefault();const n=$('fn').value
 addEventListener('scroll',()=>$('cabe').classList.toggle('on',scrollY>40),{passive:true});
 
 /* vídeos: solo suenan a la vista */
+if(matchMedia('(min-width:1100px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('.abanico video').forEach(v=>{v.src=v.dataset.src;v.play().catch(()=>{})});
 const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce)document.querySelectorAll('.clip video').forEach(v=>vo.observe(v));
@@ -429,14 +445,14 @@ try{
  const r=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,1.5));
  const sc=new T.Scene();sc.fog=new T.FogExp2(0x0A0810,.055);
  const cam=new T.PerspectiveCamera(55,1,.1,100);cam.position.set(0,0,13);
- const g=new T.Group();sc.add(g);g.position.x=movil?0:3.2;g.position.y=movil?2.2:.4;
+ const g=new T.Group();sc.add(g);g.position.x=movil?0:1.2;g.position.y=movil?2.2:.4;
  const P=[];for(let i=0;i<N;i++){const u=Math.random()*2-1,t=Math.random()*Math.PI*2,rad=3.2+Math.pow(Math.random(),.6)*4.6,s=Math.sqrt(1-u*u);P.push(new T.Vector3(rad*s*Math.cos(t)*1.25,rad*u*.8,rad*s*Math.sin(t)))}
  const tex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),gr=x.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.8)');gr.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=gr;x.fillRect(0,0,64,64);return new T.CanvasTexture(c)})();
  const pg=new T.BufferGeometry().setFromPoints(P);
- const nodos=new T.Points(pg,new T.PointsMaterial({size:.34,map:tex,color:0xC9A6FF,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));nodos.frustumCulled=false;g.add(nodos);
+ const nodos=new T.Points(pg,new T.PointsMaterial({size:.3,map:tex,color:0xF4E8D8,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));nodos.frustumCulled=false;g.add(nodos);
  const E=[],lp=[];for(let i=0;i<N;i++){const d=P.map((p,j)=>[p.distanceTo(P[i]),j]).sort((a,b)=>a[0]-b[0]);for(let k=1;k<=2;k++){const j=d[k][1];if(j>i||k===1){E.push([i,j]);lp.push(P[i].x,P[i].y,P[i].z,P[j].x,P[j].y,P[j].z)}}}
  const lg=new T.BufferGeometry();lg.setAttribute('position',new T.Float32BufferAttribute(lp,3));
- g.add(new T.LineSegments(lg,new T.LineBasicMaterial({color:0x8F52D9,transparent:true,opacity:.34,blending:T.AdditiveBlending,depthWrite:false})));
+ g.add(new T.LineSegments(lg,new T.LineBasicMaterial({color:0xBFA9DD,transparent:true,opacity:.2,blending:T.AdditiveBlending,depthWrite:false})));
  const pu=Array.from({length:PUL},()=>({e:Math.random()*E.length|0,t:Math.random(),v:.25+Math.random()*.5}));
  const pa=new Float32Array(PUL*3),pgeo=new T.BufferGeometry();pgeo.setAttribute('position',new T.BufferAttribute(pa,3));
  const pul=new T.Points(pgeo,new T.PointsMaterial({size:.5,map:tex,color:0xD4AF37,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));pul.frustumCulled=false;g.add(pul);
