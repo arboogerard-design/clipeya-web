@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clipeya AI Lab · Marketing completo para tiendas online</title>
-<meta name="description" content="Web, anuncios, automatización y contenido para tu tienda online, con un solo equipo. Tres planes con precio cerrado. Diagnóstico gratis.">
+<title>Clipeya AI Lab · Webs, embudos y automatización para vender online</title>
+<meta name="description" content="Tiendas, landings, embudos, CRM, ManyChat y contenido para tiendas online, infoproductores, marcas personales y agencias. Diagnóstico gratis.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/clipeya_spark_favicon.svg">
 <link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Landing de Clipeya AI Lab v10 (22-nov-2026). Un cliente (tiendas online), tres planes. Precios: bloque PLANES del script (único sitio). Sin IVA. -->
+<!-- Landing de Clipeya AI Lab v12 (22-nov-2026). Oferta por tipo de cliente. Servicios y precios: bloque CASOS del script (único sitio). Sin IVA. -->
 <style>
 @font-face{font-family:"Bricolage";src:url("fonts/bricolage-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
 @font-face{font-family:"Serif";src:url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@5.3.0/files/instrument-serif-latin-400-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
@@ -122,6 +122,34 @@ section{padding:var(--sec) 0;position:relative;scroll-margin-top:60px}
 .chat i.n{align-self:flex-end;border-radius:12px 12px 3px 12px;background:var(--crema);color:#0A0810}
 .piezas p{color:var(--tenue);font-size:.95rem;margin-top:8px}
 @media(max-width:699px){.piezas article{flex-direction:row}.piezas img{width:34%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--linea)}.piezas article>div:last-child{padding:18px;flex:1}.piezas .chat{width:34%;flex:0 0 34%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--linea);padding:8px;gap:5px}.chat i{font-size:.5rem;padding:4px 6px}.piezas img{flex:0 0 34%}}
+.pila{display:grid;gap:22px}
+.capa{position:sticky;top:calc(78px + var(--i)*12px);display:grid;background:var(--sup);border:1px solid var(--linea);border-radius:28px;overflow:hidden;transform-origin:50% 0;will-change:transform}
+.capa .tx{padding:clamp(22px,4.4vw,60px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.capa .num{font:400 clamp(2.2rem,4vw,3.4rem)/1 "Serif",Georgia,serif;font-style:italic;color:var(--oro)}
+.capa h3{font-size:clamp(1.9rem,4vw,3.3rem);line-height:1}
+.capa p{color:var(--tenue);max-width:46ch}
+.capa ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.capa li{font:500 .8rem "Plex";padding:7px 13px;border-radius:999px;border:1px solid var(--linea)}
+.capa .vis{position:relative;background:var(--sup2);min-height:230px;overflow:hidden;display:grid;place-items:center}
+.capa .vis>img,.capa .vis>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.capa .vis>video{object-position:center}
+.capa:nth-child(2) .vis>img{object-position:left top}
+.capa .vis.tel{background:radial-gradient(80% 90% at 60% 40%,#2a1640,var(--sup2) 75%)}
+.capa .vis.tel>img{position:absolute;inset:auto;top:12%;left:50%;width:min(40%,230px);height:auto;border-radius:22px;border:5px solid #241a31;box-shadow:0 40px 70px -30px #000;transform:translateX(-78%) rotate(-5deg)}
+.capa .vis.tel>img+img{top:22%;transform:translateX(-12%) rotate(5deg)}
+.chat2{width:min(88%,380px);display:flex;flex-direction:column;gap:10px;padding:24px 0}
+.chat2 i{font:500 clamp(.86rem,1.2vw,1rem)/1.35 "Plex";font-style:normal;padding:11px 16px;border-radius:18px 18px 18px 5px;background:#2a2136;align-self:flex-start;max-width:84%}
+.chat2 i.n{align-self:flex-end;border-radius:18px 18px 5px 18px;background:var(--crema);color:#0A0810}
+.chat2 small{align-self:center;margin-top:10px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+@media(min-width:900px){.capa{grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(68vh,540px)}.capa:nth-child(even) .tx{order:2}}
+@media(max-width:899px){.capa .vis{order:-1;height:230px}.capa .vis.tel>img{top:10%;width:34%}.capa .vis.tel>img+img{top:20%}}
+.cinta{overflow:hidden;padding:clamp(40px,7vw,90px) 0 0;white-space:nowrap}
+.cinta div{display:inline-flex;gap:.6em;animation:cinta 34s linear infinite;font:700 clamp(3rem,10vw,8.5rem)/1 "Bricolage";letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(244,232,216,.3)}
+.cinta em{font-family:"Serif",Georgia,serif;font-style:italic;font-weight:400;color:var(--oro);-webkit-text-stroke:0}
+@keyframes cinta{to{transform:translateX(-50%)}}
+.pasos{position:relative}
+@media(min-width:900px){.pasos::after{content:"";position:absolute;left:0;right:0;top:-22px;height:2px;background:linear-gradient(90deg,var(--oro),rgba(212,175,55,.2));transform:scaleX(var(--h,0));transform-origin:left}}
+@media(prefers-reduced-motion:reduce){.cinta div{animation:none}.pasos{--h:1}}
 /* páginas */
 #paginas{background:var(--sup)}
 .moviles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,48px);perspective:1600px;max-width:980px}
@@ -169,6 +197,27 @@ section{padding:var(--sec) 0;position:relative;scroll-margin-top:60px}
 @media(min-width:900px){.medida{grid-template-columns:1fr auto}}
 .medida p{color:var(--tenue);max-width:62ch;margin-top:8px}
 
+.pest{overflow-x:auto;scrollbar-width:none}.pest::-webkit-scrollbar{display:none}.pest button{white-space:nowrap;flex:0 0 auto}
+.caso{padding:clamp(20px,3.4vw,44px);display:grid;gap:clamp(24px,3vw,40px)}
+.cTop h3{font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.04}
+.cTop p{color:var(--tenue);max-width:60ch;margin-top:12px;font-size:1.06rem}
+.grupos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.grupo{background:var(--sup2);border-radius:16px;padding:20px 20px 22px}
+.grupo h4{font:600 .72rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--oro);margin-bottom:14px}
+.grupo ul{list-style:none;padding:0;display:grid;gap:10px;font-size:.95rem}
+.grupo li{padding-left:20px;position:relative;line-height:1.35}
+.grupo li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:2px;background:var(--oro)}
+.ruta{display:grid;gap:10px;counter-reset:r}
+@media(min-width:900px){.ruta{grid-auto-flow:column;grid-auto-columns:1fr;gap:0}}
+.tramo{position:relative;padding:18px 18px 18px 0;border-top:1px solid var(--linea);counter-increment:r}
+@media(min-width:900px){.tramo{padding:22px 20px 4px 0}.tramo::after{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--oro)}}
+.tramo b{display:block;font:600 .7rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+.tramo b::before{content:"0" counter(r) " · ";color:var(--oro)}
+.tramo span{display:block;font:600 1.02rem/1.25 "Bricolage";margin:8px 0 6px}
+.tramo em{font:700 clamp(1.3rem,2.2vw,1.8rem) "Bricolage";font-style:normal;color:var(--oro)}
+.tramo em small{font:500 .78rem "Plex";color:var(--tenue)}
+.cPie{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.cPie small{color:var(--tenue);font-size:.8rem;max-width:60ch}
 /* proceso y condiciones */
 #proceso{background:var(--sup)}
 .pasos{display:grid;gap:14px;counter-reset:p}
@@ -201,7 +250,7 @@ footer img{height:28px;width:auto}
 <div class="halo" aria-hidden="true"></div>
 <header id="cabe">
   <a href="#top" aria-label="Clipeya AI Lab, inicio"><img src="img/logo.svg" alt="Clipeya AI Lab" width="147" height="36"></a>
-  <nav><a href="#servicios">Qué hacemos</a><a href="#planes">Planes</a><a href="#proceso">Cómo trabajamos</a><a class="btn p" href="#hablar">Diagnóstico gratis</a></nav>
+  <nav><a href="#servicios">Qué hacemos</a><a href="#casos">Tu caso</a><a href="#proceso">Cómo trabajamos</a><a class="btn p" href="#hablar">Diagnóstico gratis</a></nav>
 </header>
 
 <main id="top">
@@ -209,11 +258,11 @@ footer img{height:28px;width:auto}
   <canvas id="red" aria-hidden="true"></canvas>
   <div class="w" id="hTxt">
     <div>
-      <span class="k">Marketing completo para tiendas online</span>
+      <span class="k">Webs, embudos y automatización para vender online</span>
       <h1>Tu producto es bueno. <span class="it">Que lo parezca.</span></h1>
       <p class="sub">Tu web, tus anuncios, tu WhatsApp y tu contenido, llevados por un solo equipo. Con precio cerrado y sin permanencia.</p>
-      <div class="cta"><a class="btn p" href="#planes">Ver planes</a><a class="btn s" href="#servicios">Qué hacemos</a></div>
-      <div class="dat"><span><b>Desde 490 €</b> al mes</span><span><b>Sin permanencia</b></span><span><b>Diagnóstico gratis</b> de tu tienda</span></div>
+      <div class="cta"><a class="btn p" href="#casos">Ver mi caso</a><a class="btn s" href="#servicios">Qué hacemos</a></div>
+      <div class="dat"><span><b>Desde 100 €</b> la primera pieza</span><span><b>Sin permanencia</b></span><span><b>Diagnóstico gratis</b></span></div>
     </div>
     <div class="abanico" aria-hidden="true">
       <img src="media/web_movil_crema.jpg" alt="" width="390" height="844">
@@ -221,20 +270,30 @@ footer img{height:28px;width:auto}
       <video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" data-src="media/vfx_joyeria_montaje.mp4"></video>
     </div>
   </div>
-  <div class="nodos" aria-hidden="true"><b>Web y tienda</b><b>Anuncios</b><b>Automatización</b><b>Contenido</b><b class="c">Tu tienda</b></div>
+  <div class="nodos" aria-hidden="true"><b>Web y tienda</b><b>Anuncios</b><b>Automatización</b><b>Contenido</b><b class="c">Tu negocio</b></div>
   <p class="lema" aria-hidden="true">Cuatro piezas que <span class="it">se hablan.</span></p>
   <i class="baja" aria-hidden="true"></i>
 </div></section>
 
 <section id="servicios">
-  <div class="w">
-    <div class="cab rv"><span class="k">Qué hacemos</span><h2>Cuatro piezas, <span class="it">un solo equipo.</span></h2><p>Lo que una tienda necesita para vender, sin repartirlo entre cuatro proveedores que no se hablan.</p></div>
-    <div class="piezas">
-      <article class="tarjeta rv"><img src="media/web_movil_calzado.jpg" alt="" loading="lazy" style="object-position:50% 68%"><div><h3>Web y tienda</h3><p>Tu tienda Shopify, tus fichas de producto y tus landings, pensadas primero para el móvil.</p></div></article>
-      <article class="tarjeta rv"><img src="media/srv_landing.jpg" alt="" loading="lazy"><div><h3>Anuncios</h3><p>Campañas en Meta y TikTok llevadas cada semana, con la página a la que llegan hecha por nosotros.</p></div></article>
-      <article class="tarjeta rv"><div class="chat" aria-hidden="true"><i>Hola, ¿tenéis la talla 42?</i><i class="n">Sí, quedan 3. ¿Te la aparto?</i><i>Vale</i><i class="n">Hecho. Aquí tienes el enlace de pago.</i></div><div><h3>Automatización</h3><p>WhatsApp e Instagram que contestan, recuperan carritos y hacen seguimiento sin que estés tú.</p></div></article>
-      <article class="tarjeta rv"><img src="media/poster_vfx_joyeria_montaje.jpg" alt="" loading="lazy" style="object-position:center"><div><h3>Contenido</h3><p>Vídeos e imágenes de producto para alimentar los anuncios y las redes cada mes.</p></div></article>
-    </div>
+  <div class="w"><div class="cab rv"><span class="k">Qué hacemos</span><h2>Cuatro piezas, <span class="it">un solo equipo.</span></h2><p>Lo que un negocio online necesita para vender, sin repartirlo entre cuatro proveedores que no se hablan.</p></div></div>
+  <div class="w pila">
+    <article class="capa" style="--i:0">
+      <div class="tx"><span class="num">01</span><h3>Web y tienda</h3><p>Tu tienda Shopify, tus fichas de producto y tus landings, pensadas primero para el móvil, que es donde se decide la compra.</p><ul><li>Tienda Shopify</li><li>Fichas de producto</li><li>Landings de campaña</li></ul></div>
+      <div class="vis tel"><img src="media/web_movil_calzado.jpg" alt="Ficha de producto hecha por Clipeya, vista en un móvil" loading="lazy" width="390" height="844"><img src="media/web_movil_crema.jpg" alt="" loading="lazy" width="390" height="844"></div>
+    </article>
+    <article class="capa" style="--i:1">
+      <div class="tx"><span class="num">02</span><h3>Anuncios</h3><p>Campañas en Meta y TikTok llevadas cada semana, con la página a la que llegan hecha por el mismo equipo. Lo que promete el anuncio es lo que encuentra el cliente.</p><ul><li>Meta</li><li>TikTok</li><li>Página de destino</li></ul></div>
+      <div class="vis"><img src="media/srv_landing.jpg" alt="Landing de campaña hecha por Clipeya" loading="lazy"></div>
+    </article>
+    <article class="capa" style="--i:2">
+      <div class="tx"><span class="num">03</span><h3>Automatización</h3><p>WhatsApp e Instagram que contestan al momento, recuperan carritos y hacen el seguimiento sin que tengas que estar tú delante.</p><ul><li>WhatsApp</li><li>Instagram</li><li>Carritos y seguimiento</li></ul></div>
+      <div class="vis"><div class="chat2" aria-hidden="true"><i>Hola, ¿tenéis la talla 42?</i><i class="n">Sí, quedan 3. ¿Te la aparto?</i><i>Vale, perfecto</i><i class="n">Hecho. Aquí tienes el enlace de pago.</i><small>Ejemplo de conversación automática</small></div></div>
+    </article>
+    <article class="capa" style="--i:3">
+      <div class="tx"><span class="num">04</span><h3>Contenido</h3><p>Vídeos e imágenes de producto para alimentar los anuncios y las redes cada mes, con el estilo de tu marca.</p><ul><li>Vídeo de producto</li><li>Creatividades</li><li>Guía de estilo</li></ul></div>
+      <div class="vis"><video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" src="media/vfx_joyeria_montaje.mp4"></video></div>
+    </article>
   </div>
 </section>
 
@@ -249,25 +308,15 @@ footer img{height:28px;width:auto}
   </div>
 </section>
 
-<section id="planes">
+<section id="casos">
   <div class="w">
-    <div class="cab rv"><span class="k">Planes</span><h2>Así es un mes <span class="it">con Clipeya.</span></h2><p>Elige un plan y mira qué recibes cada semana. Todos los precios son sin IVA y ninguno tiene permanencia.</p></div>
-    <div class="pest" role="tablist" aria-label="Planes" id="pest"></div>
-    <div class="plan">
-      <div class="tarjeta mes" aria-live="polite"><div class="tit"><h3 id="mesT">Tu mes</h3><span id="mesR"></span></div><div class="semanas" id="semanas"></div></div>
-      <div class="tarjeta ficha">
-        <span class="eti" id="pEti"></span>
-        <h3 id="pNom" style="font-size:1.9rem"></h3>
-        <p id="pDes"></p>
-        <div class="precio"><div><div class="c" id="pMes"></div><div class="e">Al mes</div></div><div><div class="c" id="pIni"></div><div class="e">Inicio único</div></div></div>
-        <ul id="pInc"></ul>
-        <a class="btn p" href="#hablar" id="pBtn">Empezar con este plan</a>
-        <small id="pNota"></small>
-      </div>
-    </div>
-    <div class="tarjeta medida rv">
-      <div><h3>¿Tu caso es distinto?</h3><p>Tienda nueva desde cero, un lanzamiento, varias tiendas o un negocio que no es una tienda online: te preparamos un presupuesto a medida en 48 horas, con precio cerrado.</p></div>
-      <a class="btn s" href="#hablar" data-plan="a medida">Pedir presupuesto a medida</a>
+    <div class="cab rv"><span class="k">Tu caso</span><h2>Dinos qué vendes y te enseñamos <span class="it">el camino.</span></h2><p>Cada negocio necesita piezas distintas. Elige el tuyo: verás todo lo que hacemos para él, por dónde se empieza y cuánto cuesta.</p></div>
+    <div class="pest" role="tablist" aria-label="Tipo de negocio" id="pest"></div>
+    <div class="tarjeta caso" aria-live="polite">
+      <div class="cTop"><h3 id="cTit"></h3><p id="cDes"></p></div>
+      <div class="grupos" id="cGru"></div>
+      <div class="ruta" id="cRuta"></div>
+      <div class="cPie"><small>Precios sin IVA. Pago por adelantado. Sin permanencia. Lo que pone «a medida» se presupuesta en 48 horas, con precio cerrado.</small><a class="btn p" href="#hablar" id="cBtn"></a></div>
     </div>
   </div>
 </section>
@@ -276,7 +325,7 @@ footer img{height:28px;width:auto}
   <div class="w">
     <div class="cab rv"><span class="k">Cómo trabajamos</span><h2>Del sí <span class="it">a la primera entrega.</span></h2></div>
     <div class="pasos">
-      <article class="rv"><h3>Eliges tu plan</h3><p>Te mandamos el presupuesto en PDF. Con el primer pago abrimos un grupo de WhatsApp contigo.</p></article>
+      <article class="rv"><h3>Eliges por dónde empezar</h3><p>Te mandamos el presupuesto en PDF. Con el primer pago abrimos un grupo de WhatsApp contigo.</p></article>
       <article class="rv"><h3>Puesta en marcha</h3><p>Nos invitas a tu tienda (nunca contraseñas por mensaje) y estudiamos tu producto y tu cliente.</p></article>
       <article class="rv"><h3>Entregas cada semana</h3><p>Recibes el trabajo por semanas. Lo revisas tú antes de publicar nada.</p></article>
       <article class="rv"><h3>Informe y siguiente mes</h3><p>Un informe de una página con lo hecho y lo que proponemos. Sigues o paras: tú decides.</p></article>
@@ -302,7 +351,7 @@ footer img{height:28px;width:auto}
   <div class="w">
     <div class="cab rv"><span class="k">Condiciones</span><h2>Claro <span class="it">desde el principio.</span></h2></div>
     <div class="cond">
-      <div><b>Pago</b><span>Por adelantado: el inicio y el primer mes antes de empezar, y cada mes al comenzarlo. Precios sin IVA.</span></div>
+      <div><b>Pago</b><span>Por adelantado: cada trabajo antes de empezarlo y cada mensualidad al comenzar el mes. Precios sin IVA.</span></div>
       <div><b>Permanencia</b><span>Ninguna. Si paras, el mes pagado se termina de entregar y el siguiente no se cobra.</span></div>
       <div><b>Lo que entregamos es tuyo</b><span>Páginas, vídeos y automatizaciones son tuyos en cuanto están pagados, y tus cuentas siguen siempre a tu nombre.</span></div>
       <div><b>Lo que no incluye</b><span>La inversión en anuncios y las cuotas de tus herramientas (Shopify y similares): las pagas tú al proveedor.</span></div>
@@ -311,21 +360,23 @@ footer img{height:28px;width:auto}
   </div>
 </section>
 
+<div class="cinta" aria-hidden="true"><div><span>Web y tienda</span><em>·</em><span>Anuncios</span><em>·</em><span>Automatización</span><em>·</em><span>Contenido</span><em>·</em><span>Web y tienda</span><em>·</em><span>Anuncios</span><em>·</em><span>Automatización</span><em>·</em><span>Contenido</span><em>·</em></div></div>
+
 <section id="hablar">
   <div class="w">
     <span class="k">Diagnóstico gratis</span>
     <h2>Parece caro. <span class="it">No lo es.</span></h2>
-    <p>Déjanos tu nombre y tu tienda. Te contestamos por WhatsApp con capturas de lo que ve hoy un cliente tuyo y qué plan te encaja.</p>
+    <p>Déjanos tu nombre y tu web. Te contestamos por WhatsApp con capturas de lo que ve hoy un cliente tuyo y por dónde empezaríamos.</p>
     <form id="form" novalidate>
       <label>Tu nombre<input id="fn" autocomplete="name"></label>
-      <label>Tu tienda o tu Instagram<input id="fw" autocomplete="url" inputmode="url"></label>
+      <label>Tu web o tu Instagram<input id="fw" autocomplete="url" inputmode="url"></label>
       <p id="err" role="alert"></p>
       <button class="btn p" type="submit">Pedir mi diagnóstico por WhatsApp</button>
     </form>
   </div>
 </section>
 </main>
-<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="114" height="28"><span>Marketing completo para tiendas online · Precios sin IVA</span></footer>
+<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="114" height="28"><span>Webs, embudos y automatización para vender online · Precios sin IVA</span></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
@@ -335,50 +386,57 @@ footer img{height:28px;width:auto}
 document.documentElement.classList.add('js');
 const WA='34600235411';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-/* ====== PLANES: único sitio con precios y cantidades (sin IVA) ====== */
-const C=['cosmetica_led','joyeria_montaje','calzado_martillo','moda_espejo','beauty_mascara','cosmetica_ugc','calzado_cine'].map(x=>'media/poster_vfx_'+x+'.jpg');
-const G=['media/web_movil_led.jpg','media/web_movil_crema.jpg'];
-const PLANES=[
- {id:'tienda',n:'Tienda',eti:'',mes:490,ini:490,d:'Tu web cuidada y mejorando cada mes: lo primero que tiene que funcionar.',
-  r:'2 páginas al mes y la tienda vigilada',inc:['2 páginas de producto o landings nuevas o rehechas al mes','Revisión de la tienda en el móvil cada semana','Arreglos pequeños sin presupuesto aparte','Informe mensual de una página'],
-  sem:[{g:1,x:['Revisión móvil']},{x:['Revisión móvil','Arreglos']},{g:1,x:['Revisión móvil']},{x:['Arreglos','Informe']}]},
- {id:'crece',n:'Crecimiento',eti:'Recomendado para empezar',mes:890,ini:690,d:'La web y los anuncios trabajando juntos, con contenido nuevo para alimentarlos.',
-  r:'Todo Tienda, más anuncios y contenido',inc:['Todo lo del plan Tienda','Anuncios en Meta o TikTok gestionados cada semana','4 vídeos o creatividades de producto al mes','Informe mensual con lo gastado y lo conseguido'],
-  sem:[{g:1,c:1,x:['Anuncios']},{c:1,x:['Anuncios','Arreglos']},{g:1,c:1,x:['Anuncios']},{c:1,x:['Anuncios','Informe']}]},
- {id:'sistema',n:'Sistema',eti:'Plazas limitadas',mes:1490,ini:0,d:'Todo conectado: web, anuncios, WhatsApp automático y contenido, con un equipo que responde.',
-  r:'Todo Crecimiento, más automatización',inc:['Todo lo del plan Crecimiento','WhatsApp e Instagram automáticos: respuestas, carritos y seguimiento','Mejoras de la tienda: packs, carrito y página de inicio','8 vídeos o creatividades al mes','2 reuniones al mes'],
-  sem:[{g:1,c:2,x:['Anuncios','WhatsApp','Reunión']},{c:2,x:['Anuncios','Mejora de tienda']},{g:1,c:2,x:['Anuncios','WhatsApp','Reunión']},{c:2,x:['Anuncios','Informe']}]}
+/* ====== CASOS: único sitio con servicios y precios (sin IVA). Los precios son los que ha dado Gerard; lo demás, «a medida». ====== */
+const CASOS=[
+ {id:'tienda',c:'Tienda online',n:'Tiendas online y marcas de producto',d:'Shopify, dropshipping o marca propia: que la tienda convierta, que el tráfico llegue y que el cliente vuelva.',
+  g:[['Vender',['Landing de producto','Ficha de producto rehecha','Tienda Shopify completa','Página de inicio y colecciones','Packs, carrito y subida de ticket']],
+     ['Traer clientes',['Anuncios en Meta y TikTok','Creatividades y vídeo de producto','Página de destino para cada campaña']],
+     ['Automatizar',['Carritos recuperados por WhatsApp','ManyChat en Instagram: del comentario al mensaje con enlace','Chatbot de atención: tallas, envíos y devoluciones']],
+     ['Mantener',['Vigilancia de la tienda en el móvil','Arreglos y páginas nuevas cada mes','Informe mensual']]],
+  r:[['Empieza','Una landing de producto','100 €'],['Monta','Tienda completa o rediseño','desde 390 €'],['Automatiza','WhatsApp, ManyChat y chatbot','desde 97 €','/mes'],['Mantén','Cuidado mensual con páginas nuevas','desde 149 €','/mes']]},
+ {id:'info',c:'Infoproducto',n:'Infoproductores, academias y formadores',d:'Que entren contactos cada día, que se cualifiquen solos y que tu equipo de ventas sepa a quién llamar.',
+  g:[['Captar',['Landing de captación con regalo de entrada','Embudo de webinar: registro, recordatorios y repetición','Embudo de vídeo de venta','Anuncios en Meta']],
+     ['Convertir',['ManyChat que cualifica y agenda la llamada','Secuencias de email y WhatsApp','Página de venta y de pago']],
+     ['Gestionar',['CRM en GoHighLevel montado: fases, etiquetas y avisos','CRM o panel a medida','Panel de medición: contactos, llamadas y ventas']],
+     ['Mantener',['Optimización mensual del embudo','Apoyo en cada lanzamiento','Informe mensual']]],
+  r:[['Empieza','Una landing de captación','100 €'],['Monta','Embudo completo de webinar o vídeo','desde 1.490 €'],['Automatiza','ManyChat, CRM y seguimiento','desde 97 €','/mes'],['Mantén','Optimización e informe cada mes','desde 149 €','/mes']]},
+ {id:'marca',c:'Marca personal',n:'Marcas personales y creadores',d:'Que tu contenido no se quede en visitas: que cada publicación traiga conversaciones y contactos.',
+  g:[['Contenido',['Guiones de reels y carruseles','Edición de vídeo','Calendario del mes']],
+     ['Captar',['ManyChat: del comentario al mensaje privado','Landing para el enlace de la bio','Regalo de entrada: guía, plantilla o clase']],
+     ['Sistema',['CRM sencillo de contactos','Agenda de llamadas','Panel con lo que trae cada publicación']]],
+  r:[['Empieza','Landing para el enlace de la bio','100 €'],['Monta','Captación con ManyChat','a medida'],['Mantén','Contenido y automatización cada mes','desde 149 €','/mes']]},
+ {id:'agencia',c:'Agencia',n:'Agencias y equipos',d:'Producción en marca blanca y herramientas internas: tú vendes y nosotros lo montamos, sin aparecer.',
+  g:[['Producción',['Landings y tiendas en marca blanca','Embudos completos para tus clientes','Creatividades y vídeo']],
+     ['Automatización',['Flujos con n8n','ManyChat y chatbots para tus clientes','Informes automáticos']],
+     ['Herramientas',['Paneles y CRM a medida','Integraciones entre tus herramientas']]],
+  r:[['Empieza','Una pieza de prueba','100 €'],['Monta','Panel, CRM o automatización','a medida'],['Mantén','Bolsa mensual de producción','a medida']]}
 ];
-/* ====== fin de planes ====== */
-const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+/* ====== fin de casos ====== */
 const $=id=>document.getElementById(id);
-let plan='crece';
-$('pest').innerHTML=PLANES.map(p=>`<button role="tab" data-id="${p.id}" aria-selected="${p.id===plan}">${p.n}</button>`).join('');
+let caso='tienda';
+$('pest').innerHTML=CASOS.map(p=>`<button role="tab" data-id="${p.id}" aria-selected="${p.id===caso}">${p.c}</button>`).join('');
 function pinta(anima){
- const p=PLANES.find(x=>x.id===plan);let k=0,g=0;
- document.querySelectorAll('#pest button').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===plan));
- $('mesT').textContent='Tu mes con el plan '+p.n;$('mesR').textContent=p.r;
- $('semanas').innerHTML=p.sem.map((s,i)=>`<div class="sem"><b>Semana ${i+1}</b><div class="cosas">${Array.from({length:s.g||0},()=>`<span class="cosa pg"><img src="${G[g++%G.length]}" alt="Página de producto" loading="lazy" width="56" height="80"></span>`).join('')}${Array.from({length:s.c||0},()=>`<span class="cosa"><img src="${C[k++%C.length]}" alt="Clip de producto" loading="lazy" width="45" height="80"></span>`).join('')}${(s.x||[]).map(t=>`<span class="chip${t==='Informe'?' o':''}">${t}</span>`).join('')}</div></div>`).join('');
- $('pEti').textContent=p.eti;$('pNom').textContent=p.n;$('pDes').textContent=p.d;
- $('pMes').innerHTML=eur(p.mes)+'<small>/mes</small>';$('pIni').textContent=p.ini?eur(p.ini):'Incluido';
- $('pInc').innerHTML=p.inc.map(l=>`<li>${l}</li>`).join('');
- $('pBtn').textContent='Empezar con el plan '+p.n;$('pBtn').dataset.plan=p.n;
- $('pNota').textContent='Pago por adelantado. Sin permanencia.'+(p.id==='tienda'?'':' La inversión en anuncios va aparte.');
- if(anima&&window.gsap&&!reduce)gsap.from('#semanas .cosa,#semanas .chip',{opacity:0,y:14,scale:.9,duration:.7,ease:'expo.out',stagger:.035});
+ const p=CASOS.find(x=>x.id===caso);
+ document.querySelectorAll('#pest button').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===caso));
+ $('cTit').textContent=p.n;$('cDes').textContent=p.d;
+ $('cGru').innerHTML=p.g.map(g=>`<div class="grupo"><h4>${g[0]}</h4><ul>${g[1].map(l=>`<li>${l}</li>`).join('')}</ul></div>`).join('');
+ $('cRuta').innerHTML=p.r.map(t=>`<div class="tramo"><b>${t[0]}</b><span>${t[1]}</span><em>${t[2]}${t[3]?`<small>${t[3]}</small>`:''}</em></div>`).join('');
+ $('cBtn').textContent='Diagnóstico gratis para mi caso';$('cBtn').dataset.plan=p.c.toLowerCase();
+ if(anima&&window.gsap&&!reduce){gsap.from('#cGru .grupo',{opacity:0,y:22,duration:.7,ease:'expo.out',stagger:.06});gsap.from('#cRuta .tramo',{opacity:0,x:-18,duration:.7,ease:'expo.out',stagger:.09,delay:.15})}
 }
-$('pest').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;plan=b.dataset.id;pinta(true)});
+$('pest').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;caso=b.dataset.id;pinta(true)});
 pinta(false);
 const abre=t=>window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');
 let interes='';document.addEventListener('click',e=>{const a=e.target.closest('[data-plan]');if(a)interes=a.dataset.plan});
 $('form').addEventListener('submit',e=>{e.preventDefault();const n=$('fn').value.trim(),w=$('fw').value.trim();
- if(!n||!w){$('err').textContent='Escribe tu nombre y tu tienda o Instagram para poder mirarla.';return}$('err').textContent='';
- abre('Hola, soy '+n+'. Mi tienda es '+w+'. Quiero el diagnóstico gratis'+(interes?(interes==='a medida'?' y un presupuesto a medida':' y me interesa el plan '+interes):'')+'.')});
+ if(!n||!w){$('err').textContent='Escribe tu nombre y tu web o Instagram para poder mirarla.';return}$('err').textContent='';
+ abre('Hola, soy '+n+'. Mi web es '+w+'. Quiero el diagnóstico gratis'+(interes?' ('+interes+')':'')+'.')});
 addEventListener('scroll',()=>$('cabe').classList.toggle('on',scrollY>40),{passive:true});
 
 /* vídeos: solo se reproducen a la vista */
 if(matchMedia('(min-width:1100px)').matches&&!reduce)document.querySelectorAll('.abanico video').forEach(v=>{v.src=v.dataset.src;v.play().catch(()=>{})});
 const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
-if(!reduce)document.querySelectorAll('.clip video').forEach(v=>vo.observe(v));
+if(!reduce)document.querySelectorAll('.clip video,.capa video').forEach(v=>vo.observe(v));
 
 addEventListener('DOMContentLoaded',()=>{
  if(reduce||!window.gsap){document.documentElement.classList.remove('js');return}
@@ -392,6 +450,10 @@ addEventListener('DOMContentLoaded',()=>{
  gsap.fromTo('#paginas',{clipPath:'inset(0% 12% 0% 12% round 56px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:'#paginas',start:'top 95%',end:'top 35%',scrub:.5}});
  if(matchMedia('(hover:hover)').matches){const hx=gsap.quickTo('.halo','x',{duration:.9,ease:'power3'}),hy=gsap.quickTo('.halo','y',{duration:.9,ease:'power3'});
   addEventListener('pointermove',e=>{gsap.to('.halo',{opacity:1,duration:.5,overwrite:'auto'});hx(e.clientX);hy(e.clientY)},{passive:true})}
+ const capas=gsap.utils.toArray('.capa');
+ capas.forEach((c,i)=>{if(capas[i+1])gsap.to(c,{scale:.93,filter:'brightness(.5)',ease:'none',scrollTrigger:{trigger:capas[i+1],start:'top 88%',end:'top 18%',scrub:true}})});
+ gsap.from('.chat2 i',{opacity:0,y:18,duration:.6,stagger:.4,ease:'power3.out',scrollTrigger:{trigger:'.chat2',start:'top 78%',once:true}});
+ gsap.to('.pasos',{'--h':1,ease:'none',scrollTrigger:{trigger:'.pasos',start:'top 82%',end:'top 38%',scrub:.5}});
  const mm=gsap.matchMedia();
  mm.add('(min-width:1000px)',()=>{
   const c=$('carril'),sec=$('trabajos');sec.classList.add('pin');
