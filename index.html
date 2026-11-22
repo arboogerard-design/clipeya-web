@@ -3,547 +3,406 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clipeya AI Lab · Webs, embudos y automatización para vender online</title>
-<meta name="description" content="Tiendas, landings, embudos, CRM, ManyChat y contenido para tiendas online, infoproductores, marcas personales y agencias. Diagnóstico gratis.">
+<title>Clipeya AI Lab · Webs, embudos y automatización con el precio a la vista</title>
+<meta name="description" content="Webs, embudos, chat, CRM y automatización para negocios. Cada caso con sus dos packs y sus precios a la vista. Sin permanencia.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/clipeya_spark_favicon.svg">
 <link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Landing de Clipeya AI Lab v14 (22-nov-2026). Oferta por tipo de cliente. Servicios y precios: bloque CASOS del script (único sitio). Sin IVA. -->
+<!-- Landing de Clipeya AI Lab v15 (23-nov-2026), mejora de la v14. Se genera con construir.py a partir de plantilla.html + oferta.json + catalogo.json: no se edita a mano la oferta. Sin IVA. -->
 <style>
 @font-face{font-family:"Bricolage";src:url("fonts/bricolage-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
-@font-face{font-family:"Serif";src:url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@5.3.0/files/instrument-serif-latin-400-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
+@font-face{font-family:"Serif";src:url("fonts/instrument-serif-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
 @font-face{font-family:"Plex";src:url("fonts/plexsans-var.woff2") format("woff2");font-weight:100 700;font-display:swap}
-:root{--fondo:#0A0810;--sup:#120D18;--sup2:#1A1322;--crema:#F4E8D8;--oro:#D4AF37;--marca:#8F52D9;
- --tenue:rgba(244,232,216,.64);--linea:rgba(244,232,216,.13);--max:1200px;--pad:clamp(20px,5vw,56px);--r:20px;
- --sec:clamp(88px,12vw,168px);--e:cubic-bezier(.16,1,.3,1)}
+:root{--fondo:#0A0810;--sup:#17101F;--sup2:#201530;--ciruela:#3D1B5E;--crema:#F4E8D8;--oro:#D4AF37;--marca:#8F52D9;
+ --tenue:rgba(244,232,216,.68);--linea:rgba(244,232,216,.14);--max:1200px;--pad:clamp(20px,5vw,56px);--r:20px;
+ --sec:clamp(64px,9vw,136px);--e:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box;margin:0}
-html{background:var(--fondo);color:var(--crema);font:400 17px/1.55 "Plex",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{background:var(--fondo);color:var(--crema);font:400 17px/1.55 "Plex",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;scroll-behavior:smooth}
 body{overflow-x:clip;min-height:100dvh}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.06;mix-blend-mode:overlay;
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;mix-blend-mode:overlay;
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
-h1,h2,h3{font-family:"Bricolage",sans-serif;font-weight:700;letter-spacing:-.028em;text-wrap:balance}
-h1{font-size:clamp(2.8rem,6.2vw,5.5rem);line-height:.98}
-h2{font-size:clamp(2.1rem,5vw,4rem);line-height:1.02}
+h1,h2,h3,h4{font-family:"Bricolage",sans-serif;font-weight:700;letter-spacing:-.028em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.2vw,5.5rem);line-height:.98}
+h2{font-size:clamp(1.9rem,4.4vw,3.6rem);line-height:1.04}
 h3{font-size:1.3rem;line-height:1.15;letter-spacing:-.015em}
 .it{font-family:"Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.012em;color:var(--oro)}
 h1 .it{font-size:1.07em}
 p{text-wrap:pretty}
 a{color:inherit}
-img,video{display:block;max-width:100%}
+img{display:block;max-width:100%}
 .w{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-section{padding:var(--sec) 0;position:relative;scroll-margin-top:60px}
-.cab{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,64px);max-width:760px}
-.cab p{color:var(--tenue);font-size:1.08rem;max-width:54ch}
+section{padding:var(--sec) 0;position:relative;scroll-margin-top:56px}
+.cab{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,52px);max-width:760px}
+.cab p{color:var(--tenue);font-size:1.06rem;max-width:54ch}
 .k{font:600 .74rem "Plex";letter-spacing:.18em;text-transform:uppercase;color:var(--tenue)}
 .k::before{content:"";display:inline-block;width:22px;height:1px;background:var(--oro);vertical-align:middle;margin-right:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 1.7em;border-radius:999px;border:1px solid transparent;font:600 1rem "Plex";cursor:pointer;text-decoration:none;transition:transform .6s var(--e),border-color .3s,background .3s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:54px;padding:0 8px 0 1.7em;border-radius:999px;border:1px solid transparent;font:600 1rem "Plex";cursor:pointer;text-decoration:none;transition:transform .6s var(--e)}
 .btn.p{background:var(--crema);color:#0A0810}
-.btn.s{border-color:var(--linea);color:var(--crema)}
-@media(hover:hover){.btn:hover{transform:translateY(-3px)}.btn.s:hover{border-color:var(--crema)}}
+.btn .ar{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(10,8,16,.1);font-size:1.05rem;transition:transform .6s var(--e)}
+@media(hover:hover){.btn:hover{transform:translateY(-3px)}.btn:hover .ar{transform:translate(3px,-2px)}}
+.btn:active{transform:scale(.98)}
 :focus-visible{outline:2px solid var(--oro);outline-offset:3px}
-.tarjeta{background:var(--sup);border:1px solid var(--linea);border-radius:var(--r)}
+.vermas{display:inline-block;margin-top:6px;font:600 .98rem "Plex";color:var(--crema);text-decoration:none;border-bottom:1px solid var(--oro);padding:13px 0 12px;min-height:44px}
 
 /* cabecera */
-#cabe{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);transition:background .4s}
-#cabe.on{background:rgba(10,8,16,.82);backdrop-filter:blur(14px)}
-#cabe img{height:36px;width:auto}
-#cabe nav{display:flex;gap:30px;align-items:center;font-size:.92rem}
-#cabe nav a{text-decoration:none;color:var(--tenue)}
-#cabe nav a.btn{color:#0A0810;min-height:42px;padding:0 1.25em;font-size:.92rem}
+#cabe{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);transition:background .4s}
+#cabe.on{background:rgba(10,8,16,.86);backdrop-filter:blur(14px)}
+#cabe>a:first-child{display:flex;align-items:center;min-height:44px}
+#cabe img{height:34px;width:auto}
+#cabe nav{display:flex;gap:28px;align-items:center;font-size:.92rem}
+#cabe nav a{text-decoration:none;color:var(--tenue);padding:12px 0}
+#cabe nav a.btn{color:#0A0810;min-height:44px;padding:0 1.3em;font-size:.92rem}
 @media(max-width:820px){#cabe nav a:not(.btn){display:none}}
 
 /* portada */
 .hero{padding:0}
-.hero.sis{height:300vh}
-.pin{position:sticky;top:0;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 clamp(40px,7vh,84px);isolation:isolate;overflow:hidden;
- background:radial-gradient(80% 70% at 82% 34%,#2a1640 0%,#120c19 46%,#0A0810 80%)}
-.hero.sis .pin{height:100svh}
-#red{--mk:0;position:absolute;inset:0;width:100%;height:100%;z-index:-1;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,var(--mk)) 0,#000 30%,#000 60%,rgba(0,0,0,var(--mk)) 100%);mask-image:linear-gradient(180deg,rgba(0,0,0,var(--mk)) 0,#000 30%,#000 60%,rgba(0,0,0,var(--mk)) 100%)}
-#hTxt{will-change:transform,opacity}
-.nodos{position:absolute;inset:0;pointer-events:none}
-.nodos b{position:absolute;left:0;top:0;opacity:0;font:600 clamp(.82rem,1.3vw,1.1rem) "Bricolage";white-space:nowrap;padding:8px 15px;border-radius:999px;border:1px solid var(--linea);background:rgba(10,8,16,.72);will-change:transform}
-.nodos b.c{background:var(--crema);color:#0A0810;border-color:transparent}
-.lema{position:absolute;left:0;right:0;bottom:8vh;text-align:center;font:700 clamp(1.7rem,4.2vw,3.4rem)/1.05 "Bricolage";letter-spacing:-.025em;opacity:0;padding:0 20px;pointer-events:none}
-.baja{position:absolute;left:50%;bottom:18px;width:1px;height:34px;background:linear-gradient(var(--oro),transparent);animation:baja 1.8s ease-in-out infinite;display:none}
-.hero.sis .baja{display:block}
-@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-#pre{position:fixed;inset:0;z-index:90;background:var(--fondo);display:grid;place-items:center;animation:preF .8s 1.05s var(--e) forwards}
-#pre img{height:44px;width:auto;animation:preL .9s var(--e) both}
-#pre::after{content:"";position:absolute;left:50%;top:calc(50% + 44px);width:140px;height:1px;margin-left:-70px;background:var(--oro);transform-origin:left;animation:preB 1s ease-in-out both}
-@keyframes preF{to{transform:translateY(-100%);visibility:hidden}}
-@keyframes preL{from{opacity:0;transform:translateY(12px)}}
-@keyframes preB{from{transform:scaleX(0)}}
-.halo{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:1;opacity:0;will-change:transform;background:radial-gradient(circle,rgba(143,82,217,.16),transparent 62%)}
-@media(hover:none){.halo{display:none}}
-@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
-.piezas article,.pasos article{position:relative}
-.piezas article::after,.pasos article::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:conic-gradient(from var(--a),transparent 62%,var(--oro));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s;animation:gira 3.2s linear infinite paused}
-@media(hover:hover){.piezas article:hover::after,.pasos article:hover::after{opacity:1;animation-play-state:running}}
-@keyframes gira{to{--a:360deg}}
-@media(prefers-reduced-motion:reduce){#pre,.halo,.baja{display:none!important}}
-.hero .w{width:100%;display:grid;gap:44px;align-items:end}
-.hero h1{max-width:12ch;margin:20px 0 24px}
-.hero .sub{max-width:42ch;font-size:clamp(1.06rem,1.5vw,1.26rem);color:var(--tenue);margin-bottom:34px}
-.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
-.hero .dat{display:flex;flex-wrap:wrap;gap:8px 36px;margin-top:36px;padding-top:22px;border-top:1px solid var(--linea);font-size:.88rem;color:var(--tenue)}
-.hero .dat b{color:var(--crema);font-weight:600}
+.pin{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:110px 0 clamp(40px,8vh,84px);isolation:isolate;overflow:hidden;
+ background:radial-gradient(80% 70% at 82% 34%,var(--ciruela) 0%,#150E1C 50%,#0A0810 82%)}
+#red{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 30%,#000 55%,transparent 100%)}
+.hero .w{width:100%;display:grid;gap:16px;align-items:end}
+.hm{display:flex;gap:12px;justify-content:center;height:214px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent)}
+.hm img,.abanico img{border-radius:24px;border:4px solid #241a31;box-shadow:0 30px 60px -24px #000;background:var(--sup2)}
+.hm img{width:268px;height:auto;aspect-ratio:320/560;align-self:flex-start}
 .abanico{display:none}
+.hero .mu{font-size:.74rem;color:var(--tenue);margin-top:14px;max-width:46ch}
+.hero h1{max-width:13ch;margin:18px 0 22px}
+.hero .sub{max-width:44ch;font-size:clamp(1.06rem,1.5vw,1.24rem);color:var(--tenue);margin-bottom:30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center}
 @media(min-width:1100px){
- #red{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,var(--mk)) 42%,#000 72%);mask-image:linear-gradient(90deg,rgba(0,0,0,var(--mk)) 42%,#000 72%)}
- .hero .w{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
- .abanico{display:block;position:relative;height:min(72vh,660px);perspective:1400px}
- .abanico>*{position:absolute;bottom:0;width:46%;aspect-ratio:9/16;height:auto;object-fit:cover;object-position:top;border-radius:22px;box-shadow:0 50px 90px -30px #000,0 0 0 1px var(--linea)}
- .abanico>*:nth-child(1){left:0;transform:rotateY(18deg) rotateZ(-4deg) translateY(-6%);z-index:1;filter:brightness(.78)}
- .abanico>*:nth-child(2){left:27%;width:48%;z-index:3;transform:translateY(-14%)}
- .abanico>*:nth-child(3){right:0;transform:rotateY(-18deg) rotateZ(4deg) translateY(-2%);z-index:2;filter:brightness(.78)}}
+ #red{-webkit-mask-image:linear-gradient(90deg,transparent 42%,#000 72%);mask-image:linear-gradient(90deg,transparent 42%,#000 72%)}
+ .hero .w{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:44px}
+ .hm{display:none}
+ .abanico{display:block;position:relative;height:min(74vh,660px);perspective:1400px}
+ .abanico img{position:absolute;bottom:0;width:40%;height:auto;aspect-ratio:320/560;object-fit:cover}
+ .abanico img:nth-child(1){left:0;transform:rotateY(18deg) rotateZ(-4deg) translateY(-4%);z-index:1;filter:brightness(.8)}
+ .abanico img:nth-child(2){left:22%;width:56%;z-index:3;transform:translateY(-8%)}
+ .abanico img:nth-child(3){right:0;transform:rotateY(-18deg) rotateZ(4deg) translateY(-2%);z-index:2;filter:brightness(.8)}}
+@keyframes up{from{transform:translateY(34px)}}
+.hero .ht>*,.hm,.abanico img{animation:up 1.1s var(--e) both}
+.hm{animation-delay:.02s}
+.hero .k{animation-delay:.05s}.hero h1{animation-delay:.13s}.hero .sub{animation-delay:.21s}.hero .cta{animation-delay:.29s}
 
-/* trabajos */
-.carril{display:flex;gap:clamp(14px,2vw,26px);padding:0 var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;align-items:center}
-.carril::-webkit-scrollbar{display:none}
-.clip{flex:0 0 auto;width:min(70vw,320px);scroll-snap-align:center;position:relative;border-radius:var(--r);overflow:hidden;background:var(--sup);box-shadow:0 0 0 1px var(--linea)}
-.clip.an{width:min(84vw,480px)}
-.clip video{width:100%;aspect-ratio:9/16;object-fit:cover}
-.clip.an video{aspect-ratio:1/1}
-.clip figcaption{position:absolute;inset:auto 0 0 0;padding:64px 18px 16px;background:linear-gradient(transparent,rgba(10,8,16,.94));font:600 1rem "Bricolage"}
-.clip figcaption span{display:block;font:500 .7rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--oro);margin-bottom:4px}
-#trabajos>.cab{max-width:var(--max)}#trabajos>.cab>*{max-width:760px}
-.pista{margin:24px auto 0;font-size:.82rem;color:var(--tenue)}
-@media(min-width:1000px){#trabajos.pin .carril{overflow:visible;width:max-content;scroll-snap-type:none}}
+/* precios */
+#precios{background:var(--sup)}
+.sel{display:grid;gap:14px;margin-bottom:24px}
+.sel .fila{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sel .fila>span{flex:0 0 100%;font:600 .72rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+@media(min-width:760px){.sel .fila>span{flex:0 0 120px}}
+.sel button{font:600 .98rem "Plex";color:var(--crema);background:none;border:1px solid var(--linea);min-height:46px;padding:0 20px;border-radius:999px;cursor:pointer;transition:background .5s var(--e),color .5s var(--e),border-color .3s}
+@media(hover:hover){.sel button:hover{border-color:var(--crema)}}
+.sel button[aria-pressed=true]{background:var(--crema);color:#0A0810;border-color:var(--crema)}
+.ficha{display:grid;gap:16px;animation:up .8s var(--e) both}
+.ficha[hidden]{display:none}
+.ficha>header{display:grid;gap:8px;margin-bottom:4px}
+.ficha>header h3{font-size:clamp(1.5rem,3vw,2.2rem)}
+.ficha>header p{color:var(--tenue);max-width:60ch}
+.suelta,.diag{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;padding:18px 22px;border-radius:var(--r);border:1px dashed rgba(212,175,55,.5)}
+.suelta b,.diag b{grid-row:span 2;font:700 clamp(2.2rem,5vw,2.8rem)/1 "Bricolage";color:var(--oro);letter-spacing:-.03em}
+.suelta strong,.diag strong{font:600 1.05rem "Bricolage"}
+.suelta p,.diag p{color:var(--tenue);font-size:.95rem}
+.suelta .et,.diag .et{font:600 .68rem "Plex";letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);display:block;margin-bottom:2px}
+.packs{display:grid;gap:14px}
+@media(min-width:900px){.packs{grid-template-columns:1fr 1fr}}
+.pk{padding:6px;border-radius:30px;background:rgba(244,232,216,.04);border:1px solid var(--linea)}
+.pk>div{height:100%;display:grid;align-content:start;gap:14px;background:var(--sup2);border-radius:24px;padding:clamp(22px,3vw,34px);box-shadow:inset 0 1px 0 rgba(244,232,216,.09)}
+.pk .tr{font:600 .7rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--oro)}
+.pk h4{font-size:clamp(1.5rem,2.6vw,1.95rem);line-height:1.05}
+.pk .para{color:var(--tenue)}
+.pr{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:16px 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.pr b{font:700 clamp(2.6rem,6vw,3.1rem)/1 "Bricolage";letter-spacing:-.035em;color:var(--oro)}
+.pr small{font:500 .86rem "Plex";color:var(--tenue)}
+.pr .mas{font:600 1.05rem "Bricolage";color:var(--crema)}
+.pk ul{list-style:none;padding:0;display:grid;gap:10px;font-size:.96rem}
+.pk li{padding-left:24px;position:relative}
+.pk li::before{content:"";position:absolute;left:0;top:.72em;width:11px;height:2px;background:var(--oro)}
+.aparte{font-size:.86rem;color:var(--tenue)}
+.ficha .btn{justify-self:start;margin-top:4px}
+.diag{margin-top:18px}
 
-/* qué hacemos */
-.piezas{display:grid;gap:14px}
-@media(min-width:700px){.piezas{grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.piezas{grid-template-columns:repeat(4,1fr)}}
-.piezas article{overflow:hidden;display:flex;flex-direction:column}
-.piezas img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-bottom:1px solid var(--linea)}
-.piezas article>div:last-child{padding:22px 22px 26px}
-.piezas .chat{aspect-ratio:4/3;background:var(--sup2);border-bottom:1px solid var(--linea);display:flex;flex-direction:column;justify-content:center;gap:7px;padding:16px}
-.chat i{font:500 .74rem/1.3 "Plex";font-style:normal;padding:7px 11px;border-radius:12px 12px 12px 3px;background:#2a2136;align-self:flex-start;max-width:86%}
-.chat i.n{align-self:flex-end;border-radius:12px 12px 3px 12px;background:var(--crema);color:#0A0810}
-.piezas p{color:var(--tenue);font-size:.95rem;margin-top:8px}
-@media(max-width:699px){.piezas article{flex-direction:row}.piezas img{width:34%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--linea)}.piezas article>div:last-child{padding:18px;flex:1}.piezas .chat{width:34%;flex:0 0 34%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--linea);padding:8px;gap:5px}.chat i{font-size:.5rem;padding:4px 6px}.piezas img{flex:0 0 34%}}
-.pila{display:grid;gap:22px}
-.capa{position:sticky;top:calc(78px + var(--i)*12px);display:grid;background:var(--sup);border:1px solid var(--linea);border-radius:28px;overflow:hidden;transform-origin:50% 0;will-change:transform}
-.capa .tx{padding:clamp(22px,4.4vw,60px);display:flex;flex-direction:column;justify-content:center;gap:14px}
-.capa .num{font:400 clamp(2.2rem,4vw,3.4rem)/1 "Serif",Georgia,serif;font-style:italic;color:var(--oro)}
-.capa h3{font-size:clamp(1.9rem,4vw,3.3rem);line-height:1}
-.capa p{color:var(--tenue);max-width:46ch}
-.capa ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.capa li{font:500 .8rem "Plex";padding:7px 13px;border-radius:999px;border:1px solid var(--linea)}
-.capa .vis{position:relative;background:var(--sup2);min-height:230px;overflow:hidden;display:grid;place-items:center}
-.capa .vis>img,.capa .vis>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
-.capa .vis>video{object-position:center}
-.capa:nth-child(2) .vis>img{object-position:left top}
-.capa .vis.tel{background:radial-gradient(80% 90% at 60% 40%,#2a1640,var(--sup2) 75%)}
-.capa .vis.tel>img{position:absolute;inset:auto;top:12%;left:50%;width:min(40%,230px);height:auto;border-radius:22px;border:5px solid #241a31;box-shadow:0 40px 70px -30px #000;transform:translateX(-78%) rotate(-5deg)}
-.capa .vis.tel>img+img{top:22%;transform:translateX(-12%) rotate(5deg)}
-.chat2{width:min(88%,380px);display:flex;flex-direction:column;gap:10px;padding:24px 0}
-.chat2 i{font:500 clamp(.86rem,1.2vw,1rem)/1.35 "Plex";font-style:normal;padding:11px 16px;border-radius:18px 18px 18px 5px;background:#2a2136;align-self:flex-start;max-width:84%}
-.chat2 i.n{align-self:flex-end;border-radius:18px 18px 5px 18px;background:var(--crema);color:#0A0810}
-.chat2 small{align-self:center;margin-top:10px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
-@media(min-width:900px){.capa{grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(68vh,540px)}.capa:nth-child(even) .tx{order:2}}
-@media(max-width:899px){.capa .vis{order:-1;height:230px}.capa .vis.tel>img{top:10%;width:34%}.capa .vis.tel>img+img{top:20%}}
-.cinta{overflow:hidden;padding:clamp(40px,7vw,90px) 0 0;white-space:nowrap}
-.cinta div{display:inline-flex;gap:.6em;animation:cinta 34s linear infinite;font:700 clamp(3rem,10vw,8.5rem)/1 "Bricolage";letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(244,232,216,.3)}
-.cinta em{font-family:"Serif",Georgia,serif;font-style:italic;font-weight:400;color:var(--oro);-webkit-text-stroke:0}
-@keyframes cinta{to{transform:translateX(-50%)}}
-.pasos{position:relative}
-@media(min-width:900px){.pasos::after{content:"";position:absolute;left:0;right:0;top:-22px;height:2px;background:linear-gradient(90deg,var(--oro),rgba(212,175,55,.2));transform:scaleX(var(--h,0));transform-origin:left}}
-@media(prefers-reduced-motion:reduce){.cinta div{animation:none}.pasos{--h:1}}
-/* páginas */
-#paginas{background:var(--sup)}
-.moviles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,48px);perspective:1600px;max-width:980px}
-.movil{border-radius:clamp(16px,3vw,36px);overflow:hidden;border:5px solid #241a31;box-shadow:0 60px 90px -40px #000;background:var(--sup2)}
-.movil img{width:100%;height:auto}
-.moviles figcaption{margin-top:14px;font-size:.84rem;color:var(--tenue)}
-.moviles figcaption b{display:block;color:var(--crema);font:600 1rem "Bricolage"}
+/* lo que no hacemos */
+.nohago{display:grid;gap:0;border-top:1px solid var(--linea);list-style:none;padding:0}
+@media(min-width:900px){.nohago{grid-template-columns:1fr 1fr;column-gap:56px}}
+.nohago li{display:grid;grid-template-columns:34px 1fr;gap:4px 14px;padding:20px 0;border-bottom:1px solid var(--linea)}
+.nohago i{grid-row:span 2;width:30px;height:30px;border-radius:50%;border:1px solid rgba(212,175,55,.55);display:grid;place-items:center;font:600 1rem "Plex";font-style:normal;color:var(--oro)}
+.nohago b{font:600 1.15rem/1.2 "Bricolage"}
+.nohago span{color:var(--tenue);font-size:.96rem}
+.letra{margin-top:22px;display:grid;gap:6px;color:var(--tenue);font-size:.88rem;max-width:70ch}
 
-/* planes */
-.pest{display:inline-flex;padding:5px;border-radius:999px;border:1px solid var(--linea);background:var(--sup);margin-bottom:28px;max-width:100%}
-.pest button{font:600 .98rem "Plex";color:var(--tenue);background:none;border:0;min-height:46px;padding:0 clamp(16px,3vw,30px);border-radius:999px;cursor:pointer;transition:background .4s,color .4s}
-.pest button[aria-selected=true]{background:var(--crema);color:#0A0810}
-.plan{display:grid;gap:18px}
-@media(min-width:1000px){.plan{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px;align-items:stretch}}
-.mes{padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column}
-.mes .tit{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap}
-.mes .tit span{font-size:.82rem;color:var(--tenue)}
-.semanas{display:grid;gap:10px;grid-auto-rows:1fr;flex:1}
-.sem{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:center;padding:12px;border-radius:14px;background:var(--sup2);min-height:104px}
-.sem>b{font:600 .72rem "Plex";letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
-.sem .cosas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.cosa{height:var(--ch,72px);width:calc(var(--ch,72px)*.5625);border-radius:10px;overflow:hidden;position:relative;flex:0 0 auto;box-shadow:0 0 0 1px var(--linea)}
-.cosa img{height:100%;width:100%;object-fit:cover}
-.cosa.pg{width:calc(var(--ch,72px)*.72)}
-@media(min-width:1000px){.semanas{--ch:104px}.sem{grid-template-columns:96px 1fr;padding:14px 16px}}
-@media(max-width:480px){.sem{grid-template-columns:58px 1fr;gap:8px;padding:10px}.sem>b{font-size:.62rem;letter-spacing:.1em}.sem .cosas{gap:6px}.semanas{--ch:66px}}
-.cosa.pg img{object-position:top}
-.cosa.pg::after{content:"Página";position:absolute;inset:auto 0 0 0;font:600 .56rem "Plex";letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:3px 0;background:rgba(10,8,16,.86);color:var(--oro)}
-.chip{font:500 .8rem "Plex";padding:8px 12px;border-radius:999px;border:1px solid var(--linea);color:var(--crema);white-space:nowrap}
-.chip.o{border-color:rgba(212,175,55,.5);color:var(--oro)}
-.ficha{padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:16px}
-.ficha .eti{align-self:flex-start;font:600 .68rem "Plex";letter-spacing:.14em;text-transform:uppercase;color:#0A0810;background:var(--oro);padding:5px 10px;border-radius:999px}
-.ficha .eti:empty{display:none}
-.ficha p{color:var(--tenue)}
-.precio{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.precio div{padding:14px 16px;border-radius:14px;background:var(--sup2)}
-.precio .c{font:700 clamp(1.6rem,2.6vw,2.1rem) "Bricolage";color:var(--oro);line-height:1.1;padding:0;background:none}
-.precio .c small{font:500 .8rem "Plex";color:var(--tenue)}
-.precio .e{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);margin-top:2px;padding:0;background:none}
-.ficha ul{list-style:none;padding:0;display:grid;gap:9px;font-size:.96rem;flex:1;align-content:start}
-.ficha li{padding-left:24px;position:relative}
-.ficha li::before{content:"";position:absolute;left:0;top:.72em;width:11px;height:2px;background:var(--oro)}
-.ficha small{font-size:.78rem;color:var(--tenue)}
-.medida{margin-top:18px;padding:clamp(22px,3vw,34px);display:grid;gap:18px;align-items:center}
-@media(min-width:900px){.medida{grid-template-columns:1fr auto}}
-.medida p{color:var(--tenue);max-width:62ch;margin-top:8px}
-
-.pest{overflow-x:auto;scrollbar-width:none}.pest::-webkit-scrollbar{display:none}.pest button{white-space:nowrap;flex:0 0 auto}
-.caso{padding:clamp(20px,3.4vw,44px);display:grid;gap:clamp(24px,3vw,40px)}
-.cTop h3{font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.04}
-.cTop p{color:var(--tenue);max-width:60ch;margin-top:12px;font-size:1.06rem}
-.grupos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
-.grupo{background:var(--sup2);border-radius:16px;padding:20px 20px 22px}
-.grupo h4{font:600 .72rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--oro);margin-bottom:14px}
-.grupo ul{list-style:none;padding:0;display:grid;gap:10px;font-size:.95rem}
-.grupo li{padding-left:20px;position:relative;line-height:1.35}
-.grupo li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:2px;background:var(--oro)}
-.ruta{display:grid;gap:10px;counter-reset:r}
-@media(min-width:900px){.ruta{grid-auto-flow:column;grid-auto-columns:1fr;gap:0}}
-.tramo{position:relative;padding:18px 18px 18px 0;border-top:1px solid var(--linea);counter-increment:r}
-@media(min-width:900px){.tramo{padding:22px 20px 4px 0}.tramo::after{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--oro)}}
-.tramo b{display:block;font:600 .7rem "Plex";letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
-.tramo b::before{content:"0" counter(r) " · ";color:var(--oro)}
-.tramo span{display:block;font:600 1.02rem/1.25 "Bricolage";margin:8px 0 6px}
-.tramo em{font:700 clamp(1.3rem,2.2vw,1.8rem) "Bricolage";font-style:normal;color:var(--oro)}
-.tramo em small{font:500 .78rem "Plex";color:var(--tenue)}
-.vol{background:var(--sup2);border-radius:16px;padding:20px}
-.vol p{font:600 .72rem "Plex";letter-spacing:.14em;text-transform:uppercase;color:var(--oro);margin-bottom:14px;line-height:1.5}
-.vol div{display:grid;gap:10px}
-@media(min-width:700px){.vol div{grid-template-columns:repeat(3,1fr)}}
-.vol span{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;border:1px solid var(--linea);border-radius:12px}
-.vol b{font:500 .95rem "Plex"}
-.vol em{font:700 1.3rem "Bricolage";font-style:normal;color:var(--oro);white-space:nowrap}
-.vol em small{font:500 .74rem "Plex";color:var(--tenue)}
-.cPie{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
-.cPie small{color:var(--tenue);font-size:.8rem;max-width:60ch}
-/* proceso y condiciones */
-#proceso{background:var(--sup)}
+/* cómo trabajamos */
+#como{background:var(--sup)}
 .pasos{display:grid;gap:14px;counter-reset:p}
-@media(min-width:900px){.pasos{grid-template-columns:repeat(4,1fr)}}
-.pasos article{padding:26px 24px;background:var(--sup2);border:1px solid var(--linea);border-radius:var(--r);counter-increment:p}
-.pasos article::before{content:"0" counter(p);font:400 2.6rem "Serif",Georgia,serif;font-style:italic;color:var(--oro);display:block;margin-bottom:14px;line-height:1}
-.pasos p{color:var(--tenue);font-size:.95rem;margin-top:8px}
-.cond{display:grid;gap:0;max-width:880px;border-top:1px solid var(--linea)}
-.cond div{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid var(--linea)}
-@media(min-width:800px){.cond div{grid-template-columns:260px 1fr;gap:30px}}
-.cond b{font:600 1.05rem "Bricolage"}
-.cond span{color:var(--tenue)}
+@media(min-width:900px){.pasos{grid-template-columns:repeat(3,1fr)}}
+.pasos article{padding:26px 24px;background:var(--sup2);border:1px solid var(--linea);border-radius:var(--r);counter-increment:p;display:grid;gap:8px;align-content:start}
+.pasos article::before{content:"0" counter(p);font:400 2.4rem/1 "Serif",Georgia,serif;font-style:italic;color:var(--oro)}
+.pasos p{color:var(--tenue);font-size:.96rem}
+.pasos .pc{font:700 1.4rem "Bricolage";color:var(--oro)}
+
+/* catálogo */
+.fam{border-top:1px solid var(--linea)}
+.fam:last-of-type{border-bottom:1px solid var(--linea)}
+.fam summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 0;font:600 1.15rem "Bricolage"}
+.fam summary::-webkit-details-marker{display:none}
+.fam summary small{font:500 .8rem "Plex";color:var(--tenue)}
+.fam summary::after{content:"+";font:400 1.6rem/1 "Plex";color:var(--oro);transition:transform .5s var(--e);flex:0 0 auto}
+.fam[open] summary::after{transform:rotate(45deg)}
+.fam summary>span{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;flex:1}
+.srv{display:grid;gap:2px 20px;padding:14px 0;border-top:1px solid var(--linea)}
+@media(min-width:760px){.srv{grid-template-columns:1.1fr 1.4fr auto;align-items:baseline}}
+.srv b{font:600 1rem "Plex"}
+.srv span{color:var(--tenue);font-size:.93rem}
+.srv em{font:700 1.1rem "Bricolage";font-style:normal;color:var(--oro);white-space:nowrap}
+.fam .srvs{padding-bottom:10px}
+
+
+/* ficha: situación del cliente */
+.ficha>header .k{margin-bottom:2px}
+.ficha>header h3{font-size:clamp(1.55rem,3.4vw,2.4rem);line-height:1.08;max-width:24ch}
+.ficha.sal{opacity:0;transition:opacity .2s var(--e)}
+/* pack 1 discreto, pack 2 protagonista (crema) */
+.pk.t1{padding:0;background:none;border:1px solid var(--linea);border-radius:26px}
+.pk.t1>div{background:transparent;box-shadow:none}
+.pk.t1 .pr b{font-size:clamp(2.1rem,5vw,2.5rem)}
+.pk.t2{background:var(--crema);border:0}
+.pk.t2>div{background:var(--crema);color:#17101F;box-shadow:none}
+.pk.t2 .tr{color:var(--ciruela)}
+.pk.t2 .para{color:#4a3a55}
+.pk.t2 .pr{border-color:rgba(23,16,31,.18)}
+.pk.t2 .pr b{color:var(--ciruela)}
+.pk.t2 .pr small{color:#5a4a63}.pk.t2 .pr .mas{color:#17101F}
+.pk.t2 li::before{background:var(--ciruela)}
+@media(min-width:900px){.packs{grid-template-columns:5fr 6fr;align-items:stretch}}
+/* así queda */
+.asi{margin-top:22px;display:grid;gap:14px;background:radial-gradient(90% 90% at 20% 0,#FBF3E7,#F4E8D8 55%,#E6D5BD);color:#17101F;border-radius:30px;padding:clamp(20px,3vw,36px)}
+@media(max-width:760px){.asi{margin-left:calc(-1*var(--pad));margin-right:calc(-1*var(--pad));border-radius:0;padding:26px 16px 18px}}
+.asi h4{font-size:clamp(1.3rem,2.6vw,1.8rem)}
+.asi>p{color:#4a3a55;font-size:.92rem;max-width:62ch}
+.asi .fil{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 14px;scrollbar-width:none}
+.asi .fil::-webkit-scrollbar{display:none}
+.asi figure{flex:0 0 300px;scroll-snap-align:start;display:grid;gap:12px;align-content:start}
+@media(min-width:900px){.asi .fil{overflow:visible;gap:24px}.asi figure{flex:0 0 320px}}
+.asi .mk{border-radius:26px;border:6px solid #17101F;overflow:hidden;background:var(--sup2);box-shadow:0 26px 40px -22px rgba(23,16,31,.55);aspect-ratio:320/560}
+.asi .mk img,.asi .mk video{width:100%;height:100%;object-fit:cover;display:block}
+.asi figcaption{font-size:.86rem;color:#4a3a55;line-height:1.35}
+.asi figcaption b{display:block;color:#17101F;font:600 1rem "Bricolage";margin-bottom:2px}
+/* lo que no hacemos en crema */
+#nohago{background:radial-gradient(90% 70% at 15% 0,#FBF3E7,var(--crema) 60%,#EBDCC6);color:#17101F}
+#nohago .k{color:#5a4a63}#nohago .k::before{background:var(--ciruela)}
+#nohago h2 .it{color:var(--ciruela)}
+.nohago{border-top-color:rgba(23,16,31,.2)}
+.nohago li{border-bottom-color:rgba(23,16,31,.2)}
+.nohago i{border-color:var(--ciruela);color:var(--ciruela)}
+.nohago span{color:#4a3a55}
+.letra{color:#4a3a55}
+/* cómo trabajamos: líneas, no tarjetas */
+#como{background:var(--fondo)}
+.pasos{gap:0;border-top:1px solid var(--linea)}
+.pasos article{background:none;border:0;border-radius:0;border-bottom:1px solid var(--linea);padding:24px 0}
+@media(min-width:900px){.pasos article{border-bottom:0;border-right:1px solid var(--linea);padding:28px 28px 8px}.pasos article:first-child{padding-left:0}.pasos article:last-child{border-right:0}}
+.pasos article::before{font-size:3.2rem}
 
 /* cierre */
-#hablar{background:radial-gradient(70% 90% at 50% 100%,#2a1640,#0A0810 72%);text-align:center}
-#hablar h2{font-size:clamp(2.6rem,7vw,5.6rem);margin:16px auto 20px}
-#hablar p{color:var(--tenue);max-width:50ch;margin:0 auto 34px}
-#form{display:grid;gap:12px;max-width:500px;margin:0 auto;text-align:left}
-#form label{font-size:.8rem;color:var(--tenue)}
-#form input{width:100%;min-height:52px;border-radius:14px;border:1px solid var(--linea);background:rgba(10,8,16,.6);color:var(--crema);padding:0 16px;font:400 16px "Plex";margin-top:6px}
-#form #err{color:#ffb4a8;font-size:.86rem;min-height:1.3em;margin:0}
-footer{padding:36px var(--pad) 56px;border-top:1px solid var(--linea);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--tenue)}
+#hablar{background:radial-gradient(70% 90% at 50% 100%,var(--ciruela),#0A0810 74%);text-align:center}
+#hablar h2{font-size:clamp(2rem,6vw,4.6rem);margin:16px auto 18px;max-width:18ch}
+#hablar p{color:var(--tenue);max-width:50ch;margin:0 auto 30px}
+footer{padding:32px var(--pad) 48px;border-top:1px solid var(--linea);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--tenue)}
 footer img{height:28px;width:auto}
-.js .rv{opacity:0;transform:translateY(30px)}
-@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}*{transition:none!important}}
+@keyframes rise{from{transform:translateY(28px)}to{transform:none}}
+@supports (animation-timeline:view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div id="pre" aria-hidden="true"><img src="img/logo.svg" alt="" width="180" height="44"></div>
-<div class="halo" aria-hidden="true"></div>
 <header id="cabe">
-  <a href="#top" aria-label="Clipeya AI Lab, inicio"><img src="img/logo.svg" alt="Clipeya AI Lab" width="147" height="36"></a>
-  <nav><a href="#servicios">Qué hacemos</a><a href="#casos">Tu caso</a><a href="#proceso">Cómo trabajamos</a><a class="btn p" href="#hablar">Diagnóstico gratis</a></nav>
+  <a href="#top" aria-label="Clipeya AI Lab, inicio"><img src="img/logo.svg" alt="Clipeya AI Lab" width="139" height="34"></a>
+  <nav><a href="#precios">Precios</a><a href="#nohago">Lo que no hacemos</a><a href="#como">Cómo trabajamos</a><a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">WhatsApp</a></nav>
 </header>
 
 <main id="top">
 <section class="hero"><div class="pin">
   <canvas id="red" aria-hidden="true"></canvas>
-  <div class="w" id="hTxt">
-    <div>
-      <span class="k">Webs, embudos y automatización para vender online</span>
-      <h1>Tu producto es bueno. <span class="it">Que lo parezca.</span></h1>
-      <p class="sub">Tu web, tus anuncios, tu WhatsApp y tu contenido, llevados por un solo equipo. Con precio cerrado y sin permanencia.</p>
-      <div class="cta"><a class="btn p" href="#casos">Ver mi caso</a><a class="btn s" href="#servicios">Qué hacemos</a></div>
-      <div class="dat"><span><b>Desde 100 €</b> la primera pieza</span><span><b>Sin permanencia</b></span><span><b>Diagnóstico gratis</b></span></div>
+  <div class="w">
+    <div class="hm" aria-hidden="true"><img src="media/muestra_tienda.jpg" alt="" width="960" height="1680" fetchpriority="high"></div>
+    <div class="ht">
+      <span class="k">Webs, embudos, chat y CRM para negocios</span>
+      <h1>Precios a la vista. <span class="it">Sin pedir presupuesto.</span></h1>
+      <p class="sub">Una pieza suelta cuesta 100 €. Ningún pack pasa de 990 € de inicio. Sin permanencia y con tus cuentas a tu nombre.</p>
+      <div class="cta"><a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a><a class="vermas" href="#precios">Ver los precios ↓</a></div>
+      <p class="mu">Las pantallas de la portada son muestras hechas por Clipeya, con marcas y datos de ejemplo.</p>
     </div>
-    <div class="abanico" aria-hidden="true">
-      <img src="media/web_movil_crema.jpg" alt="" width="390" height="844">
-      <img src="media/web_movil_led.jpg" alt="" width="390" height="844">
-      <video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" data-src="media/vfx_joyeria_montaje.mp4"></video>
-    </div>
+    <div class="abanico" aria-hidden="true"><img src="media/muestra_webinar.jpg" alt="" width="960" height="1680"><img src="media/muestra_tienda.jpg" alt="" width="960" height="1680"><img src="media/muestra_panel.jpg" alt="" width="960" height="1680"></div>
   </div>
-  <div class="nodos" aria-hidden="true"><b>Web y tienda</b><b>Anuncios</b><b>Automatización</b><b>Contenido</b><b class="c">Tu negocio</b></div>
-  <p class="lema" aria-hidden="true">Cuatro piezas que <span class="it">se hablan.</span></p>
-  <i class="baja" aria-hidden="true"></i>
 </div></section>
 
-<section id="servicios">
-  <div class="w"><div class="cab rv"><span class="k">Qué hacemos</span><h2>Cuatro piezas, <span class="it">un solo equipo.</span></h2><p>Lo que un negocio online necesita para vender, sin repartirlo entre cuatro proveedores que no se hablan.</p></div></div>
-  <div class="w pila">
-    <article class="capa" style="--i:0">
-      <div class="tx"><span class="num">01</span><h3>Web y tienda</h3><p>Tu tienda Shopify, tus fichas de producto y tus landings, pensadas primero para el móvil, que es donde se decide la compra.</p><ul><li>Tienda Shopify</li><li>Fichas de producto</li><li>Landings de campaña</li></ul></div>
-      <div class="vis tel"><img src="media/web_movil_calzado.jpg" alt="Ficha de producto hecha por Clipeya, vista en un móvil" loading="lazy" width="390" height="844"><img src="media/web_movil_crema.jpg" alt="" loading="lazy" width="390" height="844"></div>
-    </article>
-    <article class="capa" style="--i:1">
-      <div class="tx"><span class="num">02</span><h3>Anuncios</h3><p>Campañas en Meta y TikTok llevadas cada semana, con la página a la que llegan hecha por el mismo equipo. Lo que promete el anuncio es lo que encuentra el cliente.</p><ul><li>Meta</li><li>TikTok</li><li>Página de destino</li></ul></div>
-      <div class="vis"><img src="media/srv_landing.jpg" alt="Landing de campaña hecha por Clipeya" loading="lazy"></div>
-    </article>
-    <article class="capa" style="--i:2">
-      <div class="tx"><span class="num">03</span><h3>Automatización</h3><p>WhatsApp e Instagram que contestan al momento, recuperan carritos y hacen el seguimiento sin que tengas que estar tú delante.</p><ul><li>WhatsApp</li><li>Instagram</li><li>Carritos y seguimiento</li></ul></div>
-      <div class="vis"><div class="chat2" aria-hidden="true"><i>Hola, ¿tenéis la talla 42?</i><i class="n">Sí, quedan 3. ¿Te la aparto?</i><i>Vale, perfecto</i><i class="n">Hecho. Aquí tienes el enlace de pago.</i><small>Ejemplo de conversación automática</small></div></div>
-    </article>
-    <article class="capa" style="--i:3">
-      <div class="tx"><span class="num">04</span><h3>Contenido</h3><p>Vídeos e imágenes de producto para alimentar los anuncios y las redes cada mes, con el estilo de tu marca.</p><ul><li>Vídeo de producto</li><li>Creatividades</li><li>Guía de estilo</li></ul></div>
-      <div class="vis"><video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" src="media/vfx_joyeria_montaje.mp4"></video></div>
-    </article>
-  </div>
-</section>
-
-<section id="paginas">
+<section id="precios">
   <div class="w">
-    <div class="cab rv"><span class="k">Páginas</span><h2>Donde se decide la compra: <span class="it">en el móvil.</span></h2><p>Tres páginas nuestras tal como se ven en un teléfono. En la primera pantalla: qué es, por qué lo quiero y dónde pulso.</p></div>
-    <div class="moviles">
-      <figure><div class="movil"><img src="media/web_movil_led.jpg" alt="Landing de venta de una máscara LED vista en el móvil" width="390" height="844" loading="lazy"></div><figcaption><b>Fototerapia LED</b>Landing de venta</figcaption></figure>
-      <figure><div class="movil"><img src="media/web_movil_crema.jpg" alt="Página de producto de cosmética vista en el móvil" width="390" height="844" loading="lazy"></div><figcaption><b>Cosmética</b>Página de producto</figcaption></figure>
-      <figure><div class="movil"><img src="media/web_movil_calzado.jpg" alt="Ficha de producto de calzado de seguridad vista en el móvil" width="390" height="844" loading="lazy"></div><figcaption><b>Calzado de seguridad</b>Ficha de producto</figcaption></figure>
+    <div class="cab rv"><span class="k">Precios</span><h2>Elige quién eres <span class="it">o qué necesitas.</span></h2><p>Cada caso tiene sus dos packs, con el inicio y la mensualidad a la vista. Precios sin IVA.</p></div>
+    <div class="sel rv" id="sel">
+      <div class="fila"><span>Soy…</span><button type="button" data-id="tienda" data-titulo="Tiendas e-commerce" aria-pressed="false">Tienda</button><button type="button" data-id="info" data-titulo="Infoproductores y academias" aria-pressed="false">Infoproductor</button><button type="button" data-id="marca" data-titulo="Marca personal y creadores" aria-pressed="false">Marca personal</button><button type="button" data-id="agencia" data-titulo="Agencias (marca blanca)" aria-pressed="false">Agencia</button></div>
+      <div class="fila"><span>Necesito…</span><button type="button" data-id="auto" data-titulo="Pack de automatización" aria-pressed="false">Automatización</button><button type="button" data-id="chat" data-titulo="Pack de conversaciones" aria-pressed="false">Conversaciones</button><button type="button" data-id="crm" data-titulo="Pack de CRM y medición" aria-pressed="false">CRM y medición</button></div>
+    </div>
+    <div id="fichas" aria-live="polite">
+      <article class="ficha" id="f-tienda">
+        <header><span class="k">Tiendas e-commerce</span><h3>Vendes un producto físico en tu tienda online o quieres abrirla.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Landing de producto</strong></div><p>Una página de producto para el móvil, lista en 3 días. La puerta de entrada.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Tienda en marcha</h4><p class="para">Tienda nueva o que no convierte.</p><p class="pr"><b>390 €</b><small>de inicio</small><span class="mas">+ 197 €<small>/mes</small></span></p><ul><li>Tienda Shopify montada o rehecha, hasta 10 productos, pagos, envíos y textos legales</li><li>2 landings de producto</li><li>Carritos recuperados por WhatsApp</li><li>Cada mes: tienda vigilada en el móvil, arreglos, informe y 1 página nueva o rehecha</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Tienda que crece</h4><p class="para">Tienda que ya vende y quiere más pedidos por visita.</p><p class="pr"><b>690 €</b><small>de inicio</small><span class="mas">+ 349 €<small>/mes</small></span></p><ul><li>Todo lo de «Tienda en marcha»</li><li>ManyChat en Instagram y chatbot de atención</li><li>Panel con tus ventas, carritos y páginas</li><li>Cada mes: todo vigilado, 2 páginas nuevas o rehechas y una revisión contigo</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: anuncios en Meta y TikTok, creatividades y vídeo de producto.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_tienda.jpg" alt="Ficha de producto: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Ficha de producto</b>Muestra de ficha de tienda. Marca y producto de ejemplo.</figcaption></figure><figure><div class="mk"><img src="media/muestra_chat.jpg" alt="Conversación automática: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Conversación automática</b>Muestra de chat que pasa a una persona lo que no sabe.</figcaption></figure><figure><div class="mk"><video muted loop playsinline preload="none" poster="media/joyeria_poster.jpg" data-src="media/vfx_joyeria_montaje.mp4" aria-label="Vídeo de producto de muestra"></video></div><figcaption><b>Vídeo de producto</b>Muestra de vídeo de producto. Es un servicio a medida, fuera de los packs.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-info" hidden>
+        <header><span class="k">Infoproductores y academias</span><h3>Vendes un curso, una mentoría o una formación y necesitas llamadas o registros.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Landing de captación</strong></div><p>Una página de registro para el móvil con el formulario conectado.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Embudo de captación</h4><p class="para">Tienes audiencia y no la conviertes en contactos.</p><p class="pr"><b>490 €</b><small>de inicio</small><span class="mas">+ 149 €<small>/mes</small></span></p><ul><li>Página de registro y página de gracias</li><li>ManyChat que entrega el regalo y recoge el contacto</li><li>CRM con fases de venta y avisos a tu equipo</li><li>Cada mes: embudo vigilado, arreglos, cambios pequeños e informe</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Embudo de webinar o vídeo de venta</h4><p class="para">Lanzas con directo o con vídeo de venta y agenda de llamadas.</p><p class="pr"><b>990 €</b><small>de inicio</small><span class="mas">+ 349 €<small>/mes</small></span></p><ul><li>Todo lo de «Embudo de captación»</li><li>Páginas de confirmación, venta y repetición</li><li>Recordatorios y seguimiento de cada contacto</li><li>Panel de registros, asistencia, llamadas y ventas</li><li>Cada mes: todo vigilado, 1 lanzamiento preparado contigo (cuenta como 2 piezas) y revisión</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: anuncios en Meta, grabar el webinar o el vídeo.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_webinar.jpg" alt="Página de registro: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Página de registro</b>Muestra de registro a un webinar. Datos de ejemplo.</figcaption></figure><figure><div class="mk"><img src="media/muestra_panel.jpg" alt="CRM con fases: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>CRM con fases</b>Muestra de panel con contactos inventados.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-marca" hidden>
+        <header><span class="k">Marca personal y creadores</span><h3>Tienes seguidores y quieres que cada publicación traiga conversaciones.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Página personal</strong></div><p>Tu página de enlace bien hecha, para el móvil.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Tu enlace vende</h4><p class="para">Publicas y los contactos se pierden.</p><p class="pr"><b>290 €</b><small>de inicio</small><span class="mas">+ 97 €<small>/mes</small></span></p><ul><li>Página personal y landing de captación</li><li>ManyChat: comentan una palabra y reciben el recurso por privado</li><li>Lista de contactos ordenada</li><li>Cada mes: todo vigilado y cambio de palabra y recurso en 2 publicaciones</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Sistema de contactos</h4><p class="para">Ya te escriben y quieres vender un servicio o un producto.</p><p class="pr"><b>590 €</b><small>de inicio</small><span class="mas">+ 197 €<small>/mes</small></span></p><ul><li>Todo lo de «Tu enlace vende»</li><li>Embudo con regalo de entrada y seguimiento</li><li>CRM con fases y agenda de llamadas</li><li>Panel de contactos por publicación</li><li>Cada mes: todo vigilado, 1 automatización nueva y una revisión contigo</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: edición de vídeo y contenido, anuncios.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_enlace.jpg" alt="Página personal: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Página personal</b>Muestra de página de enlaces. Nombre y texto de ejemplo.</figcaption></figure><figure><div class="mk"><img src="media/muestra_chat.jpg" alt="Conversación automática: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Conversación automática</b>Muestra de chat que pasa a una persona lo que no sabe.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-agencia" hidden>
+        <header><span class="k">Agencias (marca blanca)</span><h3>Tienes clientes y necesitas un equipo que entregue con tu nombre.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Pieza de prueba</strong></div><p>Una landing para uno de tus clientes, para que veas cómo trabajamos.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Equipo 5</h4><p class="para">Hasta 5 piezas al mes.</p><p class="pr"><b>490 €</b><small>/mes · sin cuota de inicio</small></p><ul><li>5 piezas al mes: landings, páginas de tienda o automatizaciones</li><li>Entrega con tu marca, sin la nuestra</li><li>Canal directo y plazo de 3 días por pieza</li><li>Informe mensual que puedes reenviar a tu cliente</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Equipo 10</h4><p class="para">Hasta 10 piezas al mes.</p><p class="pr"><b>890 €</b><small>/mes · sin cuota de inicio</small></p><ul><li>10 piezas al mes</li><li>Embudos completos y CRM contados como 3 piezas</li><li>Prioridad en la cola y revisión semanal contigo</li><li>Lo mismo de «Equipo 5»</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: más de 10 piezas al mes: a medida, anuncios y contenido.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_tienda.jpg" alt="Ficha de producto: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Ficha de producto</b>Muestra de ficha de tienda. Marca y producto de ejemplo.</figcaption></figure><figure><div class="mk"><img src="media/muestra_webinar.jpg" alt="Página de registro: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Página de registro</b>Muestra de registro a un webinar. Datos de ejemplo.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-auto" hidden>
+        <header><span class="k">Pack de automatización</span><h3>Tu equipo pierde horas en tareas que se repiten cada día.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Una automatización</strong></div><p>Una tarea repetida que deja de hacerse a mano: un aviso, un traspaso de datos, un recordatorio.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Tareas en automático</h4><p class="para">Para quitarte lo que más tiempo te come.</p><p class="pr"><b>290 €</b><small>de inicio</small><span class="mas">+ 97 €<small>/mes</small></span></p><ul><li>3 automatizaciones de tareas repetidas</li><li>Avisos al equipo cuando pasa algo importante</li><li>Informe automático cada mes con tus números</li><li>Cada mes: vigilancia, arreglo cuando una herramienta cambia e informe</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Negocio en automático</h4><p class="para">Para que el día a día funcione sin estar encima.</p><p class="pr"><b>590 €</b><small>de inicio</small><span class="mas">+ 197 €<small>/mes</small></span></p><ul><li>Todo lo de «Tareas en automático»</li><li>Recordatorios por SMS o WhatsApp de citas, directos y pagos</li><li>Manual de operación paso a paso de tu proceso</li><li>Cada mes: todo vigilado, 1 automatización nueva y una revisión contigo</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: app o asistente con IA a medida, cuotas de las herramientas y coste de los mensajes.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_chat.jpg" alt="Conversación automática: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Conversación automática</b>Muestra de chat que pasa a una persona lo que no sabe.</figcaption></figure><figure><div class="mk"><img src="media/muestra_panel.jpg" alt="CRM con fases: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>CRM con fases</b>Muestra de panel con contactos inventados.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-chat" hidden>
+        <header><span class="k">Pack de conversaciones</span><h3>Te escriben por Instagram, WhatsApp o la web y no llegas a contestar a todos.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Comentario a privado</strong></div><p>Comentan una palabra en tu publicación y reciben el recurso por privado.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Responde solo</h4><p class="para">Para no dejar a nadie sin respuesta.</p><p class="pr"><b>290 €</b><small>de inicio</small><span class="mas">+ 149 €<small>/mes</small></span></p><ul><li>ManyChat: del comentario al contacto guardado</li><li>Chatbot de atención en web o WhatsApp que pasa a una persona lo que no sabe</li><li>Lista de contactos ordenada</li><li>Cada mes: conversaciones vigiladas, respuestas nuevas, ajustes e informe</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Chat que vende</h4><p class="para">Para que la conversación acabe en cita o en compra.</p><p class="pr"><b>590 €</b><small>de inicio</small><span class="mas">+ 249 €<small>/mes</small></span></p><ul><li>Todo lo de «Responde solo»</li><li>Chat que cualifica al contacto y agenda la llamada</li><li>Agenda conectada y recordatorios antes de la cita</li><li>Cada mes: todo vigilado, 1 flujo nuevo y una revisión contigo</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: anuncios para llenar el chat, coste de los mensajes de WhatsApp y cuota de ManyChat.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_chat.jpg" alt="Conversación automática: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Conversación automática</b>Muestra de chat que pasa a una persona lo que no sabe.</figcaption></figure><figure><div class="mk"><img src="media/muestra_enlace.jpg" alt="Página personal: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Página personal</b>Muestra de página de enlaces. Nombre y texto de ejemplo.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
+      <article class="ficha" id="f-crm" hidden>
+        <header><span class="k">Pack de CRM y medición</span><h3>No sabes cuántos contactos entran, quién los lleva ni de dónde vienen las ventas.</h3></header>
+        <div class="suelta"><b>100 €</b><div><span class="et">Para empezar, una pieza suelta</span><strong>Agenda de llamadas conectada</strong></div><p>Calendario con preguntas previas y avisos a tu equipo.</p></div>
+        <div class="packs"><div class="pk t1"><div><span class="tr">Pack 1</span><h4>Contactos en orden</h4><p class="para">Para dejar de perder contactos.</p><p class="pr"><b>490 €</b><small>de inicio</small><span class="mas">+ 97 €<small>/mes</small></span></p><ul><li>CRM con fases de venta, etiquetas y avisos</li><li>Agenda de llamadas conectada</li><li>2 automatizaciones de seguimiento</li><li>Cada mes: CRM vigilado, orden, arreglos e informe</li></ul></div></div><div class="pk t2"><div><span class="tr">Pack 2</span><h4>Todo medido</h4><p class="para">Para decidir con números y no a ojo.</p><p class="pr"><b>890 €</b><small>de inicio</small><span class="mas">+ 249 €<small>/mes</small></span></p><ul><li>Todo lo de «Contactos en orden»</li><li>Panel con contactos, llamadas, ventas y anuncios en una pantalla</li><li>Panel comercial por persona: qué cierra cada vendedor y de qué fuente</li><li>Informe automático cada semana</li><li>Cada mes: panel y CRM vigilados, mejoras pequeñas y una revisión contigo</li></ul></div></div></div>
+        <p class="aparte">Aparte, no incluido: cuota del CRM o del servidor, anuncios.</p>
+        <div class="asi"><h4>Así queda lo que entregamos</h4><p>Muestras hechas por Clipeya, con marcas y datos de ejemplo. No son trabajos de clientes.</p><div class="fil"><figure><div class="mk"><img src="media/muestra_panel.jpg" alt="CRM con fases: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>CRM con fases</b>Muestra de panel con contactos inventados.</figcaption></figure><figure><div class="mk"><img src="media/muestra_chat.jpg" alt="Conversación automática: muestra hecha por Clipeya" width="960" height="1680" loading="lazy" decoding="async"></div><figcaption><b>Conversación automática</b>Muestra de chat que pasa a una persona lo que no sabe.</figcaption></figure></div></div>
+        <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="casos">
+<section id="nohago">
   <div class="w">
-    <div class="cab rv"><span class="k">Tu caso</span><h2>Dinos qué vendes y te enseñamos <span class="it">el camino.</span></h2><p>Cada negocio necesita piezas distintas. Elige el tuyo: verás todo lo que hacemos para él, por dónde se empieza y cuánto cuesta.</p></div>
-    <div class="pest" role="tablist" aria-label="Tipo de negocio" id="pest"></div>
-    <div class="tarjeta caso" aria-live="polite">
-      <div class="cTop"><h3 id="cTit"></h3><p id="cDes"></p></div>
-      <div class="grupos" id="cGru"></div>
-      <div class="ruta" id="cRuta"></div>
-      <div class="vol" id="cVol"></div>
-      <div class="cPie"><small>Precios sin IVA. Pago por adelantado. Sin permanencia. Lo que pone «a medida» se presupuesta en 48 horas, con precio cerrado.</small><a class="btn p" href="#hablar" id="cBtn"></a></div>
+    <div class="cab rv"><span class="k">Lo que no hacemos</span><h2>Lo que no vas a ver <span class="it">con nosotros.</span></h2></div>
+    <ul class="nohago rv">
+      <li><i aria-hidden="true">×</i><b>Pedirte una reunión para decirte el precio.</b><span>Todos los precios de cada caso están en esta página.</span></li>
+      <li><i aria-hidden="true">×</i><b>Atarte con permanencia.</b><span>Sin permanencia: si paras, el mes pagado se termina de entregar.</span></li>
+      <li><i aria-hidden="true">×</i><b>Quedarnos con tus cuentas.</b><span>Todo lo entregado es tuyo y tus cuentas siguen a tu nombre.</span></li>
+      <li><i aria-hidden="true">×</i><b>Prometerte cifras de ventas.</b><span>No prometemos cifras de ventas.</span></li>
+      <li><i aria-hidden="true">×</i><b>Empezar sin cobrar antes.</b><span>Pago por adelantado: el inicio antes de empezar y cada mes al comenzarlo.</span></li>
+    </ul>
+    <div class="letra rv">
+      <p>Si pagas el año entero por adelantado, pagas 10 meses y te llevas 12.</p>
+      <p>Precios sin IVA. Anuncios, cuotas de herramientas y coste de mensajes los pagas tú al proveedor.</p>
     </div>
   </div>
 </section>
 
-<section id="proceso">
+<section id="como">
   <div class="w">
-    <div class="cab rv"><span class="k">Cómo trabajamos</span><h2>Del sí <span class="it">a la primera entrega.</span></h2></div>
+    <div class="cab rv"><span class="k">Cómo trabajamos</span><h2>Diagnóstico, pack <span class="it">y cuidado mensual.</span></h2></div>
     <div class="pasos">
-      <article class="rv"><h3>Eliges por dónde empezar</h3><p>Te mandamos el presupuesto en PDF. Con el primer pago abrimos un grupo de WhatsApp contigo.</p></article>
-      <article class="rv"><h3>Puesta en marcha</h3><p>Nos invitas a tu tienda (nunca contraseñas por mensaje) y estudiamos tu producto y tu cliente.</p></article>
-      <article class="rv"><h3>Entregas cada semana</h3><p>Recibes el trabajo por semanas. Lo revisas tú antes de publicar nada.</p></article>
-      <article class="rv"><h3>Informe y siguiente mes</h3><p>Un informe de una página con lo hecho y lo que proponemos. Sigues o paras: tú decides.</p></article>
+      <article class="rv"><h3>Diagnóstico</h3><span class="pc">97 €</span><p>Revisamos tu caso en el móvil y te decimos los 3 fallos que más ventas te quitan y qué pack te toca. Si contratas, los 97 € se descuentan del inicio.</p></article>
+      <article class="rv"><h3>Pack</h3><p>Eliges el pack de tu caso. Pagas el inicio antes de empezar y montamos lo que pone en su lista.</p></article>
+      <article class="rv"><h3>Cuidado mensual</h3><p>Cada mes pagas al comenzarlo. Vigilancia, arreglos e informe, según tu pack.</p></article>
     </div>
   </div>
 </section>
 
-<section id="trabajos">
-  <div class="w cab rv"><span class="k">Contenido</span><h2>Y el contenido, <span class="it">también.</span></h2><p>Vídeos de producto para tus anuncios y tus redes, hechos por el mismo equipo que lleva tu web.</p></div>
-  <div class="carril" id="carril">
-    <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_cosmetica_led.jpg" src="media/vfx_cosmetica_led.mp4"></video><figcaption><span>Cosmética</span>Clip de uso con subtítulos</figcaption></figure>
-    <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_joyeria_montaje.jpg" src="media/vfx_joyeria_montaje.mp4"></video><figcaption><span>Joyería</span>Montaje de producto</figcaption></figure>
-    <figure class="clip an"><video muted loop playsinline preload="none" poster="media/poster_vfx_calzado_martillo.jpg" src="media/vfx_calzado_martillo.mp4"></video><figcaption><span>Calzado de seguridad</span>Prueba de resistencia</figcaption></figure>
-    <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_moda_espejo.jpg" src="media/vfx_moda_espejo.mp4"></video><figcaption><span>Moda</span>Gancho a cámara</figcaption></figure>
-    <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_beauty_mascara.jpg" src="media/vfx_beauty_mascara.mp4"></video><figcaption><span>Belleza</span>Producto en uso</figcaption></figure>
-    <figure class="clip"><video muted loop playsinline preload="none" poster="media/poster_vfx_cosmetica_ugc.jpg" src="media/vfx_cosmetica_ugc.mp4"></video><figcaption><span>Cosmética</span>Vídeo en primera persona</figcaption></figure>
-    <figure class="clip an"><video muted loop playsinline preload="none" poster="media/poster_vfx_calzado_cine.jpg" src="media/vfx_calzado_cine.mp4"></video><figcaption><span>Calzado</span>Plano de cine</figcaption></figure>
-  </div>
-  <p class="pista w">Desliza para ver más →</p>
-</section>
-
-<section id="condiciones">
+<section id="mas">
   <div class="w">
-    <div class="cab rv"><span class="k">Condiciones</span><h2>Claro <span class="it">desde el principio.</span></h2></div>
-    <div class="cond">
-      <div><b>Pago</b><span>Por adelantado: cada trabajo antes de empezarlo y cada mensualidad al comenzar el mes. Precios sin IVA.</span></div>
-      <div><b>Permanencia</b><span>Ninguna. Si paras, el mes pagado se termina de entregar y el siguiente no se cobra.</span></div>
-      <div><b>Lo que entregamos es tuyo</b><span>Páginas, vídeos y automatizaciones son tuyos en cuanto están pagados, y tus cuentas siguen siempre a tu nombre.</span></div>
-      <div><b>Lo que no incluye</b><span>La inversión en anuncios y las cuotas de tus herramientas (Shopify y similares): las pagas tú al proveedor.</span></div>
-      <div><b>Lo que no prometemos</b><span>Cifras de ventas. Decimos qué hacemos, qué entregamos y cuándo.</span></div>
+    <div class="cab rv"><span class="k">Y si necesitas otra cosa</span><h2>El resto de servicios, <span class="it">con su precio.</span></h2><p>Cada servicio suelto, por si lo tuyo no encaja en un pack. Precios sin IVA.</p></div>
+    <div class="rv">
+      <details class="fam"><summary><span>Páginas y tiendas</span><small>4</small></summary><div class="srvs"><div class="srv"><b>Landing o página de producto</b><span>Una página para el móvil, lista en 3 días.</span><em>100 €</em></div><div class="srv"><b>Tienda Shopify montada o rehecha</b><span>Hasta 10 productos, pagos, envíos y textos legales.</span><em>390 €</em></div><div class="srv"><b>Página personal o de enlaces</b><span>Tu enlace de la bio convertido en una página que capta.</span><em>100 €</em></div><div class="srv"><b>Cuidado mensual de la web o tienda</b><span>Vigilancia en el móvil, arreglos e informe.</span><em>49 €/mes</em></div></div></details>
+      <details class="fam"><summary><span>Embudos</span><small>4</small></summary><div class="srvs"><div class="srv"><b>Embudo de captación con regalo</b><span>Registro, página de gracias y entrega automática del regalo.</span><em>300 € + 49 €/mes</em></div><div class="srv"><b>Embudo de vídeo de venta</b><span>Página del vídeo, seguimiento y avisos a quien llama.</span><em>600 € + 97 €/mes</em></div><div class="srv"><b>Embudo de webinar en directo</b><span>Registro, recordatorios, sala, repetición y oferta.</span><em>700 € + 97 €/mes</em></div><div class="srv"><b>Agenda de llamadas conectada</b><span>Calendario, preguntas previas y avisos al equipo.</span><em>100 €</em></div></div></details>
+      <details class="fam"><summary><span>Conversaciones automáticas</span><small>5</small></summary><div class="srvs"><div class="srv"><b>Comentan una palabra y reciben el recurso por privado</b><span>ManyChat en Instagram: del comentario al contacto guardado.</span><em>100 € + 49 €/mes</em></div><div class="srv"><b>Chat que cualifica y agenda la llamada</b><span>Preguntas, puntuación del contacto y cita en el calendario.</span><em>200 € + 97 €/mes</em></div><div class="srv"><b>Carritos recuperados por WhatsApp</b><span>Mensaje al que dejó el carrito, con su enlace para acabar.</span><em>200 € + 49 €/mes</em></div><div class="srv"><b>Chatbot de atención en web o WhatsApp</b><span>Responde lo de siempre y pasa a una persona lo que no sabe.</span><em>300 € + 97 €/mes</em></div><div class="srv"><b>Recordatorios por SMS o WhatsApp</b><span>Citas, directos y pagos: aviso antes y después.</span><em>200 € + 49 €/mes</em></div></div></details>
+      <details class="fam"><summary><span>Automatización de procesos</span><small>3</small></summary><div class="srvs"><div class="srv"><b>Automatización de una tarea repetida</b><span>Avisos al equipo, pasar datos entre herramientas, tareas que hoy se hacen a mano.</span><em>100 €</em></div><div class="srv"><b>Informe automático cada semana o mes</b><span>Un PDF con tus números, sin pedirlo.</span><em>100 € + 49 €/mes</em></div><div class="srv"><b>Manual de operación paso a paso</b><span>La lista de comprobación de un lanzamiento o de una entrega.</span><em>200 €</em></div></div></details>
+      <details class="fam"><summary><span>CRM y paneles</span><small>3</small></summary><div class="srvs"><div class="srv"><b>CRM con fases de venta</b><span>Cada contacto en su fase, con etiquetas y avisos.</span><em>300 € + 49 €/mes</em></div><div class="srv"><b>Panel de medición</b><span>Contactos, llamadas, ventas y anuncios en una pantalla.</span><em>400 € + 97 €/mes</em></div><div class="srv"><b>Panel comercial por persona</b><span>Qué cierra cada vendedor, de qué fuente y por qué no se compra.</span><em>300 € + 49 €/mes</em></div></div></details>
+      <details class="fam"><summary><span>Captación de clientes</span><small>2</small></summary><div class="srvs"><div class="srv"><b>Radar de clientes potenciales</b><span>50 negocios de tu nicho, cada uno con sus 3 fallos y el mensaje para escribirle.</span><em>200 €</em></div><div class="srv"><b>Diagnóstico de tu tienda, web o embudo</b><span>Los 3 fallos que más ventas te quitan. Se descuenta si contratas.</span><em>97 €</em></div></div></details>
+      <details class="fam"><summary><span>A medida</span><small>3</small></summary><div class="srvs"><div class="srv"><b>App o asistente con IA para tu negocio</b><span>Una herramienta propia: por ejemplo, pegas un producto y te monta su página.</span><em>a medida</em></div><div class="srv"><b>Anuncios y creatividades</b><span>Campañas en Meta o TikTok y las piezas para anunciar.</span><em>a medida</em></div><div class="srv"><b>Contenido: reels, carruseles y vídeo de producto</b><span>Piezas con el estilo de tu marca.</span><em>a medida</em></div></div></details>
     </div>
   </div>
 </section>
-
-<div class="cinta" aria-hidden="true"><div><span>Web y tienda</span><em>·</em><span>Anuncios</span><em>·</em><span>Automatización</span><em>·</em><span>Contenido</span><em>·</em><span>Web y tienda</span><em>·</em><span>Anuncios</span><em>·</em><span>Automatización</span><em>·</em><span>Contenido</span><em>·</em></div></div>
 
 <section id="hablar">
   <div class="w">
-    <span class="k">Diagnóstico gratis</span>
-    <h2>Parece caro. <span class="it">No lo es.</span></h2>
-    <p>Déjanos tu nombre y tu web. Te contestamos por WhatsApp con capturas de lo que ve hoy un cliente tuyo y por dónde empezaríamos.</p>
-    <form id="form" novalidate>
-      <label>Tu nombre<input id="fn" autocomplete="name"></label>
-      <label>Tu web o tu Instagram<input id="fw" autocomplete="url" inputmode="url"></label>
-      <p id="err" role="alert"></p>
-      <button class="btn p" type="submit">Pedir mi diagnóstico por WhatsApp</button>
-    </form>
+    <span class="k">Hablamos por WhatsApp</span>
+    <h2>Si ya sabes qué pack te toca, <span class="it">escríbenos.</span></h2>
+    <p>Si no lo sabes, el diagnóstico cuesta 97 € y se descuenta si contratas.</p>
+    <a class="btn p wa" href="https://wa.me/34600235411?text=Hola%2C%20quiero%20ver%20qu%C3%A9%20pack%20me%20toca." target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="ar" aria-hidden="true">↗</span></a>
   </div>
 </section>
 </main>
-<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="114" height="28"><span>Webs, embudos y automatización para vender online · Precios sin IVA</span></footer>
+<footer><img src="img/logo.svg" alt="Clipeya AI Lab" width="114" height="28"><span>Webs, embudos, chat y CRM para negocios · Precios sin IVA</span></footer>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/SplitText.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" defer></script>
 <script>
-document.documentElement.classList.add('js');
 const WA='34600235411';
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-/* ====== CASOS: único sitio con servicios y precios (sin IVA). Los precios son los que ha dado Gerard; lo demás, «a medida». ====== */
-const CASOS=[
- {id:'tienda',c:'Tienda online',n:'Tiendas online y marcas de producto',d:'Shopify, dropshipping o marca propia: que la tienda convierta, que el tráfico llegue y que el cliente vuelva.',
-  g:[['Vender',['Landing de producto','Ficha de producto rehecha','Tienda Shopify completa','Página de inicio y colecciones','Packs, carrito y subida de ticket']],
-     ['Traer clientes',['Anuncios en Meta y TikTok','Creatividades y vídeo de producto','Página de destino para cada campaña']],
-     ['Automatizar',['Carritos recuperados por WhatsApp','ManyChat en Instagram: del comentario al mensaje con enlace','Chatbot de atención: tallas, envíos y devoluciones']],
-     ['Mantener',['Vigilancia de la tienda en el móvil','Arreglos y páginas nuevas cada mes','Informe mensual']]],
-  r:[['Empieza','Una landing de producto','100 €'],['Monta','Tienda completa o rediseño','desde 390 €'],['Automatiza','WhatsApp, ManyChat y chatbot','desde 97 €','/mes'],['Mantén','Cuidado mensual con páginas nuevas','desde 149 €','/mes']],
-  v:['Mensualidad según volumen: vigilancia, arreglos e informe, más páginas nuevas o rehechas',[['1 página al mes','149 €'],['4 páginas al mes','349 €'],['8 páginas al mes','599 €']]]},
- {id:'info',c:'Infoproducto',n:'Infoproductores, academias y formadores',d:'Que entren contactos cada día, que se cualifiquen solos y que tu equipo de ventas sepa a quién llamar.',
-  g:[['Captar',['Landing de captación con regalo de entrada','Embudo de webinar: registro, recordatorios y repetición','Embudo de vídeo de venta','Anuncios en Meta']],
-     ['Convertir',['ManyChat que cualifica y agenda la llamada','Secuencias de email y WhatsApp','Página de venta y de pago']],
-     ['Gestionar',['CRM en GoHighLevel montado: fases, etiquetas y avisos','CRM o panel a medida','Panel de medición: contactos, llamadas y ventas']],
-     ['Mantener',['Optimización mensual del embudo','Apoyo en cada lanzamiento','Informe mensual']]],
-  r:[['Empieza','Una landing de captación','100 €'],['Monta','Embudo completo de webinar o vídeo','a medida'],['Automatiza','ManyChat, CRM y seguimiento','desde 97 €','/mes'],['Mantén','Optimización e informe cada mes','desde 149 €','/mes']]},
- {id:'marca',c:'Marca personal',n:'Marcas personales y creadores',d:'Que tu contenido no se quede en visitas: que cada publicación traiga conversaciones y contactos.',
-  g:[['Contenido',['Guiones de reels y carruseles','Edición de vídeo','Calendario del mes']],
-     ['Captar',['ManyChat: del comentario al mensaje privado','Landing para el enlace de la bio','Regalo de entrada: guía, plantilla o clase']],
-     ['Sistema',['CRM sencillo de contactos','Agenda de llamadas','Panel con lo que trae cada publicación']]],
-  r:[['Empieza','Landing para el enlace de la bio','100 €'],['Monta','Captación con ManyChat','a medida'],['Mantén','Contenido y automatización cada mes','desde 149 €','/mes']]},
- {id:'agencia',c:'Agencia',n:'Agencias y equipos',d:'Producción en marca blanca y herramientas internas: tú vendes y nosotros lo montamos, sin aparecer.',
-  g:[['Producción',['Landings y tiendas en marca blanca','Embudos completos para tus clientes','Creatividades y vídeo']],
-     ['Automatización',['Flujos con n8n','ManyChat y chatbots para tus clientes','Informes automáticos']],
-     ['Herramientas',['Paneles y CRM a medida','Integraciones entre tus herramientas']]],
-  r:[['Empieza','Una pieza de prueba','100 €'],['Monta','Panel, CRM o automatización','a medida'],['Mantén','Bolsa mensual de producción','desde 449 €','/mes']],
-  v:['Bolsa mensual en marca blanca: landings, fichas o páginas de embudo, las que necesites ese mes',[['5 piezas al mes','449 €'],['10 piezas al mes','799 €'],['Más volumen','a medida']]]}
-];
-/* ====== fin de casos ====== */
-const $=id=>document.getElementById(id);
-let caso='tienda';
-$('pest').innerHTML=CASOS.map(p=>`<button role="tab" data-id="${p.id}" aria-selected="${p.id===caso}">${p.c}</button>`).join('');
-function pinta(anima){
- const p=CASOS.find(x=>x.id===caso);
- document.querySelectorAll('#pest button').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===caso));
- $('cTit').textContent=p.n;$('cDes').textContent=p.d;
- $('cGru').innerHTML=p.g.map(g=>`<div class="grupo"><h4>${g[0]}</h4><ul>${g[1].map(l=>`<li>${l}</li>`).join('')}</ul></div>`).join('');
- $('cRuta').innerHTML=p.r.map(t=>`<div class="tramo"><b>${t[0]}</b><span>${t[1]}</span><em>${t[2]}${t[3]?`<small>${t[3]}</small>`:''}</em></div>`).join('');
- $('cVol').innerHTML=p.v?`<p>${p.v[0]}</p><div>${p.v[1].map(t=>`<span><b>${t[0]}</b><em>${t[1]}${t[1].includes('€')?'<small>/mes</small>':''}</em></span>`).join('')}</div>`:'';$('cVol').hidden=!p.v;
- $('cBtn').textContent='Diagnóstico gratis para mi caso';$('cBtn').dataset.plan=p.c.toLowerCase();
- if(anima&&window.gsap&&!reduce){gsap.from('#cGru .grupo',{opacity:0,y:22,duration:.7,ease:'expo.out',stagger:.06});gsap.from('#cVol span',{opacity:0,y:14,duration:.6,ease:'expo.out',stagger:.07,delay:.3});gsap.from('#cRuta .tramo',{opacity:0,x:-18,duration:.7,ease:'expo.out',stagger:.09,delay:.15})}
+const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+const links=[...document.querySelectorAll('a.wa')];
+const btns=[...document.querySelectorAll('#sel button')],fichas=[...document.querySelectorAll('.ficha')];
+function elige(id,usuario){
+ btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id));
+ const b=btns.find(x=>x.dataset.id===id);
+ if(usuario)links.forEach(a=>a.href=wa('Hola, me interesa la ficha «'+b.dataset.titulo+'». Quiero ver qué pack me toca.'));
+ document.querySelectorAll('#f-'+id+' img').forEach(i=>{i.loading='eager'});
+ const cambia=()=>{fichas.forEach(f=>{f.hidden=f.id!=='f-'+id;f.classList.remove('sal')})};
+ const act=fichas.find(f=>!f.hidden);
+ if(act&&usuario&&act.id!=='f-'+id&&!matchMedia('(prefers-reduced-motion: reduce)').matches){act.classList.add('sal');setTimeout(cambia,180)}else cambia();
 }
-$('pest').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;caso=b.dataset.id;pinta(true)});
-pinta(false);
-const abre=t=>window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');
-let interes='';document.addEventListener('click',e=>{const a=e.target.closest('[data-plan]');if(a)interes=a.dataset.plan});
-$('form').addEventListener('submit',e=>{e.preventDefault();const n=$('fn').value.trim(),w=$('fw').value.trim();
- if(!n||!w){$('err').textContent='Escribe tu nombre y tu web o Instagram para poder mirarla.';return}$('err').textContent='';
- abre('Hola, soy '+n+'. Mi web es '+w+'. Quiero el diagnóstico gratis'+(interes?' ('+interes+')':'')+'.')});
-addEventListener('scroll',()=>$('cabe').classList.toggle('on',scrollY>40),{passive:true});
-
-/* vídeos: solo se reproducen a la vista */
-if(matchMedia('(min-width:1100px)').matches&&!reduce)document.querySelectorAll('.abanico video').forEach(v=>{v.src=v.dataset.src;v.play().catch(()=>{})});
-const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
-if(!reduce)document.querySelectorAll('.clip video,.capa video').forEach(v=>vo.observe(v));
-
-addEventListener('DOMContentLoaded',()=>{
- if(reduce||!window.gsap){document.documentElement.classList.remove('js');return}
- gsap.registerPlugin(ScrollTrigger);
- if(window.Lenis){const l=new Lenis();l.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>l.raf(t*1000));gsap.ticker.lagSmoothing(0);
-  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();l.scrollTo(t,{offset:-40})}}))}
- gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
- gsap.from('.hero .k,.hero h1,.hero .sub,.hero .cta,.hero .dat,.abanico>*',{y:56,opacity:0,duration:1.2,ease:'expo.out',stagger:.08,delay:1.15});
- if(window.SplitText){gsap.registerPlugin(SplitText);document.fonts.ready.then(()=>{document.querySelectorAll('.cab h2,#hablar h2').forEach(t=>{const s=SplitText.create(t,{type:'lines',mask:'lines'});
-  gsap.from(s.lines,{yPercent:115,duration:1,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:t,start:'top 90%',once:true},onComplete:()=>s.revert()})});ScrollTrigger.refresh()})}
- gsap.fromTo('#paginas',{clipPath:'inset(0% 12% 0% 12% round 56px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:'#paginas',start:'top 95%',end:'top 35%',scrub:.5}});
- if(matchMedia('(hover:hover)').matches){const hx=gsap.quickTo('.halo','x',{duration:.9,ease:'power3'}),hy=gsap.quickTo('.halo','y',{duration:.9,ease:'power3'});
-  addEventListener('pointermove',e=>{gsap.to('.halo',{opacity:1,duration:.5,overwrite:'auto'});hx(e.clientX);hy(e.clientY)},{passive:true})}
- const capas=gsap.utils.toArray('.capa');
- capas.forEach((c,i)=>{if(capas[i+1])gsap.to(c,{scale:.93,filter:'brightness(.5)',ease:'none',scrollTrigger:{trigger:capas[i+1],start:'top 88%',end:'top 18%',scrub:true}})});
- gsap.from('.chat2 i',{opacity:0,y:18,duration:.6,stagger:.4,ease:'power3.out',scrollTrigger:{trigger:'.chat2',start:'top 78%',once:true}});
- gsap.to('.pasos',{'--h':1,ease:'none',scrollTrigger:{trigger:'.pasos',start:'top 82%',end:'top 38%',scrub:.5}});
- const mm=gsap.matchMedia();
- mm.add('(min-width:1000px)',()=>{
-  const c=$('carril'),sec=$('trabajos');sec.classList.add('pin');
-  gsap.to(c,{x:()=>-(c.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:c,start:'center center',end:()=>'+='+(c.scrollWidth-innerWidth),pin:sec,scrub:.6,invalidateOnRefresh:true}});
-  document.querySelector('.pista').textContent='Sigue bajando: la galería avanza sola';
-  gsap.utils.toArray('.movil').forEach((m,i)=>gsap.fromTo(m,{rotateY:(i-1)*-16,rotateX:8,y:70},{rotateY:(i-1)*-4,rotateX:0,y:0,ease:'none',scrollTrigger:{trigger:'.moviles',start:'top 90%',end:'top 25%',scrub:.6}}));
-  return()=>sec.classList.remove('pin')});
-});
+const vio=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{threshold:.35}):null;
+if(vio&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('.asi video').forEach(v=>vio.observe(v));
+document.getElementById('sel').addEventListener('click',e=>{const b=e.target.closest('button');if(b)elige(b.dataset.id,true)});
+elige('tienda');
+addEventListener('scroll',()=>document.getElementById('cabe').classList.toggle('on',scrollY>40),{passive:true});
+addEventListener('load',()=>setTimeout(()=>{['tienda','webinar','panel','chat','enlace'].forEach(n=>{const i=new Image();i.src='media/muestra_'+n+'.jpg'})},600));
 </script>
 <script type="module">
-/* Red 3D de la portada: dispersa al llegar; al bajar se ordena en cuatro piezas alrededor de la tienda.
-   Si WebGL o la librería fallan, queda el degradado y la portada normal de una pantalla. */
-const cv=document.getElementById('red'),hero=document.querySelector('.hero'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Red de fondo de la portada: puntos que giran despacio. Si WebGL o la librería fallan, queda el degradado. */
+const cv=document.getElementById('red'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 try{
  const T=await import('https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js');
- const movil=innerWidth<760,N=movil?96:190,PUL=movil?26:64;
+ const movil=innerWidth<760,N=movil?70:150;
  const r=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,1.5));
  const sc=new T.Scene();sc.fog=new T.FogExp2(0x0A0810,.05);
  const cam=new T.PerspectiveCamera(55,1,.1,100);cam.position.set(0,0,13);
- const g=new T.Group();sc.add(g);
- const G0=new T.Vector3(movil?0:2.6,movil?1.6:.3,0),CERO=new T.Vector3();
- const CX=movil?1.5:4.7,CY=movil?3:2.2,R=movil?.78:1.25,CEN=[[-CX,CY],[CX,CY],[-CX,-CY],[CX,-CY],[0,0]];
- const A=[],B=[];
- for(let i=0;i<N;i++){
-  const u=Math.random()*2-1,t=Math.random()*Math.PI*2,rad=3.2+Math.pow(Math.random(),.6)*4.6,s=Math.sqrt(1-u*u);
-  A.push(new T.Vector3(rad*s*Math.cos(t)*1.25,rad*u*.8,rad*s*Math.sin(t)));
-  const c=i%9===8?4:i%4,u2=Math.random()*2-1,t2=Math.random()*Math.PI*2,s2=Math.sqrt(1-u2*u2),q=Math.cbrt(Math.random())*(c===4?R*.55:R);
-  B.push(new T.Vector3(CEN[c][0]+q*s2*Math.cos(t2),CEN[c][1]+q*u2,q*s2*Math.sin(t2)*.7))}
- const P=A.map(v=>v.clone());
- const ss=(a,b,x)=>{x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x)};
+ const g=new T.Group();sc.add(g);g.position.set(movil?0:2.6,movil?1.6:.3,0);
+ const A=[];for(let i=0;i<N;i++){const u=Math.random()*2-1,t=Math.random()*Math.PI*2,rad=3.2+Math.pow(Math.random(),.6)*4.6,s=Math.sqrt(1-u*u);A.push(new T.Vector3(rad*s*Math.cos(t)*1.25,rad*u*.8,rad*s*Math.sin(t)))}
  const tex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),gr=x.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.8)');gr.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=gr;x.fillRect(0,0,64,64);return new T.CanvasTexture(c)})();
- const na=new Float32Array(N*3),ngeo=new T.BufferGeometry();ngeo.setAttribute('position',new T.BufferAttribute(na,3));
+ const na=new Float32Array(N*3);A.forEach((p,i)=>{na[i*3]=p.x;na[i*3+1]=p.y;na[i*3+2]=p.z});
+ const ngeo=new T.BufferGeometry();ngeo.setAttribute('position',new T.BufferAttribute(na,3));
  const nodos=new T.Points(ngeo,new T.PointsMaterial({size:.28,map:tex,color:0xF4E8D8,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));nodos.frustumCulled=false;g.add(nodos);
  const E=[];for(let i=0;i<N;i++){const d=A.map((p,j)=>[p.distanceTo(A[i]),j]).sort((a,b)=>a[0]-b[0]);for(let k=1;k<=2;k++){const j=d[k][1];if(j>i||k===1)E.push([i,j])}}
- const la=new Float32Array(E.length*6),lgeo=new T.BufferGeometry();lgeo.setAttribute('position',new T.BufferAttribute(la,3));
- const lmat=new T.LineBasicMaterial({color:0xBFA9DD,transparent:true,opacity:.18,blending:T.AdditiveBlending,depthWrite:false});
- const lin=new T.LineSegments(lgeo,lmat);lin.frustumCulled=false;g.add(lin);
- const E2=[];for(let i=0;i<N;i++){const d=B.map((p,j)=>[p.distanceTo(B[i]),j]).sort((a,b)=>a[0]-b[0]);for(let k=1;k<=3;k++)E2.push([i,d[k][1]])}
- const l2=new Float32Array(E2.length*6);E2.forEach((e,n)=>{const a=B[e[0]],b=B[e[1]];l2.set([a.x,a.y,a.z,b.x,b.y,b.z],n*6)});
- const l2geo=new T.BufferGeometry();l2geo.setAttribute('position',new T.BufferAttribute(l2,3));
- const l2mat=new T.LineBasicMaterial({color:0xBFA9DD,transparent:true,opacity:0,blending:T.AdditiveBlending,depthWrite:false});
- const lin2=new T.LineSegments(l2geo,l2mat);lin2.frustumCulled=false;g.add(lin2);
- const rd=[];for(let i=0;i<4;i++)rd.push(CEN[i][0]*.82,CEN[i][1]*.82,0,CEN[i][0]*.14,CEN[i][1]*.14,0);
- const rgeo=new T.BufferGeometry();rgeo.setAttribute('position',new T.Float32BufferAttribute(rd,3));
- const rmat=new T.LineBasicMaterial({color:0xD4AF37,transparent:true,opacity:0,blending:T.AdditiveBlending,depthWrite:false});
- const radios=new T.LineSegments(rgeo,rmat);radios.frustumCulled=false;g.add(radios);let mAct=0;
- function coloca(m){
-  for(let i=0;i<N;i++){P[i].lerpVectors(A[i],B[i],m);na[i*3]=P[i].x;na[i*3+1]=P[i].y;na[i*3+2]=P[i].z}
-  for(let e=0;e<E.length;e++){const a=P[E[e][0]],b=P[E[e][1]];la[e*6]=a.x;la[e*6+1]=a.y;la[e*6+2]=a.z;la[e*6+3]=b.x;la[e*6+4]=b.y;la[e*6+5]=b.z}
-  ngeo.attributes.position.needsUpdate=true;lgeo.attributes.position.needsUpdate=true;const f=ss(.72,1,m);mAct=m;lmat.opacity=.18*(1-f);l2mat.opacity=.3*f;rmat.opacity=.75*f}
- const pu=Array.from({length:PUL},()=>({e:Math.random()*E.length|0,t:Math.random(),v:.25+Math.random()*.5}));
- const pa=new Float32Array(PUL*3),pgeo=new T.BufferGeometry();pgeo.setAttribute('position',new T.BufferAttribute(pa,3));
- const pul=new T.Points(pgeo,new T.PointsMaterial({size:.46,map:tex,color:0xD4AF37,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));pul.frustumCulled=false;g.add(pul);
- function paso(dt){for(let i=0;i<PUL;i++){const p=pu[i];p.t+=p.v*dt;if(p.t>1){p.t=0;p.e=Math.random()*E.length|0}if(mAct>.9){const c=CEN[i%4],q=i%2?p.t:1-p.t,k=.82-.68*q;pa[i*3]=c[0]*k;pa[i*3+1]=c[1]*k;pa[i*3+2]=0}else{const a=P[E[p.e][0]],b=P[E[p.e][1]];pa[i*3]=a.x+(b.x-a.x)*p.t;pa[i*3+1]=a.y+(b.y-a.y)*p.t;pa[i*3+2]=a.z+(b.z-a.z)*p.t}}pgeo.attributes.position.needsUpdate=true}
- const labs=[...document.querySelectorAll('.nodos b')],lema=document.querySelector('.lema'),txt=document.getElementById('hTxt'),v3=new T.Vector3();
- let mx=0,my=0,vis=true,prev=performance.now(),rot=0,pPrev=-1,W=1,H=1;
- addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
- const talla=()=>{W=cv.clientWidth;H=cv.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();pPrev=-1};talla();addEventListener('resize',talla);
- function escena(p){
-  const m=ss(.1,.62,p);coloca(m);
-  g.position.lerpVectors(G0,CERO,m);g.rotation.y=rot*(1-m);
-  cv.style.setProperty('--mk',ss(.04,.3,p).toFixed(3));
-  txt.style.opacity=(1-ss(.02,.2,p)).toFixed(3);txt.style.transform='translateY('+(-70*ss(.02,.26,p)).toFixed(1)+'px)';txt.style.pointerEvents=p>.12?'none':'';
-  lema.style.opacity=ss(.7,.86,p).toFixed(3);
-  return m}
- function etiquetas(p){const o=ss(.5,.68,p);g.updateMatrixWorld();cam.updateMatrixWorld();
-  labs.forEach((l,i)=>{v3.set(CEN[i][0],CEN[i][1]+(i<4?(CEN[i][1]>0?R+.7:-R-.7):0),0).applyMatrix4(g.matrixWorld).project(cam);
-   l.style.opacity=o.toFixed(3);l.style.transform='translate('+((v3.x*.5+.5)*W).toFixed(1)+'px,'+((-v3.y*.5+.5)*H).toFixed(1)+'px) translate(-50%,-50%)'})}
- function loop(now){if(!vis)return;const dt=Math.min((now-prev)/1000,.05);prev=now;
-  const p=Math.min(1,Math.max(0,scrollY/Math.max(1,hero.offsetHeight-innerHeight)));
-  if(p===0){rot+=dt*.06;if(rot>Math.PI)rot-=Math.PI*2}
-  const m=(p!==pPrev||p===0)?escena(p):ss(.1,.62,p);pPrev=p;
-  paso(dt);g.rotation.x+=((my*.3)*(1-m)-g.rotation.x)*.04;cam.position.x+=((mx*1.4)-cam.position.x)*.04;cam.lookAt(0,0,0);
-  etiquetas(p);r.render(sc,cam);requestAnimationFrame(loop)}
+ const la=new Float32Array(E.length*6);E.forEach((e,n)=>{const a=A[e[0]],b=A[e[1]];la.set([a.x,a.y,a.z,b.x,b.y,b.z],n*6)});
+ const lgeo=new T.BufferGeometry();lgeo.setAttribute('position',new T.BufferAttribute(la,3));
+ const lin=new T.LineSegments(lgeo,new T.LineBasicMaterial({color:0xBFA9DD,transparent:true,opacity:.2,blending:T.AdditiveBlending,depthWrite:false}));lin.frustumCulled=false;g.add(lin);
+ let W=1,H=1,rot=0,prev=performance.now(),vis=true,mx=0;
+ const talla=()=>{W=cv.clientWidth;H=cv.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix()};talla();addEventListener('resize',talla);
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5},{passive:true});
+ function loop(now){if(!vis)return;const dt=Math.min((now-prev)/1000,.05);prev=now;rot+=dt*.06;g.rotation.y=rot;cam.position.x+=((mx*1.4)-cam.position.x)*.04;cam.lookAt(0,0,0);r.render(sc,cam);requestAnimationFrame(loop)}
  new IntersectionObserver(e=>{vis=e[0].isIntersecting;if(vis&&!reduce){prev=performance.now();requestAnimationFrame(loop)}}).observe(cv);
- coloca(0);g.position.copy(G0);paso(0);cam.lookAt(0,0,0);r.render(sc,cam);cv.dataset.ok='1';
- if(!reduce){hero.classList.add('sis');if(window.ScrollTrigger)ScrollTrigger.refresh();requestAnimationFrame(loop)}
-}catch(e){cv.dataset.ok='0';console.warn('red 3D',e)}
+ cam.lookAt(0,0,0);r.render(sc,cam);cv.dataset.ok='1';
+ if(!reduce)requestAnimationFrame(loop);
+}catch(e){cv.dataset.ok='0';console.warn('red de fondo',e)}
 </script>
 </body>
 </html>
