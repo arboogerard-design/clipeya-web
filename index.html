@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0c0c0b">
 <meta property="og:title" content="Tu producto, en su mejor página">
 <meta property="og:description" content="Webs, embudos, chat y CRM para tiendas online e infoproductores. Desde 100 €.">
-<meta property="og:image" content="img/og.jpg"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://arboogerard-design.github.io/clipeya-web/img/og.jpg"><meta property="og:url" content="https://arboogerard-design.github.io/clipeya-web/"><link rel="canonical" href="https://arboogerard-design.github.io/clipeya-web/"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/clipeya_spark_favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/bigshoulders-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrumentsans-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -74,7 +74,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),summary:focus:not(:
 .day{display:flex;align-items:baseline;margin-top:6px;font:700 14px var(--bd);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 .day output{margin-left:8px;font:700 64px/.8 var(--hd);color:var(--bone);letter-spacing:0}
 .pb{height:3px;background:rgba(236,231,222,.16);border-radius:2px;margin-top:10px;overflow:hidden}.pb i{display:block;height:100%;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:0 50%}
-.lbl{position:absolute;left:8px;top:8px;z-index:2;font:700 11px/1 var(--bd);letter-spacing:.12em;text-transform:uppercase;padding:6px 8px;border-radius:3px;background:rgba(12,12,11,.7);color:var(--bone)}
+.lbl{position:absolute;left:8px;top:8px;z-index:2;font:700 12px/1 var(--bd);letter-spacing:.12em;text-transform:uppercase;padding:6px 8px;border-radius:3px;background:rgba(12,12,11,.7);color:var(--bone)}
 .rm .scene,.scene.static{height:auto}.rm .pin{position:static;height:auto;padding:72px 0}
 @media (prefers-reduced-motion:reduce){.scene{height:auto}.pin{position:static;height:auto;padding:72px 0}}
 @media (max-width:699px){.js:not(.rm) .stl li:not(.on){display:none}.stl{align-content:start}.js:not(.rm) .stl li{opacity:1}}
@@ -88,8 +88,8 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),summary:focus:not(:
 .sl .kn{position:absolute;top:50%;left:var(--x);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--bone);color:var(--ink);display:grid;place-items:center;font:700 16px var(--bd);box-shadow:0 6px 20px rgba(0,0,0,.4)}
 .sl input{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
 .sl:focus-within .kn{outline:3px solid var(--acc);outline-offset:3px}
-.sl .t1,.sl .t2{position:absolute;top:12px;z-index:2;font:700 11px/1 var(--bd);letter-spacing:.1em;text-transform:uppercase;padding:7px 9px;border-radius:3px;background:rgba(12,12,11,.78);color:var(--bone)}
-.sl .t1{left:10px}.sl .t2{right:10px}.sl .lab{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none}.sl .lab1{clip-path:inset(0 calc(100% - var(--x)) 0 0)}.sl .lab2{clip-path:inset(0 0 0 var(--x))}
+.sl .t1,.sl .t2{position:absolute;top:12px;z-index:2;font:700 12px/1 var(--bd);letter-spacing:.1em;text-transform:uppercase;padding:7px 9px;border-radius:3px;background:rgba(12,12,11,.78);color:var(--bone)}
+.sl .t1{left:10px}.sl .t2{right:10px}.sl .t1,.sl .t2{max-width:calc(50% - 16px);line-height:1.15}.sl .lab{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none}.sl .lab1{clip-path:inset(0 calc(100% - var(--x)) 0 0)}.sl .lab2{clip-path:inset(0 0 0 var(--x))}
 html:not(.js) .sl{max-width:none;aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;background:none;box-shadow:none}
 html:not(.js) .sl img{position:static;height:auto}html:not(.js) .sl .a{clip-path:none}
 html:not(.js) .sl .ln1,html:not(.js) .sl .kn,html:not(.js) .sl input,html:not(.js) .sl .lab{display:none}
@@ -244,7 +244,7 @@ footer img{height:28px;width:auto}
  .scene{height:102svh}
   .tiles{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
  .tile{aspect-ratio:1/1}.tile b{font-size:17px;line-height:.9;letter-spacing:0}.tile div{left:10px;right:10px;bottom:10px}
- .sl{max-width:270px}.sl .t1,.sl .t2{font-size:10px;letter-spacing:.05em;padding:6px 7px}.sl .t2{top:40px}
+ .sl{max-width:270px}.sl .t1,.sl .t2{font-size:12px;letter-spacing:.05em;padding:6px 7px}.sl .t2{top:40px}
  .vidbox{max-width:132px}
  .cond{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;border-bottom:1px solid rgba(12,12,11,.25)}
  .cond li:last-child{border-bottom:0}.cond b{font-size:24px}.cond p{font-size:14px}
@@ -548,7 +548,7 @@ $$('h1,h2').forEach(function(h){if(!h.children.length)split(h)});
 var hd=$('#hd'),fab=$('#fab'),hv=$('#hv'),hero=$('#top');
 requestAnimationFrame(function(){var h1=$('h1.split');if(h1)h1.classList.add('in');if(hero)hero.classList.add('go')});
 /* vídeos: solo UNO suena a la vez (el más visible, con 50 % o más a la vista); los demás, parados */
-var vids=$$('video[data-play]'),vr=[],curV=null;
+var vids=$$('video[data-play]'),vr=[],curV=null,curM=null;
 function tg(v){var p=v.parentNode;return(p&&/(^|\s)vbg(\s|$)/.test(p.className))?p:v}
 function setPoster(v){var p=v.getAttribute('data-poster');if(p&&!v.getAttribute('poster'))v.setAttribute('poster',p)}
 function playV(v){
@@ -556,8 +556,14 @@ function playV(v){
  if(LITE&&v!==hv)return;
  if(LITE&&v===hv&&!v.getAttribute('data-ls')){v.setAttribute('data-ls','1');v.src=v.getAttribute('data-lite')||v.currentSrc}
  v.preload='auto';var p=v.play();if(p&&p.then)p.then(function(){v.classList.add('on')},function(){})}
+/* «Elige tu caso»: el fondo de la sección y el vídeo del caso visible van a la vez (si no, uno de los dos se queda parado) */
+function mate(v){if(!v||!v.closest)return null;var s=v.closest('section');if(!s||!s.querySelector('.panel'))return null;
+ if(tg(v)!==v)return s.querySelector('.panel:not([hidden]) video[data-play]');
+ var g=s.querySelector('.vbg>video[data-play]');return g!==v?g:null}
 function pick(){var best=null,b=.499,i;for(i=0;i<vids.length;i++){if(vr[i]>b){b=vr[i];best=vids[i]}}
- if(best===curV)return;if(curV)curV.pause();curV=best;if(best)playV(best)}
+ var m=mate(best);if(best===curV&&m===curM)return;
+ if(curV&&curV!==best&&curV!==m)curV.pause();if(curM&&curM!==best&&curM!==m)curM.pause();
+ curV=best;curM=m;if(best)playV(best);if(m)playV(m)}
 var vio=null;
 if(HAS_IO){
  vio=new IntersectionObserver(function(es){for(var k=0;k<es.length;k++){var e=es[k],i=e.target.__vi;if(i===undefined)continue;var h=Math.min(e.boundingClientRect.height||1,(e.rootBounds&&e.rootBounds.height)||innerHeight);vr[i]=e.isIntersecting?e.intersectionRect.height/h:0}pick()},{threshold:[0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]});
@@ -565,7 +571,7 @@ if(HAS_IO){
  vids.forEach(function(v,i){var t=tg(v);t.__vi=i;vr[i]=0;vio.observe(t);if(v.getAttribute('data-poster'))pio.observe(v)});
 }else{vids.forEach(setPoster)}
 var io={observe:function(v){if(!vio)return;var t=tg(v);if(t.__vi===undefined)return;vio.unobserve(t);vio.observe(t)}};
-document.addEventListener('visibilitychange',function(){if(!curV)return;if(document.hidden)curV.pause();else playV(curV)});
+document.addEventListener('visibilitychange',function(){[curV,curM].forEach(function(x){if(!x)return;if(document.hidden)x.pause();else playV(x)})});
 var pvb=$('#pvb'),pv=$('#pv');
 if(pvb&&pv){
  if(LITE||RM){pvb.textContent='Ver';pvb.setAttribute('aria-label','Reproducir vídeo')}
@@ -612,7 +618,7 @@ if(sc&&cv&&!RM){
 }
 measure();frame();
 /* modo ligero tardío: si el navegador no da deviceMemory, medir 10 fotogramas */
-function goLite(){if(LITE)return;LITE=true;HTML.classList.add('lite');if(curV&&curV!==hv){curV.pause();curV=null}sched()}
+function goLite(){if(LITE)return;LITE=true;HTML.classList.add('lite');if(curV&&curV!==hv){curV.pause();curV=null}if(curM&&curM!==hv){curM.pause();curM=null}sched()}
 if(!LITE&&!navigator.deviceMemory&&matchMedia('(pointer:coarse)').matches){addEventListener('load',function(){setTimeout(function(){var n=0,sum=0,last=0;requestAnimationFrame(function f(t){if(last>0)sum+=t-last;last=t;n++;if(n<12)requestAnimationFrame(f);else if(sum/10>24)goLite()})},1200)})}
 
 /* antes / después */
