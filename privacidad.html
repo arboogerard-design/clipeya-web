@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacidad · Clipeya AI Lab</title><link rel="icon" href="img/clipeya_spark_favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrumentsans-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrumentsans-bold.woff2) format("woff2");font-weight:700;font-display:swap}
+body{margin:0;background:#f1ede6;color:#141312;font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:56px 20px 80px} a{color:#c2360f} h1{font-size:clamp(34px,6vw,56px);line-height:1;letter-spacing:-.04em;margin:28px 0 8px}
+h2{font-size:21px;margin:34px 0 6px} .dato{font-weight:700} .pie{margin-top:48px;font-size:14px;color:#6b665e}
+</style><script src="config.js"></script></head>
+<body><main><a href="index.html">← Volver a Clipeya</a><h1>Privacidad</h1><p class="pie">Actualizado: <span data-legal="actualizado"></span></p>
+<h2>Responsable</h2><p><span class="dato" data-legal="titular"></span> · <span class="dato" data-legal="email"></span></p>
+<h2>Qué datos se tratan</h2><p>Esta web no tiene formularios que guarden datos: el formulario abre WhatsApp con tu mensaje y eres tú quien lo envía. Los datos que nos mandes por WhatsApp (nombre, teléfono y el enlace de tu negocio) se usan solo para contestarte y preparar tu propuesta.</p>
+<h2>Cuánto tiempo</h2><p>Mientras dure la conversación o la relación comercial, y después el tiempo que exija la ley.</p>
+<h2>Tus derechos</h2><p>Puedes pedir acceso, rectificación o supresión de tus datos escribiendo al correo del responsable. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+<h2>Cookies</h2><p>Esta web no usa cookies de seguimiento ni de publicidad.</p>
+</main>
+<script>document.querySelectorAll('[data-legal]').forEach(e => { e.textContent = (window.CONFIG && CONFIG.LEGAL[e.dataset.legal]) || ''; });</script>
+</body></html>

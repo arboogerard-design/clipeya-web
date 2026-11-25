@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aviso legal · Clipeya AI Lab</title><link rel="icon" href="img/clipeya_spark_favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrumentsans-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrumentsans-bold.woff2) format("woff2");font-weight:700;font-display:swap}
+body{margin:0;background:#f1ede6;color:#141312;font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:56px 20px 80px} a{color:#c2360f} h1{font-size:clamp(34px,6vw,56px);line-height:1;letter-spacing:-.04em;margin:28px 0 8px}
+h2{font-size:21px;margin:34px 0 6px} .dato{font-weight:700} .pie{margin-top:48px;font-size:14px;color:#6b665e}
+</style><script src="config.js"></script></head>
+<body><main><a href="index.html">← Volver a Clipeya</a><h1>Aviso legal</h1><p class="pie">Actualizado: <span data-legal="actualizado"></span></p>
+<h2>Quién es el titular de esta web</h2>
+<p>Titular: <span class="dato" data-legal="titular"></span><br>NIF: <span class="dato" data-legal="nif"></span><br>Domicilio: <span class="dato" data-legal="domicilio"></span><br>Correo: <span class="dato" data-legal="email"></span></p>
+<h2>Para qué es esta web</h2><p>Dar a conocer los servicios de Clipeya AI Lab (webs, tiendas online, CRM, WhatsApp y automatizaciones) y poder contactar por WhatsApp.</p>
+<h2>Uso de la web</h2><p>Los textos, diseños e imágenes de esta web son de su titular o se usan con permiso. Las obras que se enseñan son trabajos propios o hechos para clientes con su autorización.</p>
+</main>
+<script>document.querySelectorAll('[data-legal]').forEach(e => { e.textContent = (window.CONFIG && CONFIG.LEGAL[e.dataset.legal]) || ''; });</script>
+</body></html>
