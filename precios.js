@@ -5,8 +5,8 @@
 // La página rellena cada [data-precio="clave"].
 window.PRECIOS = {
   ESTADO: 'por confirmar',
-  sistema:  { nombre: 'Sistema a medida',               inicio: 4900, mes: null, nota: 'con el alcance por escrito' },
+  sistema:  { nombre: 'Sistema a medida',               inicio: 4900, mes: 149, nota: 'cuidado mensual; alcance por escrito' },
   local:    { nombre: 'Web + Google + Reseñas',          inicio: 690,  mes: 49 },
-  tienda:   { nombre: 'Tienda Esencial',                 inicio: 1190, mes: null },
+  tienda:   { nombre: 'Tienda Esencial',                 inicio: 1190, mes: 149, nota: 'cuidado y mejoras cada mes' },
   anuncios: { nombre: 'Anuncios + creativos IA',         inicio: null, mes: 590,  nota: 'y 190 € de alta' },
 };
