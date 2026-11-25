@@ -4,9 +4,8 @@
 // Formato: inicio = pago único (null si no hay); mes = cuota mensual (null si no hay); nota = línea pequeña debajo del precio.
 // La página rellena cada [data-precio="clave"].
 window.PRECIOS = {
-  ESTADO: 'por confirmar',
-  sistema:  { nombre: 'Sistema a medida',               inicio: 4900, mes: 149, nota: 'cuidado mensual; alcance por escrito' },
-  local:    { nombre: 'Web + Google + Reseñas',          inicio: 690,  mes: 49 },
-  tienda:   { nombre: 'Tienda Esencial',                 inicio: 1190, mes: 149, nota: 'cuidado y mejoras cada mes' },
-  anuncios: { nombre: 'Anuncios + creativos IA',         inicio: null, mes: 590,  nota: 'y 190 € de alta' },
+  ESTADO: 'v15 25-nov (coordinador): socio recurrente; fuente ENTREGAS_25NOV_AGENCIAS/PRECIOS_CLIPEYA_FABLE.md',
+  diagnostico: { nombre: 'Diagnóstico',          inicio: 97,   mes: null, nota: 'plan de 90 días' },
+  socio:       { nombre: 'Socio de crecimiento', inicio: null, mes: 1190, nota: '590 € de alta · mínimo 3 meses' },
+  proyecto:    { nombre: 'Proyecto suelto',      inicio: 690,  mes: null, desde: true, nota: 'según alcance' },
 };

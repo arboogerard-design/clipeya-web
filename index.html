@@ -21,6 +21,9 @@
 .ofertas .desc{grid-column:1;color:var(--gris-claro);font-size:16px}
 .ofertas .px{grid-column:2;grid-row:1 / span 2;text-align:right;font:400 clamp(26px,2.4vw,34px)/1 var(--f-display,serif);white-space:nowrap}
 .ofertas .px small{display:block;font:400 14px/1.3 var(--f-texto,sans-serif);color:var(--gris-claro);margin-top:6px}
+.ofertas li.destacada{background:var(--panel);border-left:3px solid var(--acento);padding:20px 16px}
+.ofertas li.destacada b::after{content:"Recomendado";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
+.ofertas li.destacada .px{color:var(--acento)}
 @media (max-width:560px){.ofertas li{grid-template-columns:1fr}.ofertas .px{grid-column:1;grid-row:auto;text-align:left;margin-top:6px}}
 
 /* vuelta 2 · un solo tramo con texto: el que sale se funde del todo (0,22 s) ANTES de que entre el siguiente (espera 0,3 s) */
@@ -247,6 +250,9 @@ form.enlace input:focus-visible{outline-offset:2px}
 .ofertas .desc{grid-column:1;color:var(--gris-claro);font-size:16px}
 .ofertas .px{grid-column:2;grid-row:1 / span 2;text-align:right;font:400 clamp(26px,2.4vw,34px)/1 var(--f-display,serif);white-space:nowrap}
 .ofertas .px small{display:block;font:400 14px/1.3 var(--f-texto,sans-serif);color:var(--gris-claro);margin-top:6px}
+.ofertas li.destacada{background:var(--panel);border-left:3px solid var(--acento);padding:20px 16px}
+.ofertas li.destacada b::after{content:"Recomendado";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
+.ofertas li.destacada .px{color:var(--acento)}
 @media (max-width:560px){.ofertas li{grid-template-columns:1fr}.ofertas .px{grid-column:1;grid-row:auto;text-align:left;margin-top:6px}}
 
 /* vuelta 2 · un solo tramo con texto: el que sale se funde del todo (0,22 s) ANTES de que entre el siguiente (espera 0,3 s) */
@@ -324,15 +330,14 @@ form.enlace input:focus-visible{outline-offset:2px}
   <section class="pantalla ancha" id="servicios" data-vista="sala:120:1">
     <div class="caja">
       <h2>¿Qué negocio tienes?</h2>
-      <p class="frase">Cuatro formas de empezar. Elige la tuya y escríbenos.</p>
+      <p class="frase">Tres formas de empezar. Si quieres que lo llevemos todo cada mes, la del centro.</p>
       <!--SERVICIOS:INICIO-->
 <ul class="ofertas" id="ofertas">
-  <li data-precio="local"><b>Web + Google + Reseñas</b><span class="desc">Que te encuentren en Google y te escriban.</span><span class="px"></span></li>
-  <li data-precio="tienda"><b>Tienda Esencial</b><span class="desc">Tu tienda online, lista para vender desde el móvil.</span><span class="px"></span></li>
-  <li data-precio="anuncios"><b>Anuncios + creativos IA</b><span class="desc">Tus anuncios en marcha, con creativos nuevos cada mes.</span><span class="px"></span></li>
-  <li data-precio="sistema"><b>Sistema a medida</b><span class="desc">Web o tienda, CRM, WhatsApp con IA, automatizaciones y panel.</span><span class="px"></span></li>
+  <li data-precio="diagnostico"><b>Diagnóstico</b><span class="desc">Revisamos tu web, tu WhatsApp y tu embudo y te damos el plan de 90 días. Se descuenta del alta si entras.</span><span class="px"></span></li>
+  <li data-precio="socio" class="destacada"><b>Socio de crecimiento</b><span class="desc">Cada mes: automatizaciones y WhatsApp con IA, CRM y panel, una mejora de tu web o tienda, contenido con IA, informe y llamada. Respuesta en 24 h.</span><span class="px"></span></li>
+  <li data-precio="proyecto"><b>Proyecto suelto</b><span class="desc">Web desde 690 €, tienda desde 1.190 €, sistema completo desde 4.900 €.</span><span class="px"></span></li>
 </ul>
-<p class="pie">Precios desde, + IVA. Sin permanencia. ¿Otra cosa? <a href="https://wa.me/34623581270?text=Hola%2C%20quiero%20pediros%20presupuesto." target="_blank" rel="noopener">Pídenos presupuesto</a>.</p>
+<p class="pie">Precios + IVA. Socio: mínimo 3 meses y después mes a mes; si un mes no entregamos lo acordado, el siguiente no lo pagas. Anuncios de Meta, aparte. <a href="https://wa.me/34623581270?text=Hola%2C%20quiero%20pediros%20presupuesto." target="_blank" rel="noopener">Pídenos presupuesto</a>.</p>
 <!--SERVICIOS:FIN-->
     </div>
   </section>
@@ -388,7 +393,7 @@ form.enlace input:focus-visible{outline-offset:2px}
   document.querySelectorAll('a[href*="wa.me/"]').forEach((a) => { a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + NUM); });
   const P = window.PRECIOS || {}, eur = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
   document.querySelectorAll('[data-precio]').forEach((li) => { const p = P[li.dataset.precio]; if (!p) return;
-    li.querySelector('.px').innerHTML = 'desde ' + (p.inicio != null ? eur(p.inicio) : eur(p.mes) + '/mes') + '<small>' + [p.inicio != null && p.mes != null ? 'y ' + eur(p.mes) + '/mes' : '', p.nota || ''].filter(Boolean).join(' · ') + '</small>'; });
+    li.querySelector('.px').innerHTML = (p.desde ? 'desde ' : '') + (p.inicio != null ? eur(p.inicio) : eur(p.mes) + '/mes') + '<small>' + [p.inicio != null && p.mes != null ? 'y ' + eur(p.mes) + '/mes' : '', p.nota || ''].filter(Boolean).join(' · ') + '</small>'; });
   const secciones = [...document.querySelectorAll('[data-vista]')];
   const marcas = [...document.querySelectorAll('.avance a')];
   // una franja a media pantalla (30 % del alto): sirve para secciones más altas que la pantalla y no se salta con un scroll rápido
