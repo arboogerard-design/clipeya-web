@@ -22,7 +22,7 @@
 .ofertas .px{grid-column:2;grid-row:1 / span 2;text-align:right;font:400 clamp(26px,2.4vw,34px)/1 var(--f-display,serif);white-space:nowrap}
 .ofertas .px small{display:block;font:400 14px/1.3 var(--f-texto,sans-serif);color:var(--gris-claro);margin-top:6px}
 .ofertas li.destacada{background:var(--panel);border-left:3px solid var(--acento);padding:20px 16px}
-.ofertas li.destacada b::after{content:"Recomendado";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
+.ofertas li.destacada b::after{content:"La más completa";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
 .ofertas li.destacada .px{color:var(--acento)}
 @media (max-width:560px){.ofertas li{grid-template-columns:1fr}.ofertas .px{grid-column:1;grid-row:auto;text-align:left;margin-top:6px}}
 
@@ -33,6 +33,15 @@
 @media (min-width:900px){.obra .caja::before{content:"";position:absolute;inset:-22% -40% -22% -45%;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(13,12,11,.82),rgba(13,12,11,0))}}
 @media (prefers-reduced-motion:reduce){.js .pantalla .caja,.js .pantalla .rotulo{transition:none!important}}
 .legal-v9{position:relative;z-index:2;padding:20px var(--margen);font-size:14px;color:var(--gris);background:var(--tinta)}.legal-v9 a{color:inherit}
+
+/* tarifas 2120 · grupos y notas (P2, 27-nov) */
+.grupo-tarifas{margin:28px 0 0;font:600 15px/1.4 var(--f-texto,sans-serif);letter-spacing:.06em;text-transform:uppercase;color:var(--acento)}
+.intro-tarifas{color:var(--gris-claro);margin:10px 0 0}
+.notas-tarifas{margin:26px 0 0;display:grid;gap:10px}
+.notas-tarifas p{margin:0;color:var(--gris-claro);font-size:16px}
+.notas-tarifas strong{color:inherit;filter:brightness(1.4)}
+.ofertas .px small{white-space:normal;max-width:260px;margin-left:auto}
+@media (max-width:560px){.ofertas .px small{max-width:none;margin-left:0}}
 </style>
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" crossorigin>
 <style>
@@ -251,7 +260,7 @@ form.enlace input:focus-visible{outline-offset:2px}
 .ofertas .px{grid-column:2;grid-row:1 / span 2;text-align:right;font:400 clamp(26px,2.4vw,34px)/1 var(--f-display,serif);white-space:nowrap}
 .ofertas .px small{display:block;font:400 14px/1.3 var(--f-texto,sans-serif);color:var(--gris-claro);margin-top:6px}
 .ofertas li.destacada{background:var(--panel);border-left:3px solid var(--acento);padding:20px 16px}
-.ofertas li.destacada b::after{content:"Recomendado";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
+.ofertas li.destacada b::after{content:"La más completa";margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--acento);color:var(--tinta);font:600 12px/1.6 var(--f-texto,sans-serif);vertical-align:middle;white-space:nowrap}
 .ofertas li.destacada .px{color:var(--acento)}
 @media (max-width:560px){.ofertas li{grid-template-columns:1fr}.ofertas .px{grid-column:1;grid-row:auto;text-align:left;margin-top:6px}}
 
@@ -329,15 +338,53 @@ form.enlace input:focus-visible{outline-offset:2px}
 
   <section class="pantalla ancha" id="servicios" data-vista="sala:120:1">
     <div class="caja">
-      <h2>¿Qué negocio tienes?</h2>
-      <p class="frase">Tres formas de empezar. Si quieres que lo llevemos todo cada mes, la del centro.</p>
+      <h2>Tarifas claras.</h2>
+      <p class="frase">Elige la pieza que te falta o júntalas: cada una con su entrada y su cuota.</p>
       <!--SERVICIOS:INICIO-->
-<ul class="ofertas" id="ofertas">
-  <li data-precio="diagnostico"><b>Diagnóstico</b><span class="desc">Revisamos tu web, tu WhatsApp y tu embudo y te damos el plan de 90 días. Se descuenta del alta si entras.</span><span class="px"></span></li>
-  <li data-precio="socio" class="destacada"><b>Socio de crecimiento</b><span class="desc">Cada mes: automatizaciones y WhatsApp con IA, CRM y panel, una mejora de tu web o tienda, contenido con IA, informe y llamada. Respuesta en 24 h.</span><span class="px"></span></li>
-  <li data-precio="proyecto"><b>Proyecto suelto</b><span class="desc">Web desde 690 €, tienda desde 1.190 €, sistema completo desde 4.900 €.</span><span class="px"></span></li>
+<p class="intro-tarifas">Una entrada pequeña para montarlo y una cuota mensual que lo mantiene al día y lo mejora. Sin sorpresas: precio cerrado por escrito antes de empezar.</p>
+<h3 class="grupo-tarifas">Tu web o tu tienda</h3>
+<ul class="ofertas">
+  <li data-precio="web" class="destacada"><b>Web élite</b><span class="desc">Diseño a medida con animaciones y vídeo, móvil primero, textos de venta, WhatsApp y formulario, ficha de Google, medición, dominio a nombre del cliente. La alojamos y la cuidamos nosotros.</span><span class="px"></span></li>
+  <li data-precio="tienda"><b>Tienda online élite (Shopify)</b><span class="desc">Tienda a medida, fichas de producto que venden, pagos, envíos, textos legales, medición y píxel. Para marcas con producto propio. Shopify ya pone el servidor y la seguridad.</span><span class="px"></span></li>
 </ul>
-<p class="pie">Precios + IVA. Socio: mínimo 3 meses y después mes a mes; si un mes no entregamos lo acordado, el siguiente no lo pagas. Anuncios de Meta, aparte. <a href="https://wa.me/34623581270?text=Hola%2C%20quiero%20pediros%20presupuesto." target="_blank" rel="noopener">Pídenos presupuesto</a>.</p>
+<h3 class="grupo-tarifas">Extras que se suman</h3>
+<ul class="ofertas">
+  <li data-precio="landing"><b>Landing de venta extra</b><span class="desc">1 página para una campaña o servicio</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">Captar clientes</h3>
+<ul class="ofertas">
+  <li data-precio="embudo"><b>Embudo de venta</b><span class="desc">landing + gracias + 3 emails + píxel</span><span class="px"></span></li>
+  <li data-precio="embudo_completo"><b>Embudo completo</b><span class="desc">embudo de venta + WhatsApp con IA + CRM + calendario de llamadas, todo junto</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">Atender en automático</h3>
+<ul class="ofertas">
+  <li data-precio="bot_whatsapp"><b>Bot de WhatsApp</b><span class="desc">preguntas frecuentes, horario y recogida de datos</span><span class="px"></span></li>
+  <li data-precio="manychat"><b>ManyChat Instagram</b><span class="desc">comentario o mensaje a privado, califica y avisa al CRM</span><span class="px"></span></li>
+  <li data-precio="whatsapp_ia"><b>WhatsApp con IA</b><span class="desc">entrenado con el negocio, responde y agenda citas</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">¿No sabes por dónde empezar?</h3>
+<ul class="ofertas">
+  <li data-precio="diagnostico"><b>Diagnóstico</b><span class="desc">Vídeo de 5 minutos sobre tu web o tienda con los 3 arreglos que más dinero dan. Si contratas en 14 días, los 97 € se restan de la entrada.</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">Vender más (tiendas)</h3>
+<ul class="ofertas">
+  <li data-precio="emails"><b>Emails automáticos</b><span class="desc">carrito abandonado, bienvenida y post-compra</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">Organizar</h3>
+<ul class="ofertas">
+  <li data-precio="crm"><b>CRM y panel</b><span class="desc">contactos, embudo, calendario, recordatorios y cifras</span><span class="px"></span></li>
+  <li data-precio="agente_ia"><b>Agente de IA a medida</b><span class="desc">conecta sus herramientas y hace tareas internas (alcance por escrito)</span><span class="px"></span></li>
+</ul>
+<h3 class="grupo-tarifas">Contenido y anuncios · solo cuota mensual</h3>
+<ul class="ofertas">
+  <li data-precio="fotos_ia"><b>Fotos de producto IA</b><span class="desc">10 fotos al mes</span><span class="px"></span></li>
+  <li data-precio="videos_ia"><b>Vídeos IA</b><span class="desc">5 vídeos de anuncio al mes, hasta 30 s</span><span class="px"></span></li>
+  <li data-precio="redes_ia"><b>Redes con IA</b><span class="desc">12 publicaciones al mes en 2 redes, con 4 reels con música</span><span class="px"></span></li>
+  <li data-precio="anuncios_meta"><b>Anuncios de Meta</b><span class="desc">gestión de 1 cuenta + 4 creativos IA al mes + informe (la inversión, aparte)</span><span class="px"></span></li>
+  <li data-precio="redes_reels"><b>Redes con IA · Reels</b><span class="desc">20 publicaciones al mes con 10 reels (avatar, voz y música)</span><span class="px"></span></li>
+</ul>
+<div class="notas-tarifas"><p><strong>¿Necesitas varias cosas?</strong> Montamos packs y proyectos a medida: juntamos lo que necesitas y te damos un presupuesto cerrado por escrito. Estos precios son el punto de partida.</p><p><strong>Cómo se paga.</strong> La instalación, al empezar. La cuota, cada mes, con un mínimo de 3 meses y después mes a mes.</p><p><strong>Qué es tuyo.</strong> Dominio, web, tienda y datos van a tu nombre desde el primer día.</p><p><strong>Qué va aparte.</strong> Plan de Shopify, dominio, apps de pago, mensajes de WhatsApp de Meta, licencias y la inversión en anuncios.</p></div>
+<p class="pie">Precios «desde», + IVA · cuotas con mínimo de 3 meses · el precio final se fija por escrito según el alcance. <a href="https://wa.me/34623581270?text=Hola%2C%20quiero%20pediros%20presupuesto." target="_blank" rel="noopener">Pídenos presupuesto</a></p>
 <!--SERVICIOS:FIN-->
     </div>
   </section>
@@ -351,7 +398,7 @@ form.enlace input:focus-visible{outline-offset:2px}
         <li><h3>Pagas el inicio y empezamos</h3><p>Una página de producto, lista en 3 días.</p></li>
         <li><h3>Cada mes, lo cuidamos</h3><p>Vigilamos, arreglamos y mejoramos lo que entregamos.</p></li>
       </ol>
-      <p class="siempre"><strong>Siempre:</strong> sin permanencia. Lo que entregamos es tuyo y tus cuentas siguen a tu nombre. Los anuncios, las cuotas de las herramientas y el coste de los mensajes van aparte. Precios sin IVA. No prometemos cifras de ventas.</p>
+      <p class="siempre"><strong>Siempre:</strong> cuotas con un mínimo de 3 meses y después mes a mes. Lo que entregamos es tuyo y tus cuentas siguen a tu nombre. Plan de Shopify, dominio, apps de pago, mensajes de WhatsApp de Meta, licencias y la inversión en anuncios van aparte. Precios «desde», + IVA. No prometemos cifras de ventas.</p>
       <div class="somos">
         <img src="img/clipeya_spark_favicon.svg" alt="" width="44" height="44">
         <p><strong>Somos Gerard y Andy.</strong> Clipeya AI Lab es nuestro estudio, y todo lo que has visto en la pared lo hicimos nosotros.</p>
@@ -370,14 +417,14 @@ form.enlace input:focus-visible{outline-offset:2px}
       </form>
       <p class="error" id="error-enlace" hidden>Pega un enlace (empieza por http, www o @).</p>
       <a class="otra" href="https://wa.me/34623581270?text=Hola%2C%20quiero%20hablar%20con%20Clipeya." target="_blank" rel="noopener">Prefiero escribiros</a>
-      <p class="pie">Precios + IVA. Sin permanencia.</p>
+      <p class="pie">Precios «desde», + IVA. Cuotas con mínimo de 3 meses.</p>
       <div class="dudas">
         <h3>Dudas, resueltas.</h3>
         <details class="duda" name="duda"><summary>¿Cuánto tarda una página?</summary><p>Una página de producto para el móvil, en 3 días. En agencias, 3 días por pieza.</p></details>
-        <details class="duda" name="duda"><summary>¿La web es mía?</summary><p>Sí. Todo lo que entregamos es tuyo y tus cuentas siguen a tu nombre.</p></details>
-        <details class="duda" name="duda"><summary>¿Y si quiero parar?</summary><p>No hay permanencia. Si paras, terminamos de entregarte el mes que ya has pagado.</p></details>
-        <details class="duda" name="duda"><summary>¿Qué pago aparte?</summary><p>Los anuncios, las cuotas de las herramientas y el coste de los mensajes. Los precios van sin IVA.</p></details>
-        <details class="duda" name="duda"><summary>¿Cuándo se paga?</summary><p>Por adelantado: el inicio antes de empezar y cada mes al comenzarlo.</p></details>
+        <details class="duda" name="duda"><summary>¿La web es mía?</summary><p>Sí. Dominio, web, tienda y datos van a tu nombre desde el primer día.</p></details>
+        <details class="duda" name="duda"><summary>¿Y si quiero parar?</summary><p>Las cuotas tienen un mínimo de 3 meses; después, mes a mes. Si paras, terminamos de entregarte el mes que ya has pagado.</p></details>
+        <details class="duda" name="duda"><summary>¿Qué pago aparte?</summary><p>Plan de Shopify, dominio, apps de pago, mensajes de WhatsApp de Meta, licencias y la inversión en anuncios. Los precios van «desde» y + IVA.</p></details>
+        <details class="duda" name="duda"><summary>¿Cuándo se paga?</summary><p>La instalación, al empezar. La cuota, cada mes, con un mínimo de 3 meses y después mes a mes.</p></details>
         <details class="duda" name="duda"><summary>¿Me prometéis ventas?</summary><p>No. Te entregamos lo acordado y lo vigilamos cada mes, pero no prometemos cifras de ventas.</p></details>
       </div>
     </div>
@@ -393,7 +440,7 @@ form.enlace input:focus-visible{outline-offset:2px}
   document.querySelectorAll('a[href*="wa.me/"]').forEach((a) => { a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + NUM); });
   const P = window.PRECIOS || {}, eur = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
   document.querySelectorAll('[data-precio]').forEach((li) => { const p = P[li.dataset.precio]; if (!p) return;
-    li.querySelector('.px').innerHTML = (p.desde ? 'desde ' : '') + (p.inicio != null ? eur(p.inicio) : eur(p.mes) + '/mes') + '<small>' + [p.inicio != null && p.mes != null ? 'y ' + eur(p.mes) + '/mes' : '', p.nota || ''].filter(Boolean).join(' · ') + '</small>'; });
+    li.querySelector('.px').innerHTML = (p.desde ? 'desde ' : '') + (p.inicio != null ? eur(p.inicio) : eur(p.mes) + '/mes') + '<small>' + [p.inicio != null && p.mes != null ? '+ ' + eur(p.mes) + '/mes' : '', p.nota || ''].filter(Boolean).join(' · ') + '</small>'; });
   const secciones = [...document.querySelectorAll('[data-vista]')];
   const marcas = [...document.querySelectorAll('.avance a')];
   // una franja a media pantalla (30 % del alto): sirve para secciones más altas que la pantalla y no se salta con un scroll rápido
