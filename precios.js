@@ -10,7 +10,7 @@ window.PRECIOS = {
   embudo_completo: { nombre: 'Embudo completo', inicio: 639, mes: 259, desde: false, nota: 'Todo junto, sale más barato' },
   bot_whatsapp: { nombre: 'Bot de WhatsApp', inicio: 119, mes: 69, desde: false, nota: '' },
   manychat: { nombre: 'ManyChat Instagram', inicio: 119, mes: 69, desde: false, nota: '' },
-  whatsapp_ia: { nombre: 'WhatsApp con IA', inicio: 379, mes: 169, desde: false, nota: '' },
+  whatsapp_ia: { nombre: 'WhatsApp con IA', inicio: 500, mes: 99, desde: false, nota: '' },
   diagnostico: { nombre: 'Diagnóstico', inicio: 97, mes: null, desde: false, nota: '' },
   emails: { nombre: 'Emails automáticos', inicio: 199, mes: 69, desde: false, nota: '' },
   crm: { nombre: 'CRM y panel', inicio: 249, mes: 119, desde: false, nota: '' },
