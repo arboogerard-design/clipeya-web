@@ -17,7 +17,7 @@ window.PRECIOS = {
   agente_ia: { nombre: 'Agente de IA a medida', inicio: 1029, mes: 329, desde: false, nota: '' },
   fotos_ia: { nombre: 'Fotos de producto IA', inicio: null, mes: 259, desde: false, nota: 'sin alta' },
   videos_ia: { nombre: 'Vídeos IA', inicio: null, mes: 459, desde: false, nota: 'sin alta' },
-  redes_ia: { nombre: 'Redes con IA', inicio: null, mes: 509, desde: false, nota: 'sin alta' },
+  redes_ia: { nombre: 'Redes y reels', inicio: null, mes: 509, desde: false, nota: 'sin alta' },
   anuncios_meta: { nombre: 'Anuncios de Meta', inicio: null, mes: 639, desde: false, nota: 'sin alta' },
-  redes_reels: { nombre: 'Redes con IA · Reels', inicio: null, mes: 899, desde: false, nota: 'sin alta' },
+  redes_reels: { nombre: 'Redes y reels · Pro', inicio: null, mes: 899, desde: false, nota: 'sin alta' },
 };
